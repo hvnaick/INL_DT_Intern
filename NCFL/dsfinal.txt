@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(2583,92)
+char initialName(2588,92)
 systemTF.p_ambient
 systemTF.T_ambient
 systemTF.g
@@ -293,6 +293,7 @@ Distance2Heaters.flowModel.continuousFlowReversal
 Distance2Heaters.flowModel.diameters[1]
 Distance2Heaters.flowModel.dp_fric_nominal
 PumpPipe.allowFlowReversal
+PumpPipe.port_a.m_flow
 PumpPipe.port_a.h_outflow
 PumpPipe.port_b.p
 PumpPipe.port_b.h_outflow
@@ -2638,6 +2639,10 @@ SecondaryLoop.X[1]
 SecondaryLoop.m_flow_in_internal
 SecondaryLoop.T_in_internal
 SecondaryLoop.X_in_internal[1]
+ramp.height
+ramp.duration
+ramp.offset
+ramp.startTime
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalTemperature
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalPressure
@@ -2687,7 +2692,7 @@ _GlobalScope.Modelica.Media.Water.waterConstants[1].SCRIT0
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltah
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltas
 
-double initialValue(2583,6)
+double initialValue(2588,6)
  -1  1.0132500000000000E+05       0                 1.0000000000000000E+100
   1   280   # systemTF.p_ambient
  -1  2.9314999999999998E+02       0                 1.0000000000000000E+100
@@ -2782,7 +2787,7 @@ double initialValue(2583,6)
   6   256   # data.Init_P
  -2  2.9414999999999998E+02       0                 1.0000000000000000E+100
   6   256   # data.Init_T
- -1    3500                       0                       0                
+ -1    5500                       0                       0                
   1   280   # data.Heater_Power
  -1  5.1487916666666667E-01       0                       0                
   1   280   # data.Heater_Length
@@ -2804,15 +2809,15 @@ double initialValue(2583,6)
   1   280   # data.sec_Mflow
  -2       1                       0                       0                
   6   257   # Slant.allowFlowReversal
- -2  1.0115625499630733E+01       0                  100000                
+ -2  1.0134249330810004E+01       0                  100000                
   6   388   # Slant.port_a.m_flow
- -2  9.7134537573331967E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7452130594782941E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # Slant.port_a.p
- -2  1.5562346831479325E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800382779208579E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # Slant.port_a.h_outflow
- -2  9.7071136632548552E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7445809379047699E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # Slant.port_b.p
- -2  1.5590243517065959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844156789314927E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # Slant.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # Slant.port_a_exposesState
@@ -2850,19 +2855,19 @@ double initialValue(2583,6)
   6   258   # Slant.flowModel.n
  -2       0                       0                       2                
   6   258   # Slant.flowModel.states[1].phase
- -2  9.9818331459991339E+02       0                  100000                
+ -2  9.9817934571349269E+02       0                  100000                
   6   256   # Slant.flowModel.states[1].d
- -2  3.0829013471302108E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1689282990670398E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # Slant.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # Slant.flowModel.states[2].phase
- -2  9.9820418649186286E+02       0                  100000                
+ -2  9.9822059969491011E+02       0                  100000                
   6   256   # Slant.flowModel.states[2].d
- -2  3.0822283462395194E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678687870463659E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # Slant.flowModel.states[2].T
- -2  4.9999438890568602E+00       0                       0                
+ -2  5.0091691795618862E+00       0                       0                
   6   256   # Slant.flowModel.vs[1]
- -2  4.9998393430230745E+00       0                       0                
+ -2  5.0089621630243464E+00       0                       0                
   6   256   # Slant.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # Slant.flowModel.nParallel
@@ -2884,25 +2889,25 @@ double initialValue(2583,6)
   6   256   # Slant.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # Slant.flowModel.m
- -2  7.1262361772563843E+00       0                       0                
+ -2  7.1393562576225156E+00       0                       0                
   6   256   # Slant.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # Slant.flowModel.Ib_flows[1]
- -2 -1.2850292350709577E+01       0                       0                
+ -2 -1.2812029160143172E+01       0                       0                
   6   256   # Slant.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # Slant.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # Slant.flowModel.use_Ib_flows
- -2  9.9818331459991339E+02       0                  100000                
+ -2  9.9817934571349269E+02       0                  100000                
   6   256   # Slant.flowModel.rhos_act[1]
- -2  7.1751473036365837E-04       0                  1.0000000000000000E+08
+ -2  6.1197392460202887E-04       0                  1.0000000000000000E+08
   6   256   # Slant.flowModel.mus[1]
- -2  7.1846641957011635E-04       0                  1.0000000000000000E+08
+ -2  6.1311882035336017E-04       0                  1.0000000000000000E+08
   6   256   # Slant.flowModel.mus[2]
- -2  7.1751473036365837E-04       0                  1.0000000000000000E+08
+ -2  6.1197392460202887E-04       0                  1.0000000000000000E+08
   6   256   # Slant.flowModel.mus_act[1]
- -2  6.3400940783414990E+03       0                       0                
+ -2  6.3212157352417707E+03       0                       0                
   6   256   # Slant.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # Slant.flowModel.Re_turbulent
@@ -2936,15 +2941,15 @@ double initialValue(2583,6)
   6  1280   # Slant.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # Distance2Heaters.allowFlowReversal
- -2  1.0115625197582062E+01       0                  100000                
+ -2  1.0134246979432815E+01       0                  100000                
   6   388   # Distance2Heaters.port_a.m_flow
- -2  9.7542131773928087E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7492675976359222E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # Distance2Heaters.port_a.p
- -2  1.5573410672362024E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9816740042408512E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # Distance2Heaters.port_a.h_outflow
- -2  9.7456689761411045E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7484147792201374E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # Distance2Heaters.port_b.p
- -2  1.5563923424372548E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9801961345875959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # Distance2Heaters.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # Distance2Heaters.port_a_exposesState
@@ -2982,19 +2987,19 @@ double initialValue(2583,6)
   6   258   # Distance2Heaters.flowModel.n
  -2       0                       0                       2                
   6   258   # Distance2Heaters.flowModel.states[1].phase
- -2  9.9822600692899880E+02       0                  100000                
+ -2  9.9824194087203693E+02       0                  100000                
   6   256   # Distance2Heaters.flowModel.states[1].d
- -2  3.0821864607570444E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678301117492333E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # Distance2Heaters.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # Distance2Heaters.flowModel.states[2].phase
- -2  9.9821465941018289E+02       0                  100000                
+ -2  9.9822399827919594E+02       0                  100000                
   6   256   # Distance2Heaters.flowModel.states[2].d
- -2  3.0824047819659336E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681765367026321E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # Distance2Heaters.flowModel.states[2].T
- -2  4.9997299011687408E+00       0                       0                
+ -2  5.0088539154443987E+00       0                       0                
   6   256   # Distance2Heaters.flowModel.vs[1]
- -2  4.9997867371694875E+00       0                       0                
+ -2  5.0089439471672996E+00       0                       0                
   6   256   # Distance2Heaters.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # Distance2Heaters.flowModel.nParallel
@@ -3016,25 +3021,25 @@ double initialValue(2583,6)
   6   256   # Distance2Heaters.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # Distance2Heaters.flowModel.m
- -2  6.0861923454402174E+00       0                       0                
+ -2  6.0973963732629963E+00       0                       0                
   6   256   # Distance2Heaters.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # Distance2Heaters.flowModel.Ib_flows[1]
- -2 -1.7317642708610972E+01       0                       0                
+ -2 -1.7285178783610231E+01       0                       0                
   6   256   # Distance2Heaters.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # Distance2Heaters.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # Distance2Heaters.flowModel.use_Ib_flows
- -2  9.9822600692899880E+02       0                  100000                
+ -2  9.9824194087203693E+02       0                  100000                
   6   256   # Distance2Heaters.flowModel.rhos_act[1]
- -2  7.1852737309961289E-04       0                  1.0000000000000000E+08
+ -2  6.1316788866032075E-04       0                  1.0000000000000000E+08
   6   256   # Distance2Heaters.flowModel.mus[1]
- -2  7.1821802006859778E-04       0                  1.0000000000000000E+08
+ -2  6.1279150470491838E-04       0                  1.0000000000000000E+08
   6   256   # Distance2Heaters.flowModel.mus[2]
- -2  7.1852737309961289E-04       0                  1.0000000000000000E+08
+ -2  6.1316788866032075E-04       0                  1.0000000000000000E+08
   6   256   # Distance2Heaters.flowModel.mus_act[1]
- -2  8.5442012517042458E+03       0                       0                
+ -2  8.5281841578483582E+03       0                       0                
   6   256   # Distance2Heaters.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # Distance2Heaters.flowModel.Re_turbulent
@@ -3068,11 +3073,13 @@ double initialValue(2583,6)
   6  1280   # Distance2Heaters.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # PumpPipe.allowFlowReversal
- -2  1.5570400495193238E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2      20                       0                  100000                
+  6   388   # PumpPipe.port_a.m_flow
+ -2  1.9811083154081108E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # PumpPipe.port_a.h_outflow
- -2  9.6900355136153158E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7429052484548647E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # PumpPipe.port_b.p
- -2  1.5565120607946237E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803158529449647E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # PumpPipe.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # PumpPipe.port_a_exposesState
@@ -3110,21 +3117,21 @@ double initialValue(2583,6)
   6   258   # PumpPipe.flowModel.n
  -2       0                       0                       2                
   6   258   # PumpPipe.flowModel.states[1].phase
- -2  1.5565414807446237E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803452728949647E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # PumpPipe.flowModel.states[1].h
- -2  9.9820473862533163E+02       0                  100000                
+ -2  9.9822072554774297E+02       0                  100000                
   6   256   # PumpPipe.flowModel.states[1].d
- -2  3.0822954200216549E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679361476846475E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # PumpPipe.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # PumpPipe.flowModel.states[2].phase
- -2  9.9818869320707165E+02       0                  100000                
+ -2  9.9820134234322381E+02       0                  100000                
   6   256   # PumpPipe.flowModel.states[2].d
- -2  3.0824597190942006E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681632802379443E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # PumpPipe.flowModel.states[2].T
- -2  9.8853730353344513E+00       0                       0                
+ -2  9.8852147169508715E+00       0                       0                
   6   256   # PumpPipe.flowModel.vs[1]
- -2  9.8855319381011189E+00       0                       0                
+ -2  9.8854066693460911E+00       0                       0                
   6   256   # PumpPipe.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # PumpPipe.flowModel.nParallel
@@ -3150,21 +3157,21 @@ double initialValue(2583,6)
   6   256   # PumpPipe.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # PumpPipe.flowModel.Ib_flows[1]
- -2 -4.8234608982997948E+01       0                       0                
+ -2 -4.7994252778040199E+01       0                       0                
   6   256   # PumpPipe.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # PumpPipe.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # PumpPipe.flowModel.use_Ib_flows
- -2  9.9820473862533163E+02       0                  100000                
+ -2  9.9822072554774297E+02       0                  100000                
   6   256   # PumpPipe.flowModel.rhos_act[1]
- -2  7.1837169074981963E-04       0                  1.0000000000000000E+08
+ -2  6.1304692482879515E-04       0                  1.0000000000000000E+08
   6   256   # PumpPipe.flowModel.mus[1]
- -2  7.1813832506509268E-04       0                  1.0000000000000000E+08
+ -2  6.1279740278063989E-04       0                  1.0000000000000000E+08
   6   256   # PumpPipe.flowModel.mus[2]
- -2  7.1837169074981963E-04       0                  1.0000000000000000E+08
+ -2  6.1304692482879515E-04       0                  1.0000000000000000E+08
   6   256   # PumpPipe.flowModel.mus_act[1]
- -2  2.3798054584130645E+04       0                       0                
+ -2  2.3679467324778438E+04       0                       0                
   6   256   # PumpPipe.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # PumpPipe.flowModel.Re_turbulent
@@ -3196,25 +3203,25 @@ double initialValue(2583,6)
   6  1280   # PumpPipe.flowModel.diameters[1]
  -2  7.7345307616892896E+01       0                 1.0000000000000000E+100
   6  1280   # PumpPipe.flowModel.dp_fric_nominal
- -2       0                       0                       0                
+ -2       1                       0                       0                
   6   257   # pump.use_input
- -2      20                       0                  100000                
+ -2      20                       0                       0                
   6   256   # pump.m_flow_nominal
  -2       0                       0                       0                
   6   257   # pump.allowFlowReversal
- -2  1.5570106295693238E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9810788954581108E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   292   # pump.port_a.h_outflow
- -2  1.0384759995198609E+07  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.8122947068992224E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # pump.port_b.p
  -2       1                       0                       0                
   6   257   # DistanceAfterHX.allowFlowReversal
- -2  1.0115625197579231E+01       0                  100000                
+ -2  1.0134246979431321E+01       0                  100000                
   6   388   # DistanceAfterHX.port_a.m_flow
- -2  9.7062783196951579E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7444984266578671E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # DistanceAfterHX.port_a.p
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # DistanceAfterHX.port_a.h_outflow
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # DistanceAfterHX.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # DistanceAfterHX.port_a_exposesState
@@ -3252,19 +3259,19 @@ double initialValue(2583,6)
   6   258   # DistanceAfterHX.flowModel.n
  -2       0                       0                       2                
   6   258   # DistanceAfterHX.flowModel.states[1].phase
- -2  9.9820376222135360E+02       0                  100000                
+ -2  9.9822018006395490E+02       0                  100000                
   6   256   # DistanceAfterHX.flowModel.states[1].d
- -2  3.0822301517293249E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678705277286031E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # DistanceAfterHX.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # DistanceAfterHX.flowModel.states[2].phase
- -2  9.9820429080739541E+02       0                  100000                
+ -2  9.9822019645868215E+02       0                  100000                
   6   256   # DistanceAfterHX.flowModel.states[2].d
- -2  3.0823081913887637E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679489213123645E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # DistanceAfterHX.flowModel.states[2].T
- -2  4.9998413188299118E+00       0                       0                
+ -2  5.0089631064928319E+00       0                       0                
   6   256   # DistanceAfterHX.flowModel.vs[1]
- -2  4.9998386712292584E+00       0                       0                
+ -2  5.0089630242258290E+00       0                       0                
   6   256   # DistanceAfterHX.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # DistanceAfterHX.flowModel.nParallel
@@ -3286,25 +3293,25 @@ double initialValue(2583,6)
   6   256   # DistanceAfterHX.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # DistanceAfterHX.flowModel.m
- -2  7.2456200165220508E+01       0                       0                
+ -2  7.2589584264270670E+01       0                       0                
   6   256   # DistanceAfterHX.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # DistanceAfterHX.flowModel.Ib_flows[1]
- -2  1.5313203694252651E+01       0                       0                
+ -2  1.5703240338183839E+01       0                       0                
   6   256   # DistanceAfterHX.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # DistanceAfterHX.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # DistanceAfterHX.flowModel.use_Ib_flows
- -2  9.9820376222135360E+02       0                  100000                
+ -2  9.9822018006395490E+02       0                  100000                
   6   256   # DistanceAfterHX.flowModel.rhos_act[1]
- -2  7.1846383396581743E-04       0                  1.0000000000000000E+08
+ -2  6.1311680861520976E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHX.flowModel.mus[1]
- -2  7.1835361136918068E-04       0                  1.0000000000000000E+08
+ -2  6.1303309191028550E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHX.flowModel.mus[2]
- -2  7.1846383396581743E-04       0                  1.0000000000000000E+08
+ -2  6.1311680861520976E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHX.flowModel.mus_act[1]
- -2 -7.5552485042884946E+03       0                       0                
+ -2 -7.7476852947548032E+03       0                       0                
   6   256   # DistanceAfterHX.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # DistanceAfterHX.flowModel.Re_turbulent
@@ -3360,15 +3367,15 @@ double initialValue(2583,6)
   6   256   # volume.h_start
  -1       1                       0                       1                
   1   280   # volume.X_start[1]
- -2  9.7138335681994464E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7452731951873425E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   288   # volume.medium.p
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # volume.medium.h
- -2  9.9820429080739541E+02       0                  100000                
+ -2  9.9822019645868215E+02       0                  100000                
   6   256   # volume.medium.d
  -2       1                       0                       1                
   6   256   # volume.medium.X[1]
- -2  1.4592814859123091E+05 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  1.8055596646664653E+05 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # volume.medium.u
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # volume.medium.R_s
@@ -3380,11 +3387,11 @@ double initialValue(2583,6)
   6   257   # volume.medium.preferredMediumStates
  -2       1                       0                       0                
   6   257   # volume.medium.standardOrderComponents
- -2  3.5080819138876393E+01       0                       0                
+ -2  4.3644892131236475E+01       0                       0                
   6   256   # volume.medium.T_degC
- -2  9.7138335681994477E+01       0                       0                
+ -2  1.7452731951873426E+02       0                       0                
   6   256   # volume.medium.p_bar
- -2  5.8202222831805057E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  6.2759885539827792E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # volume.medium.sat.Tsat
  -2       0                       0                 1.0000000000000000E+100
   6   256   # volume.m
@@ -3402,7 +3409,7 @@ double initialValue(2583,6)
   1   281   # volume.showName
  -2       0                       0                       0                
   6   257   # volume.showColors
- -2  3.0823081913887637E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679489213123645E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # volume.val
  -2  2.9314999999999998E+02       0                       0                
   6   256   # volume.val_min
@@ -3412,7 +3419,7 @@ double initialValue(2583,6)
   6   258   # volume.n_colors
  -2       0                       0                       0                
   6   256   # volume.dynColor[1]
- -2  6.3750000000000000E+01       0                       0                
+ -2  1.7531250000000000E+02       0                       0                
   6   256   # volume.dynColor[2]
  -2     255                       0                       0                
   6   256   # volume.dynColor[3]
@@ -3430,7 +3437,7 @@ double initialValue(2583,6)
   6   256   # volume.geometry.height_b
  -2  9.8066499999999994E+00       0                       0                
   6   256   # volume.g_n
- -2  1.5745927230324631E+06       0                       0                
+ -2  2.0069844094994089E+06       0                       0                
   6   256   # volume.H_flows_a[1]
  -2       0                       0                       0                
   6   257   # volume.use_HeatPort
@@ -3442,9 +3449,9 @@ double initialValue(2583,6)
   6  1280   # volume.Q_flow_internal
  -2       1                       0                       0                
   6   257   # s1.allowFlowReversal
- -2  1.5573410672362024E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9816740042408512E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s1.port_a.h_outflow
- -2  1.5564513453728112E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802551375231522E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s1.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # s1.port_a_exposesState
@@ -3478,9 +3485,9 @@ double initialValue(2583,6)
   6   388   # s1.specificEnthalpy.port.m_flow
  -2  8.4013058152596903E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s1.specificEnthalpy.port.h_outflow
- -2  3.0821864607570444E+02       0                 1.0000000000000000E+100
+ -2  3.1678301117492333E+02       0                 1.0000000000000000E+100
   6   260   # s1.statePort.T
- -2  1.5564513453728112E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802551375231522E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s1.statePort.h_out
  -2       2                       0                       0                
   6   258   # stateDisplay.precision_p
@@ -3492,17 +3499,17 @@ double initialValue(2583,6)
   6   258   # stateDisplay.precision_m_flow
  -1       0                       0                       0                
   1   281   # stateDisplay.displayUnits
- -2  1.5564513453728111E+02       0                       0                
+ -2  1.9802551375231522E+02       0                       0                
   6   256   # stateDisplay.h_out
- -2  9.7542131773928091E+01       0                       0                
+ -2  1.7492675976359223E+02       0                       0                
   6   256   # stateDisplay.p
- -2  3.5068646075704464E+01       0                       0                
+ -2  4.3633011174923354E+01       0                       0                
   6   256   # stateDisplay.T
  -2       1                       0                       0                
   6   257   # s2.allowFlowReversal
- -2  1.5562346831479325E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800382779208579E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s2.port_a.h_outflow
- -2  1.5590567332648960E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844480604897928E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s2.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # s2.port_a_exposesState
@@ -3536,13 +3543,13 @@ double initialValue(2583,6)
   6   388   # s2.specificEnthalpy.port.m_flow
  -2  8.4013058152596903E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s2.specificEnthalpy.port.h_outflow
- -2  3.0829013471302108E+02       0                 1.0000000000000000E+100
+ -2  3.1689282990670398E+02       0                 1.0000000000000000E+100
   6   260   # s2.statePort.T
- -2  1.5590567332648960E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844480604897928E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s2.statePort.h_out
  -2       1                       0                       0                
   6   257   # s3.allowFlowReversal
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s3.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # s3.port_a_exposesState
@@ -3576,13 +3583,13 @@ double initialValue(2583,6)
   6   388   # s3.specificEnthalpy.port.m_flow
  -2  8.4013058152596903E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s3.specificEnthalpy.port.h_outflow
- -2  3.0829072576999829E+02       0                 1.0000000000000000E+100
+ -2  3.1689338102106558E+02       0                 1.0000000000000000E+100
   6   260   # s3.statePort.T
- -2  1.5590243517065959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844156789314927E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s3.statePort.h_out
  -2       1                       0                       0                
   6   257   # s4.allowFlowReversal
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s4.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # s4.port_a_exposesState
@@ -3602,7 +3609,7 @@ double initialValue(2583,6)
   6   260   # s4.temperature.port.h_outflow
  -2       1                       0                       0                
   6   257   # s4.massFlowRate.allowFlowReversal
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s4.massFlowRate.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # s4.massFlowRate.port_a_exposesState
@@ -3618,9 +3625,9 @@ double initialValue(2583,6)
   6   388   # s4.specificEnthalpy.port.m_flow
  -2  8.4013058152596903E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s4.specificEnthalpy.port.h_outflow
- -2  3.0823081913887637E+02       0                 1.0000000000000000E+100
+ -2  3.1679489213123645E+02       0                 1.0000000000000000E+100
   6   260   # s4.statePort.T
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # s4.statePort.h_out
  -2       2                       0                       0                
   6   258   # stateDisplay1.precision_p
@@ -3632,11 +3639,11 @@ double initialValue(2583,6)
   6   258   # stateDisplay1.precision_m_flow
  -1       0                       0                       0                
   1   281   # stateDisplay1.displayUnits
- -2  1.5590567332648962E+02       0                       0                
+ -2  1.9844480604897930E+02       0                       0                
   6   256   # stateDisplay1.h_out
- -2  9.7134537573331968E+01       0                       0                
+ -2  1.7452130594782943E+02       0                       0                
   6   256   # stateDisplay1.p
- -2  3.5140134713021098E+01       0                       0                
+ -2  4.3742829906704003E+01       0                       0                
   6   256   # stateDisplay1.T
  -2       2                       0                       0                
   6   258   # stateDisplay2.precision_p
@@ -3648,11 +3655,11 @@ double initialValue(2583,6)
   6   258   # stateDisplay2.precision_m_flow
  -1       0                       0                       0                
   1   281   # stateDisplay2.displayUnits
- -2  1.5590243517065960E+02       0                       0                
+ -2  1.9844156789314928E+02       0                       0                
   6   256   # stateDisplay2.h_out
- -2  9.7071136632548559E+01       0                       0                
+ -2  1.7445809379047699E+02       0                       0                
   6   256   # stateDisplay2.p
- -2  3.5140725769998312E+01       0                       0                
+ -2  4.3743381021065602E+01       0                       0                
   6   256   # stateDisplay2.T
  -2       2                       0                       0                
   6   258   # stateDisplay3.precision_p
@@ -3664,21 +3671,21 @@ double initialValue(2583,6)
   6   258   # stateDisplay3.precision_m_flow
  -1       0                       0                       0                
   1   281   # stateDisplay3.displayUnits
- -2  1.5565945675896324E+02       0                       0                
+ -2  1.9803981623625577E+02       0                       0                
   6   256   # stateDisplay3.h_out
- -2  9.7138335681994477E+01       0                       0                
+ -2  1.7452731951873426E+02       0                       0                
   6   256   # stateDisplay3.p
- -2  3.5080819138876393E+01       0                       0                
+ -2  4.3644892131236475E+01       0                       0                
   6   256   # stateDisplay3.T
  -2       1                       0                       0                
   6   257   # V1_Inlet.allowFlowReversal
- -2 -9.8843748024195399E+00 -9.9999999999999995E+59  100000                
+ -2 -9.8657530205649717E+00 -9.9999999999999995E+59  100000                
   6   388   # V1_Inlet.port_a.m_flow
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # V1_Inlet.port_a.h_outflow
- -2  9.7146372275693379E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7453524850154907E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # V1_Inlet.port_b.p
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # V1_Inlet.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # V1_Inlet.port_a_exposesState
@@ -3716,21 +3723,21 @@ double initialValue(2583,6)
   6   258   # V1_Inlet.flowModel.n
  -2       0                       0                       2                
   6   258   # V1_Inlet.flowModel.states[1].phase
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # V1_Inlet.flowModel.states[1].h
- -2  9.9820429080739541E+02       0                  100000                
+ -2  9.9822019645868215E+02       0                  100000                
   6   256   # V1_Inlet.flowModel.states[1].d
- -2  3.0823081913887637E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679489213123645E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V1_Inlet.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # V1_Inlet.flowModel.states[2].phase
- -2  9.9820560508429548E+02       0                  100000                
+ -2  9.9822167227112004E+02       0                  100000                
   6   256   # V1_Inlet.flowModel.states[2].d
- -2  3.0822806128802716E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679213537266435E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V1_Inlet.flowModel.states[2].T
- -2 -4.8855387989155670E+00       0                       0                
+ -2 -4.8762569322074336E+00       0                       0                
   6   256   # V1_Inlet.flowModel.vs[1]
- -2 -4.8855323664223462E+00       0                       0                
+ -2 -4.8762497229463735E+00       0                       0                
   6   256   # V1_Inlet.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # V1_Inlet.flowModel.nParallel
@@ -3752,25 +3759,25 @@ double initialValue(2583,6)
   6   256   # V1_Inlet.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # V1_Inlet.flowModel.m
- -2 -1.8829733998609224E+00       0                       0                
+ -2 -1.8794259504176272E+00       0                       0                
   6   256   # V1_Inlet.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # V1_Inlet.flowModel.Ib_flows[1]
- -2  1.6288808534832406E+00       0                       0                
+ -2  1.6070699575601397E+00       0                       0                
   6   256   # V1_Inlet.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # V1_Inlet.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # V1_Inlet.flowModel.use_Ib_flows
- -2  9.9820560508429548E+02       0                  100000                
+ -2  9.9822167227112004E+02       0                  100000                
   6   256   # V1_Inlet.flowModel.rhos_act[1]
- -2  7.1835361136918068E-04       0                  1.0000000000000000E+08
+ -2  6.1303309191028550E-04       0                  1.0000000000000000E+08
   6   256   # V1_Inlet.flowModel.mus[1]
- -2  7.1839268102009892E-04       0                  1.0000000000000000E+08
+ -2  6.1306306767009669E-04       0                  1.0000000000000000E+08
   6   256   # V1_Inlet.flowModel.mus[2]
- -2  7.1839268102009892E-04       0                  1.0000000000000000E+08
+ -2  6.1306306767009669E-04       0                  1.0000000000000000E+08
   6   256   # V1_Inlet.flowModel.mus_act[1]
- -2 -8.0365936989150941E+02       0                       0                
+ -2 -7.9289828148111701E+02       0                       0                
   6   256   # V1_Inlet.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # V1_Inlet.flowModel.Re_turbulent
@@ -3804,9 +3811,9 @@ double initialValue(2583,6)
   6  1280   # V1_Inlet.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # V_top.allowFlowReversal
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # V_top.port_a.h_outflow
- -2  9.8136276921344195E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7552141102592692E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # V_top.port_b.p
  -2       0                       0                       0                
   6  1281   # V_top.port_a_exposesState
@@ -3824,25 +3831,25 @@ double initialValue(2583,6)
   6   257   # V_top.show_T
  -2       1                       0                       0                
   6   257   # V_top.show_V_flow
- -2 -9.8990464565081522E+04       0                       0                
+ -2 -9.8616252437785268E+04       0                       0                
   6   288   # V_top.dp
- -2 -9.9016444804461094E-03       0                       0                
+ -2 -9.8828323223235041E-03       0                       0                
   6   256   # V_top.V_flow
- -2  3.0822806128802722E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679213537266412E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V_top.port_a_T
- -2  3.0820666565685741E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677133082147031E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V_top.port_b_T
  -2       0                       0                       2                
   6  1282   # V_top.state_a.phase
- -2  9.9820469898571537E+02       0                  100000                
+ -2  9.9822059970646023E+02       0                  100000                
   6  1280   # V_top.state_a.d
- -2  3.0823064544206056E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1679472486257885E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6  1280   # V_top.state_a.T
  -2       0                       0                       2                
   6  1282   # V_top.state_b.phase
- -2  9.9825587779275725E+02       0                  100000                
+ -2  9.9827182115394658E+02       0                  100000                
   6  1280   # V_top.state_b.d
- -2  3.0820666565685741E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677133082147031E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6  1280   # V_top.state_b.T
  -2       4                       1                       4                
   6   258   # V_top.CvData
@@ -3884,7 +3891,7 @@ double initialValue(2583,6)
   6   257   # V_top.use_Re
  -2       1                       0                       0                
   6   257   # V_bot.allowFlowReversal
- -2  9.9795977787206136E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7717791388903689E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # V_bot.port_b.p
  -2       0                       0                       0                
   6  1281   # V_bot.port_a_exposesState
@@ -3902,25 +3909,25 @@ double initialValue(2583,6)
   6   257   # V_bot.show_T
  -2       1                       0                       0                
   6   257   # V_bot.show_V_flow
- -2  4.0516221647799574E+05       0                       0                
+ -2  4.0515568008853495E+05       0                       0                
   6   288   # V_bot.dp
- -2  2.0029131322331480E-02       0                       0                
+ -2  2.0028808196932424E-02       0                       0                
   6   256   # V_bot.V_flow
- -2  3.0808380485725138E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1665149441452536E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V_bot.port_a_T
- -2  3.0817139058186785E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1673698403192577E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # V_bot.port_b_T
  -2       0                       0                       2                
   6  1282   # V_bot.state_a.phase
- -2  9.9854555238254397E+02       0                  100000                
+ -2  9.9856166194966920E+02       0                  100000                
   6  1280   # V_bot.state_a.d
- -2  3.0808380485725138E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1665149441452536E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6  1280   # V_bot.state_a.T
  -2       0                       0                       2                
   6  1282   # V_bot.state_b.phase
- -2  9.9833573329241176E+02       0                  100000                
+ -2  9.9834815857128831E+02       0                  100000                
   6  1280   # V_bot.state_b.d
- -2  3.0818338681270666E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1675541538071570E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6  1280   # V_bot.state_b.T
  -2       4                       1                       4                
   6   258   # V_bot.CvData
@@ -3962,7 +3969,7 @@ double initialValue(2583,6)
   6   257   # V_bot.use_Re
  -1       1                       0                       1                
   1   280   # const.k
- -2  7.1488637316633685E-02       0                       0                
+ -2  1.0981873178064916E-01       0                       0                
   6   256   # T_diff.y
  -1       1                       0                       0                
   1   280   # T_diff.k1
@@ -3970,13 +3977,13 @@ double initialValue(2583,6)
   1   280   # T_diff.k2
  -2       1                       0                       0                
   6   257   # JetInlet.allowFlowReversal
- -2  9.9719804171012696E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7710217409493823E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # JetInlet.port_a.p
- -2  1.5570106295693238E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9810788954581108E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # JetInlet.port_a.h_outflow
- -2  9.8151546100756973E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7553647567564916E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # JetInlet.port_b.p
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # JetInlet.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # JetInlet.port_a_exposesState
@@ -4014,21 +4021,21 @@ double initialValue(2583,6)
   6   258   # JetInlet.flowModel.n
  -2       0                       0                       2                
   6   258   # JetInlet.flowModel.states[1].phase
- -2  9.9833607001773385E+02       0                  100000                
+ -2  9.9835193883330885E+02       0                  100000                
   6   256   # JetInlet.flowModel.states[1].d
- -2  3.0817303712373246E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1673858202520137E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetInlet.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # JetInlet.flowModel.states[2].phase
- -2  1.5569857206783237E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9810539865671107E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # JetInlet.flowModel.states[2].h
- -2  9.9825244797893458E+02       0                  100000                
+ -2  9.9826495453462883E+02       0                  100000                
   6   256   # JetInlet.flowModel.states[2].d
- -2  3.0821833067114972E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678944268196733E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetInlet.flowModel.states[2].T
- -2  3.9536290446861827E+01       0                       0                
+ -2  3.9535662017069463E+01       0                       0                
   6   256   # JetInlet.flowModel.vs[1]
- -2  3.9539602339780707E+01       0                       0                
+ -2  3.9539106976063351E+01       0                       0                
   6   256   # JetInlet.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # JetInlet.flowModel.nParallel
@@ -4054,21 +4061,21 @@ double initialValue(2583,6)
   6   256   # JetInlet.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # JetInlet.flowModel.Ib_flows[1]
- -2 -7.9464809335358382E+01       0                       0                
+ -2 -7.9335109906490032E+01       0                       0                
   6   256   # JetInlet.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # JetInlet.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # JetInlet.flowModel.use_Ib_flows
- -2  9.9833607001773385E+02       0                  100000                
+ -2  9.9835193883330885E+02       0                  100000                
   6   256   # JetInlet.flowModel.rhos_act[1]
- -2  7.1918122420890193E-04       0                  1.0000000000000000E+08
+ -2  6.1368275010771753E-04       0                  1.0000000000000000E+08
   6   256   # JetInlet.flowModel.mus[1]
- -2  7.1853397268872605E-04       0                  1.0000000000000000E+08
+ -2  6.1310756898801187E-04       0                  1.0000000000000000E+08
   6   256   # JetInlet.flowModel.mus[2]
- -2  7.1918122420890193E-04       0                  1.0000000000000000E+08
+ -2  6.1368275010771753E-04       0                  1.0000000000000000E+08
   6   256   # JetInlet.flowModel.mus_act[1]
- -2  1.5682580702557229E+05       0                       0                
+ -2  1.5656984192890674E+05       0                       0                
   6   256   # JetInlet.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # JetInlet.flowModel.Re_turbulent
@@ -4102,9 +4109,9 @@ double initialValue(2583,6)
   6  1280   # JetInlet.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # DistanceAfterHeaters.allowFlowReversal
- -2  9.7450523805695623E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7483537356243934E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # DistanceAfterHeaters.port_a.p
- -2  1.5562346831479325E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800382779208579E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # DistanceAfterHeaters.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # DistanceAfterHeaters.port_a_exposesState
@@ -4142,19 +4149,19 @@ double initialValue(2583,6)
   6   258   # DistanceAfterHeaters.flowModel.n
  -2       0                       0                       2                
   6   258   # DistanceAfterHeaters.flowModel.states[1].phase
- -2  9.9819936447295288E+02       0                  100000                
+ -2  9.9819532037131194E+02       0                  100000                
   6   256   # DistanceAfterHeaters.flowModel.states[1].d
- -2  3.0828330631004803E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1688620603539187E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # DistanceAfterHeaters.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # DistanceAfterHeaters.flowModel.states[2].phase
- -2  9.9820713349421396E+02       0                  100000                
+ -2  9.9822349058846726E+02       0                  100000                
   6   256   # DistanceAfterHeaters.flowModel.states[2].d
- -2  3.0822224330984886E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678632722484434E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # DistanceAfterHeaters.flowModel.states[2].T
- -2  4.9998634958333419E+00       0                       0                
+ -2  5.0090890151271630E+00       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.vs[1]
- -2  4.9998245820202678E+00       0                       0                
+ -2  5.0089476568775950E+00       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.nParallel
@@ -4176,25 +4183,25 @@ double initialValue(2583,6)
   6   256   # DistanceAfterHeaters.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # DistanceAfterHeaters.flowModel.m
- -2  7.2456202328755012E+01       0                       0                
+ -2  7.2589601106725894E+01       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.Ib_flows[1]
- -2 -6.4045034892201741E+01       0                       0                
+ -2 -6.3656163706065719E+01       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # DistanceAfterHeaters.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # DistanceAfterHeaters.flowModel.use_Ib_flows
- -2  9.9819936447295288E+02       0                  100000                
+ -2  9.9819532037131194E+02       0                  100000                
   6   256   # DistanceAfterHeaters.flowModel.rhos_act[1]
- -2  7.1761235234079506E-04       0                  1.0000000000000000E+08
+ -2  6.1205029367429554E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHeaters.flowModel.mus[1]
- -2  7.1847501333756477E-04       0                  1.0000000000000000E+08
+ -2  6.1312576140656059E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHeaters.flowModel.mus[2]
- -2  7.1761235234079506E-04       0                  1.0000000000000000E+08
+ -2  6.1205029367429554E-04       0                  1.0000000000000000E+08
   6   256   # DistanceAfterHeaters.flowModel.mus_act[1]
- -2  3.1598623236365616E+04       0                       0                
+ -2  3.1406761460993439E+04       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # DistanceAfterHeaters.flowModel.Re_turbulent
@@ -4234,13 +4241,13 @@ double initialValue(2583,6)
   6   256   # heater3.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # heater3.Init_P
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater3.HeaterPower
  -2       0                       0                       0                
   6   257   # heater3.allowFlowReversal
- -2  3.0828327699830601E+02       0                 1.0000000000000000E+100
+ -2  3.1688617791099080E+02       0                 1.0000000000000000E+100
   6   256   # heater3.Heater.summary.T_effective
- -2  3.0828327699830601E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1688617791099080E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.Heater.summary.T_max
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater3.Heater.summary.xpos[1]
@@ -4276,13 +4283,13 @@ double initialValue(2583,6)
   6   256   # heater3.Heater.hs_start[1]
  -2       1                       0                       1                
   6   256   # heater3.Heater.Xs_start[1, 1]
- -2  8.0927218962841305E+00       0                 1.0000000000000000E+100
+ -2  8.0926891007918442E+00       0                 1.0000000000000000E+100
   6   256   # heater3.Heater.ms[1]
- -2  1.6014869239597829E-03       0                       0                
+ -2  5.7793221672307382E-02       0                       0                
   6   256   # heater3.Heater.der(ms[1])
- -2  1.1826939018002728E+06       0                       0                
+ -2  1.4642064116823790E+06       0                       0                
   6   256   # heater3.Heater.Us[1]
- -2  2.8527502759317867E+03       0                       0                
+ -2  1.5526555034592981E+04       0                       0                
   6   256   # heater3.Heater.der(Us[1])
  -1       1                       0                       0                
   1  1305   # heater3.Heater.initialize_p
@@ -4362,7 +4369,7 @@ double initialValue(2583,6)
   1   280   # heater3.Heater.flowModel.dp_small
  -2       0                       0                       0                
   6   256   # heater3.Heater.flowModel.Ibs[1]
- -2  1.7653408886663470E+05       0                       0                
+ -2  2.0730617114939456E+05       0                       0                
   6   256   # heater3.Heater.flowModel.Res[1]
  -2    3150                       0                       0                
   6  1280   # heater3.Heater.flowModel.Re_center
@@ -4380,9 +4387,9 @@ double initialValue(2583,6)
   1   280   # heater3.Heater.flowModel.taus[2]
  -2       0                       0                       0                
   6   256   # heater3.Heater.flowModel.I_flows[1]
- -2 -1.0996770269059402E+00       0                       0                
+ -2 -1.0811071183696939E+00       0                       0                
   6   256   # heater3.Heater.flowModel.Fs_p[1]
- -2  1.3564002312334239E+02       0                       0                
+ -2  1.3334951167078506E+02       0                       0                
   6   256   # heater3.Heater.flowModel.dps_fg[1]
  -2       0                       0                       0                
   6   256   # heater3.Heater.flowModel.dps_K[1]
@@ -4400,13 +4407,13 @@ double initialValue(2583,6)
   6   256   # heater3.Heater.flowModel.mu_nominal
  -2       0                       0                       0                
   6   257   # heater3.Heater.flowModel.continuousFlowReversal
- -2  7.1763924082535440E-04       0                 1.0000000000000000E+100
+ -2  6.1208187112046536E-04       0                 1.0000000000000000E+100
   6   256   # heater3.Heater.flowModel.mus[1]
- -2  7.1761277143232022E-04       0                  1.0000000000000000E+08
+ -2  6.1205061795661518E-04       0                  1.0000000000000000E+08
   6   256   # heater3.Heater.flowModel.mus_a[1]
- -2  7.1857283033203198E-04       0                  1.0000000000000000E+08
+ -2  6.1320234327575014E-04       0                  1.0000000000000000E+08
   6   256   # heater3.Heater.flowModel.mus_b[1]
- -2  9.9820008812528908E+02       0                 1.0000000000000000E+100
+ -2  9.9819658419721736E+02       0                 1.0000000000000000E+100
   6   256   # heater3.Heater.flowModel.ds[1]
  -2  2.4302807954803044E+06       0                 1.0000000000000000E+100
   6  1280   # heater3.Heater.flowModel.dp_fric_nominal
@@ -4426,15 +4433,15 @@ double initialValue(2583,6)
   2   272   # heater3.Heater.flowModel.firstOrder_dps_K[1].y
  -2       0                       0                       0                
   3   256   # heater3.Heater.flowModel.firstOrder_dps_K[1].der(y)
- -2  6.2722389455410377E-01       0                     500                
+ -2  6.4214084619781164E-01       0                     500                
   6   256   # heater3.Heater.flowModel.mediaProps[1].lambda
- -2  4.1549149444467575E+03       0                  1.0000000000000000E+07
+ -2  4.1391262057658905E+03       0                  1.0000000000000000E+07
   6   256   # heater3.Heater.flowModel.mediaProps[1].cp
  -2       0                       0                       2                
   6   258   # heater3.Heater.flowModel.mediaProps[2].state.phase
- -2  6.2713210873666747E-01       0                     500                
+ -2  6.4201245256005435E-01       0                     500                
   6   256   # heater3.Heater.flowModel.mediaProps[2].lambda
- -2  4.1549099045770708E+03       0                  1.0000000000000000E+07
+ -2  4.1390924680254047E+03       0                  1.0000000000000000E+07
   6   256   # heater3.Heater.flowModel.mediaProps[2].cp
  -2       1                       0                       0                
   6   256   # heater3.Heater.flowModel.IN_con[1].length
@@ -4470,31 +4477,31 @@ double initialValue(2583,6)
   6   256   # heater3.Heater.heatTransfer.CFs[1, 1]
  -2       1                       0                       2                
   6   258   # heater3.Heater.heatTransfer.states_wall[1, 1].phase
- -2  1.5592752786400364E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9842069153661787E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater3.Heater.heatTransfer.states_wall[1, 1].h
- -2  9.9819943336663493E+02       0                  100000                
+ -2  9.9819538819589536E+02       0                  100000                
   6   256   # heater3.Heater.heatTransfer.states_wall[1, 1].d
- -2  1.0116426243094216E+01       0                       0                
+ -2  1.0163145941646029E+01       0                       0                
   6   256   # heater3.Heater.heatTransfer.m_flows[1]
- -2  1.7666616063366417E+05       0                       0                
+ -2  2.0809288532138834E+05       0                       0                
   6   256   # heater3.Heater.heatTransfer.Res[1]
- -2  4.7536773618448462E+00       0                       0                
+ -2  3.9451699218944132E+00       0                       0                
   6   256   # heater3.Heater.heatTransfer.Prs[1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater3.Heater.heatTransfer.alphas[1, 1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater3.Heater.heatTransfer.Nus[1, 1]
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater3.Heater.heatTransfer.Q_flows[1, 1]
  -2    3150                       0                       0                
   6  1280   # heater3.Heater.heatTransfer.Re_center
  -2     850                       0                       0                
   6  1280   # heater3.Heater.heatTransfer.Re_width
- -2  7.1761277143232022E-04       0                  1.0000000000000000E+08
+ -2  6.1205061795661518E-04       0                  1.0000000000000000E+08
   6   256   # heater3.Heater.heatTransfer.mediums[1].mu
- -2  6.2722389455410377E-01       0                     500                
+ -2  6.4214084619781164E-01       0                     500                
   6   256   # heater3.Heater.heatTransfer.mediums[1].lambda
- -2  4.1549149444467575E+03       0                  1.0000000000000000E+07
+ -2  4.1391262057658905E+03       0                  1.0000000000000000E+07
   6   256   # heater3.Heater.heatTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater3.Heater.internalHeatGen.nV
@@ -4530,9 +4537,9 @@ double initialValue(2583,6)
   6   256   # heater3.Heater.traceMassTransfer.Re_lam
  -2    4000                    2300                 1.0000000000000000E+100
   6   256   # heater3.Heater.traceMassTransfer.Re_turb
- -2  1.0116426243094216E+01       0                       0                
+ -2  1.0163145941646029E+01       0                       0                
   6   256   # heater3.Heater.traceMassTransfer.m_flows[1]
- -2  1.7666616063366417E+05       0                       0                
+ -2  2.0809288532138834E+05       0                       0                
   6   256   # heater3.Heater.traceMassTransfer.Res[1]
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater3.Heater.traceMassTransfer.xs[1]
@@ -4546,11 +4553,11 @@ double initialValue(2583,6)
   6  1280   # heater3.Heater.traceMassTransfer.Re_width
  -2       0                       0                       0                
   6  1282   # heater3.Heater.traceMassTransfer.nC_noT
- -2  7.1761277143232022E-04       0                  1.0000000000000000E+08
+ -2  6.1205061795661518E-04       0                  1.0000000000000000E+08
   6   256   # heater3.Heater.traceMassTransfer.mediums[1].mu
- -2  6.2722389455410377E-01       0                     500                
+ -2  6.4214084619781164E-01       0                     500                
   6   256   # heater3.Heater.traceMassTransfer.mediums[1].lambda
- -2  4.1549149444467575E+03       0                  1.0000000000000000E+07
+ -2  4.1391262057658905E+03       0                  1.0000000000000000E+07
   6   256   # heater3.Heater.traceMassTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater3.Heater.internalTraceGen.nV
@@ -4590,29 +4597,29 @@ double initialValue(2583,6)
   6   256   # heater3.Heater.Ts_wallFM_start[2]
  -2       0                       0                       2                
   6   258   # heater3.Heater.state_a.phase
- -2  1.5581701952612537E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9830330255508574E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater3.Heater.state_a.h
- -2  9.9820691924640914E+02       0                  100000                
+ -2  9.9820956069758620E+02       0                  100000                
   6   256   # heater3.Heater.state_a.d
- -2  3.0826194873871344E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1685200225504775E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.Heater.state_a.T
  -2       0                       0                       2                
   6   258   # heater3.Heater.state_b.phase
- -2  9.9822318180968398E+02       0                  100000                
+ -2  9.9823946261379876E+02       0                  100000                
   6   256   # heater3.Heater.state_b.d
- -2  3.0821541361814593E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677970150536476E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.Heater.state_b.T
- -2  1.0117226986556194E+01       0                       0                
+ -2  1.0192042552482182E+01       0                       0                
   6   256   # heater3.Heater.m_flows[1]
- -2  1.0115625499632234E+01       0                 1.0000000000000000E+100
+ -2  1.0134249330809874E+01       0                 1.0000000000000000E+100
   6   256   # heater3.Heater.m_flows[2]
- -2  1.5764361549144690E+06       0                       0                
+ -2  2.0211156979391824E+06       0                       0                
   6   256   # heater3.Heater.H_flows[1]
- -2  1.5770834046385372E+06       0                       0                
+ -2  2.0110891429045894E+06       0                       0                
   6   256   # heater3.Heater.H_flows[2]
- -2  1.2500647338121542E+00       0                       0                
+ -2  1.2558428743607113E+00       0                       0                
   6   256   # heater3.Heater.vs[1]
- -2 -1.3229896330139576E-12       0                       0                
+ -2 -1.0449084936612712E-11       0                       0                
   6   256   # heater3.Heater.Wb_flows[1]
  -1       1                       0                       0                
   1   281   # heater3.Heater.showName
@@ -4628,7 +4635,7 @@ double initialValue(2583,6)
   6   258   # heater3.Heater.n_colors
  -2       0                       0                       0                
   6   256   # heater3.Heater.dynColor[1]
- -2  6.3750000000000000E+01       0                       0                
+ -2  1.7531250000000000E+02       0                       0                
   6   256   # heater3.Heater.dynColor[2]
  -2     255                       0                       0                
   6   256   # heater3.Heater.dynColor[3]
@@ -4638,13 +4645,13 @@ double initialValue(2583,6)
   6  1412   # heater3.Heater.heatPorts_int[1, 1].Q_flow
  -2       1                       0                       2                
   6  1346   # heater3.Heater.statesFM[1].phase
- -2  9.9819943336663493E+02       0                  100000                
+ -2  9.9819538819589536E+02       0                  100000                
   6  1280   # heater3.Heater.statesFM[1].d
- -2  1.9753592926191471E-01       0                       0                
+ -2  7.1285238594715841E+00       0                       0                
   6  1280   # heater3.Heater.statesFM[1].der(d)
  -2       0                       0                       2                
   6  1282   # heater3.Heater.statesFM[2].phase
- -2  1.2499360501088397E+00       0                       0                
+ -2  1.2522168781854810E+00       0                       0                
   6  1280   # heater3.Heater.vsFM[2]
  -2       1                       0                       0                
   6  1280   # heater3.Heater.dlengthsFM[1]
@@ -4658,19 +4665,19 @@ double initialValue(2583,6)
   6  1280   # heater3.Heater.roughnessesFM[1]
  -2  2.5000000000000001E-05       0                 1.0000000000000000E+100
   6  1280   # heater3.Heater.roughnessesFM[2]
- -2  9.7451880205926858E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7483670705755606E+07  6.1165700000000004E+02  1.0000000000000000E+08
   2   272   # heater3.Heater.mediums[1].p
- -2  5.3139779825651040E+05       0                       0                
+ -2  1.7598640394886330E+07       0                       0                
   3   256   # heater3.Heater.mediums[1].der(p)
- -2  1.5590567332648960E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844480604897928E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   2   272   # heater3.Heater.mediums[1].h
- -2  8.5401194892684202E+02       0                       0                
+ -2  1.8131870865409692E+04       0                       0                
   3   256   # heater3.Heater.mediums[1].der(h)
  -2       1                       0                       1                
   6   256   # heater3.Heater.mediums[1].X[1]
- -2  1.4614290679422961E+05 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  1.8092952706401522E+05 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # heater3.Heater.mediums[1].u
- -2  3.2358758341538510E+02       0                       0                
+ -2  6.2649815243990065E+02       0                       0                
   6   256   # heater3.Heater.mediums[1].der(u)
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # heater3.Heater.mediums[1].R_s
@@ -4680,15 +4687,15 @@ double initialValue(2583,6)
   6   257   # heater3.Heater.mediums[1].preferredMediumStates
  -2       1                       0                       0                
   6   257   # heater3.Heater.mediums[1].standardOrderComponents
- -2  3.5133276998306030E+01       0                       0                
+ -2  4.3736177910990818E+01       0                       0                
   6   256   # heater3.Heater.mediums[1].T_degC
- -2  9.7451880205926869E+01       0                       0                
+ -2  1.7483670705755608E+02       0                       0                
   6   256   # heater3.Heater.mediums[1].p_bar
- -2  5.8225764964968005E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  6.2774441733906144E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.Heater.mediums[1].sat.Tsat
  -2       0                       0                       0                
   6   769   # heater3.HeatSRC.use_port
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater3.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # heater3.HeatSRC.showName
@@ -4730,19 +4737,19 @@ double initialValue(2583,6)
   6   258   # heater3.HeaterPipe.flowModel.n
  -2       0                       0                       2                
   6   258   # heater3.HeaterPipe.flowModel.states[1].phase
- -2  9.9820695472944374E+02       0                  100000                
+ -2  9.9820959599379989E+02       0                  100000                
   6   256   # heater3.HeaterPipe.flowModel.states[1].d
- -2  3.0826193364062135E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1685198761689685E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.HeaterPipe.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # heater3.HeaterPipe.flowModel.states[2].phase
- -2  9.9819943336663493E+02       0                  100000                
+ -2  9.9819538819589536E+02       0                  100000                
   6   256   # heater3.HeaterPipe.flowModel.states[2].d
- -2  3.0828327699830601E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1688617791099080E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater3.HeaterPipe.flowModel.states[2].T
- -2  1.2501542601110944E+00       0                       0                
+ -2  1.2593956544403762E+00       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.vs[1]
- -2  1.2501636799358740E+00       0                       0                
+ -2  1.2594135800280430E+00       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.nParallel
@@ -4764,25 +4771,25 @@ double initialValue(2583,6)
   6   256   # heater3.HeaterPipe.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # heater3.HeaterPipe.flowModel.m
- -2  5.2091493998155638E+00       0                       0                
+ -2  5.2476703760532315E+00       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.Ib_flows[1]
- -2 -5.6639555135645581E-01       0                       0                
+ -2 -5.6264280734927807E-01       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # heater3.HeaterPipe.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # heater3.HeaterPipe.flowModel.use_Ib_flows
- -2  9.9820695472944374E+02       0                  100000                
+ -2  9.9820959599379989E+02       0                  100000                
   6   256   # heater3.HeaterPipe.flowModel.rhos_act[1]
- -2  7.1791449349070918E-04       0                  1.0000000000000000E+08
+ -2  6.1242007535271747E-04       0                  1.0000000000000000E+08
   6   256   # heater3.HeaterPipe.flowModel.mus[1]
- -2  7.1761277143232022E-04       0                  1.0000000000000000E+08
+ -2  6.1205061795661518E-04       0                  1.0000000000000000E+08
   6   256   # heater3.HeaterPipe.flowModel.mus[2]
- -2  7.1791449349070918E-04       0                  1.0000000000000000E+08
+ -2  6.1242007535271747E-04       0                  1.0000000000000000E+08
   6   256   # heater3.HeaterPipe.flowModel.mus_act[1]
- -2  6.9862244825810194E+01       0                       0                
+ -2  6.9399361386895180E+01       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # heater3.HeaterPipe.flowModel.Re_turbulent
@@ -4814,11 +4821,11 @@ double initialValue(2583,6)
   6  1280   # heater3.HeaterPipe.flowModel.diameters[1]
  -2  1.1442053831735257E+00       0                 1.0000000000000000E+100
   6  1280   # heater3.HeaterPipe.flowModel.dp_fric_nominal
- -2  1.0117226986556194E+01       0                  100000                
+ -2  1.0192042552482182E+01       0                  100000                
   6   388   # heater3.port_a.m_flow
- -2  9.7452578828375116E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7483740105116993E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # heater3.port_a.p
- -2  1.5590567332648960E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844480604897928E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # heater3.port_a.h_outflow
  -1      10                       0                       0                
   1   280   # heater2.bruh
@@ -4828,13 +4835,13 @@ double initialValue(2583,6)
   6   256   # heater2.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # heater2.Init_P
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater2.HeaterPower
  -2       0                       0                       0                
   6   257   # heater2.allowFlowReversal
- -2  3.0826190431705561E+02       0                 1.0000000000000000E+100
+ -2  3.1685195918663123E+02       0                 1.0000000000000000E+100
   6   256   # heater2.Heater.summary.T_effective
- -2  3.0826190431705561E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1685195918663123E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.Heater.summary.T_max
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater2.Heater.summary.xpos[1]
@@ -4870,13 +4877,13 @@ double initialValue(2583,6)
   6   256   # heater2.Heater.hs_start[1]
  -2       1                       0                       1                
   6   256   # heater2.Heater.Xs_start[1, 1]
- -2  8.0927834330947341E+00       0                 1.0000000000000000E+100
+ -2  8.0928048437274853E+00       0                 1.0000000000000000E+100
   6   256   # heater2.Heater.ms[1]
- -2 -1.6969740388006471E-05       0                       0                
+ -2  7.5934110831887836E-04       0                       0                
   6   256   # heater2.Heater.der(ms[1])
- -2  1.1819843732804439E+06       0                       0                
+ -2  1.4630825646965038E+06       0                       0                
   6   256   # heater2.Heater.Us[1]
- -2  2.5988150865703356E+03       0                       0                
+ -2  4.2052158116279170E+03       0                       0                
   6   256   # heater2.Heater.der(Us[1])
  -1       1                       0                       0                
   1  1305   # heater2.Heater.initialize_p
@@ -4956,7 +4963,7 @@ double initialValue(2583,6)
   1   280   # heater2.Heater.flowModel.dp_small
  -2       0                       0                       0                
   6   256   # heater2.Heater.flowModel.Ibs[1]
- -2  1.7664293108030051E+05       0                       0                
+ -2  2.0862149978197340E+05       0                       0                
   6   256   # heater2.Heater.flowModel.Res[1]
  -2    3150                       0                       0                
   6  1280   # heater2.Heater.flowModel.Re_center
@@ -4974,9 +4981,9 @@ double initialValue(2583,6)
   1   280   # heater2.Heater.flowModel.taus[2]
  -2       0                       0                       0                
   6   256   # heater2.Heater.flowModel.I_flows[1]
- -2 -1.1000553002200530E+00       0                       0                
+ -2 -1.0927666966294778E+00       0                       0                
   6   256   # heater2.Heater.flowModel.Fs_p[1]
- -2  1.3568668136872770E+02       0                       0                
+ -2  1.3478766617196649E+02       0                       0                
   6   256   # heater2.Heater.flowModel.dps_fg[1]
  -2       0                       0                       0                
   6   256   # heater2.Heater.flowModel.dps_K[1]
@@ -4994,13 +5001,13 @@ double initialValue(2583,6)
   6   256   # heater2.Heater.flowModel.mu_nominal
  -2       0                       0                       0                
   6   257   # heater2.Heater.flowModel.continuousFlowReversal
- -2  7.1790660004743745E-04       0                 1.0000000000000000E+100
+ -2  6.1241086335869050E-04       0                 1.0000000000000000E+100
   6   256   # heater2.Heater.flowModel.mus[1]
- -2  7.1791491298976490E-04       0                  1.0000000000000000E+08
+ -2  6.1242040342541799E-04       0                  1.0000000000000000E+08
   6   256   # heater2.Heater.flowModel.mus_a[1]
- -2  7.1761298728818248E-04       0                  1.0000000000000000E+08
+ -2  6.1205078672362586E-04       0                  1.0000000000000000E+08
   6   256   # heater2.Heater.flowModel.mus_b[1]
- -2  9.9820681563800554E+02       0                 1.0000000000000000E+100
+ -2  9.9820929697464555E+02       0                 1.0000000000000000E+100
   6   256   # heater2.Heater.flowModel.ds[1]
  -2  2.4302807954803044E+06       0                 1.0000000000000000E+100
   6  1280   # heater2.Heater.flowModel.dp_fric_nominal
@@ -5016,19 +5023,19 @@ double initialValue(2583,6)
   1   280   # heater2.Heater.flowModel.firstOrder_dps_K[1].y_start
  -2       0                       0                       0                
   6   256   # heater2.Heater.flowModel.firstOrder_dps_K[1].u
- -2       0                       0                       0                
+ -2 -4.0718503178197657E-34       0                       0                
   2   272   # heater2.Heater.flowModel.firstOrder_dps_K[1].y
- -2       0                       0                       0                
+ -2  4.0718503178197656E-32       0                       0                
   3   256   # heater2.Heater.flowModel.firstOrder_dps_K[1].der(y)
- -2  6.2719512418073042E-01       0                     500                
+ -2  6.4209972781924729E-01       0                     500                
   6   256   # heater2.Heater.flowModel.mediaProps[1].lambda
- -2  4.1549127506322120E+03       0                  1.0000000000000000E+07
+ -2  4.1391148182375309E+03       0                  1.0000000000000000E+07
   6   256   # heater2.Heater.flowModel.mediaProps[1].cp
  -2       0                       0                       2                
   6   258   # heater2.Heater.flowModel.mediaProps[2].state.phase
- -2  6.2722391011374068E-01       0                     500                
+ -2  6.4214086349366373E-01       0                     500                
   6   256   # heater2.Heater.flowModel.mediaProps[2].lambda
- -2  4.1549147748887253E+03       0                  1.0000000000000000E+07
+ -2  4.1391260516954035E+03       0                  1.0000000000000000E+07
   6   256   # heater2.Heater.flowModel.mediaProps[2].cp
  -2       1                       0                       0                
   6   256   # heater2.Heater.flowModel.IN_con[1].length
@@ -5064,31 +5071,31 @@ double initialValue(2583,6)
   6   256   # heater2.Heater.heatTransfer.CFs[1, 1]
  -2       1                       0                       2                
   6   258   # heater2.Heater.heatTransfer.states_wall[1, 1].phase
- -2  1.5583890981337297E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9827923373971158E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater2.Heater.heatTransfer.states_wall[1, 1].h
- -2  9.9820702364469730E+02       0                  100000                
+ -2  9.9820966454620793E+02       0                  100000                
   6   256   # heater2.Heater.heatTransfer.states_wall[1, 1].d
- -2  1.0117218501724722E+01       0                       0                
+ -2  1.0192422222953656E+01       0                       0                
   6   256   # heater2.Heater.heatTransfer.m_flows[1]
- -2  1.7660563856640577E+05       0                       0                
+ -2  2.0856631382259459E+05       0                       0                
   6   256   # heater2.Heater.heatTransfer.Res[1]
- -2  4.7558944750193151E+00       0                       0                
+ -2  3.9477954233345023E+00       0                       0                
   6   256   # heater2.Heater.heatTransfer.Prs[1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater2.Heater.heatTransfer.alphas[1, 1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater2.Heater.heatTransfer.Nus[1, 1]
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater2.Heater.heatTransfer.Q_flows[1, 1]
  -2    3150                       0                       0                
   6  1280   # heater2.Heater.heatTransfer.Re_center
  -2     850                       0                       0                
   6  1280   # heater2.Heater.heatTransfer.Re_width
- -2  7.1791491298976490E-04       0                  1.0000000000000000E+08
+ -2  6.1242040342541799E-04       0                  1.0000000000000000E+08
   6   256   # heater2.Heater.heatTransfer.mediums[1].mu
- -2  6.2719512418073042E-01       0                     500                
+ -2  6.4209972781924729E-01       0                     500                
   6   256   # heater2.Heater.heatTransfer.mediums[1].lambda
- -2  4.1549127506322120E+03       0                  1.0000000000000000E+07
+ -2  4.1391148182375309E+03       0                  1.0000000000000000E+07
   6   256   # heater2.Heater.heatTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater2.Heater.internalHeatGen.nV
@@ -5124,9 +5131,9 @@ double initialValue(2583,6)
   6   256   # heater2.Heater.traceMassTransfer.Re_lam
  -2    4000                    2300                 1.0000000000000000E+100
   6   256   # heater2.Heater.traceMassTransfer.Re_turb
- -2  1.0117218501724722E+01       0                       0                
+ -2  1.0192422222953656E+01       0                       0                
   6   256   # heater2.Heater.traceMassTransfer.m_flows[1]
- -2  1.7660563856640577E+05       0                       0                
+ -2  2.0856631382259459E+05       0                       0                
   6   256   # heater2.Heater.traceMassTransfer.Res[1]
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater2.Heater.traceMassTransfer.xs[1]
@@ -5140,11 +5147,11 @@ double initialValue(2583,6)
   6  1280   # heater2.Heater.traceMassTransfer.Re_width
  -2       0                       0                       0                
   6  1282   # heater2.Heater.traceMassTransfer.nC_noT
- -2  7.1791491298976490E-04       0                  1.0000000000000000E+08
+ -2  6.1242040342541799E-04       0                  1.0000000000000000E+08
   6   256   # heater2.Heater.traceMassTransfer.mediums[1].mu
- -2  6.2719512418073042E-01       0                     500                
+ -2  6.4209972781924729E-01       0                     500                
   6   256   # heater2.Heater.traceMassTransfer.mediums[1].lambda
- -2  4.1549127506322120E+03       0                  1.0000000000000000E+07
+ -2  4.1391148182375309E+03       0                  1.0000000000000000E+07
   6   256   # heater2.Heater.traceMassTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater2.Heater.internalTraceGen.nV
@@ -5184,29 +5191,29 @@ double initialValue(2583,6)
   6   256   # heater2.Heater.Ts_wallFM_start[2]
  -2       0                       0                       2                
   6   258   # heater2.Heater.state_a.phase
- -2  1.5572820643006460E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9816150013052949E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater2.Heater.state_a.h
- -2  9.9821451953550343E+02       0                  100000                
+ -2  9.9822385949117063E+02       0                  100000                
   6   256   # heater2.Heater.state_a.d
- -2  3.0824053771890124E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681771123710041E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.Heater.state_a.T
  -2       0                       0                       2                
   6   258   # heater2.Heater.state_b.phase
- -2  9.9819946885075171E+02       0                  100000                
+ -2  9.9819542349397682E+02       0                  100000                
   6   256   # heater2.Heater.state_b.d
- -2  3.0828326190110874E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1688616327415002E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.Heater.state_b.T
- -2  1.0117210016854528E+01       0                       0                
+ -2  1.0192801893507816E+01       0                       0                
   6   256   # heater2.Heater.m_flows[1]
- -2  1.0117226986594916E+01       0                 1.0000000000000000E+100
+ -2  1.0192042552399498E+01       0                 1.0000000000000000E+100
   6   256   # heater2.Heater.m_flows[2]
- -2  1.5755349700010393E+06       0                       0                
+ -2  2.0198209137508103E+06       0                       0                
   6   256   # heater2.Heater.H_flows[1]
- -2  1.5764361549144690E+06       0                       0                
+ -2  2.0211156979391824E+06       0                       0                
   6   256   # heater2.Heater.H_flows[2]
- -2  1.2501531253574929E+00       0                       0                
+ -2  1.2594424825224257E+00       0                       0                
   6   256   # heater2.Heater.vs[1]
- -2 -5.9986684437494313E-12       0                       0                
+ -2  1.8105929145762931E-12       0                       0                
   6   256   # heater2.Heater.Wb_flows[1]
  -1       1                       0                       0                
   1   281   # heater2.Heater.showName
@@ -5222,7 +5229,7 @@ double initialValue(2583,6)
   6   258   # heater2.Heater.n_colors
  -2       0                       0                       0                
   6   256   # heater2.Heater.dynColor[1]
- -2  6.3750000000000000E+01       0                       0                
+ -2  1.7531250000000000E+02       0                       0                
   6   256   # heater2.Heater.dynColor[2]
  -2     255                       0                       0                
   6   256   # heater2.Heater.dynColor[3]
@@ -5232,13 +5239,13 @@ double initialValue(2583,6)
   6  1412   # heater2.Heater.heatPorts_int[1, 1].Q_flow
  -2       1                       0                       2                
   6  1346   # heater2.Heater.statesFM[1].phase
- -2  9.9820702364469730E+02       0                  100000                
+ -2  9.9820966454620793E+02       0                  100000                
   6  1280   # heater2.Heater.statesFM[1].d
- -2 -2.0931381872228657E-03       0                       0                
+ -2  9.3661177755772082E-02       0                       0                
   6  1280   # heater2.Heater.statesFM[1].der(d)
  -2       0                       0                       2                
   6  1282   # heater2.Heater.statesFM[2].phase
- -2  1.2501636354996877E+00       0                       0                
+ -2  1.2594135354825757E+00       0                       0                
   6  1280   # heater2.Heater.vsFM[2]
  -2       1                       0                       0                
   6  1280   # heater2.Heater.dlengthsFM[1]
@@ -5252,19 +5259,19 @@ double initialValue(2583,6)
   6  1280   # heater2.Heater.roughnessesFM[1]
  -2  2.5000000000000001E-05       0                 1.0000000000000000E+100
   6  1280   # heater2.Heater.roughnessesFM[2]
- -2  9.7453935695188809E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7483874892783165E+07  6.1165700000000004E+02  1.0000000000000000E+08
   2   272   # heater2.Heater.mediums[1].p
- -2  5.9246824117991528E+04       0                       0                
+ -2  3.5260892937017878E+05       0                       0                
   3   256   # heater2.Heater.mediums[1].der(p)
- -2  1.5581701952612537E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9830330255508574E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   2   272   # heater2.Heater.mediums[1].h
- -2  3.8080744761200094E+02       0                       0                
+ -2  8.5425874006781328E+02       0                       0                
   3   256   # heater2.Heater.mediums[1].der(h)
  -2       1                       0                       1                
   6   256   # heater2.Heater.mediums[1].X[1]
- -2  1.4605412131094743E+05 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  1.8078806951961774E+05 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # heater2.Heater.mediums[1].u
- -2  3.2143373273203099E+02       0                       0                
+ -2  5.0266082984825806E+02       0                       0                
   6   256   # heater2.Heater.mediums[1].der(u)
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # heater2.Heater.mediums[1].R_s
@@ -5274,15 +5281,15 @@ double initialValue(2583,6)
   6   257   # heater2.Heater.mediums[1].preferredMediumStates
  -2       1                       0                       0                
   6   257   # heater2.Heater.mediums[1].standardOrderComponents
- -2  3.5111904317055632E+01       0                       0                
+ -2  4.3701959186631257E+01       0                       0                
   6   256   # heater2.Heater.mediums[1].T_degC
- -2  9.7453935695188818E+01       0                       0                
+ -2  1.7483874892783166E+02       0                       0                
   6   256   # heater2.Heater.mediums[1].p_bar
- -2  5.8225919105919706E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  6.2774537727966833E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.Heater.mediums[1].sat.Tsat
  -2       0                       0                       0                
   6   769   # heater2.HeatSRC.use_port
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater2.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # heater2.HeatSRC.showName
@@ -5324,19 +5331,19 @@ double initialValue(2583,6)
   6   258   # heater2.HeaterPipe.flowModel.n
  -2       0                       0                       2                
   6   258   # heater2.HeaterPipe.flowModel.states[1].phase
- -2  9.9821455501905086E+02       0                  100000                
+ -2  9.9822389479258175E+02       0                  100000                
   6   256   # heater2.HeaterPipe.flowModel.states[1].d
- -2  3.0824052261922645E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681769659469830E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.HeaterPipe.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # heater2.HeaterPipe.flowModel.states[2].phase
- -2  9.9820702364469730E+02       0                  100000                
+ -2  9.9820966454620793E+02       0                  100000                
   6   256   # heater2.HeaterPipe.flowModel.states[2].d
- -2  3.0826190431705561E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1685195918663123E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater2.HeaterPipe.flowModel.states[2].T
- -2  1.2501426447045840E+00       0                       0                
+ -2  1.2594714423702202E+00       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.vs[1]
- -2  1.2501520769085552E+00       0                       0                
+ -2  1.2594893971041428E+00       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.nParallel
@@ -5358,25 +5365,25 @@ double initialValue(2583,6)
   6   256   # heater2.HeaterPipe.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # heater2.HeaterPipe.flowModel.m
- -2  5.2091406624697125E+00       0                       0                
+ -2  5.2480613449277262E+00       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.Ib_flows[1]
- -2 -5.6642123460446114E-01       0                       0                
+ -2 -5.6275569103197809E-01       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # heater2.HeaterPipe.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # heater2.HeaterPipe.flowModel.use_Ib_flows
- -2  9.9821455501905086E+02       0                  100000                
+ -2  9.9822389479258175E+02       0                  100000                
   6   256   # heater2.HeaterPipe.flowModel.rhos_act[1]
- -2  7.1821738420191361E-04       0                  1.0000000000000000E+08
+ -2  6.1279100897638659E-04       0                  1.0000000000000000E+08
   6   256   # heater2.HeaterPipe.flowModel.mus[1]
- -2  7.1791491298976490E-04       0                  1.0000000000000000E+08
+ -2  6.1242040342541799E-04       0                  1.0000000000000000E+08
   6   256   # heater2.HeaterPipe.flowModel.mus[2]
- -2  7.1821738420191361E-04       0                  1.0000000000000000E+08
+ -2  6.1279100897638659E-04       0                  1.0000000000000000E+08
   6   256   # heater2.HeaterPipe.flowModel.mus_act[1]
- -2  6.9865412734448910E+01       0                       0                
+ -2  6.9413285061717033E+01       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # heater2.HeaterPipe.flowModel.Re_turbulent
@@ -5408,11 +5415,11 @@ double initialValue(2583,6)
   6  1280   # heater2.HeaterPipe.flowModel.diameters[1]
  -2  1.1442053831735257E+00       0                 1.0000000000000000E+100
   6  1280   # heater2.HeaterPipe.flowModel.dp_fric_nominal
- -2  1.0117210016854528E+01       0                  100000                
+ -2  1.0192801893507816E+01       0                  100000                
   6   388   # heater2.port_a.m_flow
- -2  9.7454634349316154E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7483944306068227E+07  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # heater2.port_a.p
- -2  1.5581701952612537E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9830330255508574E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # heater2.port_a.h_outflow
  -1      10                       0                       0                
   1   280   # heater1.bruh
@@ -5422,13 +5429,13 @@ double initialValue(2583,6)
   6   256   # heater1.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # heater1.Init_P
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater1.HeaterPower
  -2       0                       0                       0                
   6   257   # heater1.allowFlowReversal
- -2  3.0824049329258719E+02       0                 1.0000000000000000E+100
+ -2  3.1681766815617505E+02       0                 1.0000000000000000E+100
   6   256   # heater1.Heater.summary.T_effective
- -2  3.0824049329258719E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681766815617505E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.Heater.summary.T_max
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater1.Heater.summary.xpos[1]
@@ -5464,13 +5471,13 @@ double initialValue(2583,6)
   6   256   # heater1.Heater.hs_start[1]
  -2       1                       0                       1                
   6   256   # heater1.Heater.Xs_start[1, 1]
- -2  8.0928450510802090E+00       0                 1.0000000000000000E+100
+ -2  8.0929207687418891E+00       0                 1.0000000000000000E+100
   6   256   # heater1.Heater.ms[1]
- -2 -1.5848192630674163E-03       0                       0                
+ -2 -5.8554914116408341E-02       0                       0                
   6   256   # heater1.Heater.der(ms[1])
- -2  1.1812735572599466E+06       0                       0                
+ -2  1.4619563014813287E+06       0                       0                
   6   256   # heater1.Heater.Us[1]
- -2  2.3531896471672226E+03       0                       0                
+ -2 -7.5412441879224498E+03       0                       0                
   6   256   # heater1.Heater.der(Us[1])
  -1       1                       0                       0                
   1  1305   # heater1.Heater.initialize_p
@@ -5550,7 +5557,7 @@ double initialValue(2583,6)
   1   280   # heater1.Heater.flowModel.dp_small
  -2       0                       0                       0                
   6   256   # heater1.Heater.flowModel.Ibs[1]
- -2  1.7656821649610309E+05       0                       0                
+ -2  2.0851090822782429E+05       0                       0                
   6   256   # heater1.Heater.flowModel.Res[1]
  -2    3150                       0                       0                
   6  1280   # heater1.Heater.flowModel.Re_center
@@ -5568,9 +5575,9 @@ double initialValue(2583,6)
   1   280   # heater1.Heater.flowModel.taus[2]
  -2       0                       0                       0                
   6   256   # heater1.Heater.flowModel.I_flows[1]
- -2 -1.1001051823272037E+00       0                       0                
+ -2 -1.0929859397632695E+00       0                       0                
   6   256   # heater1.Heater.flowModel.Fs_p[1]
- -2  1.3569283409445652E+02       0                       0                
+ -2  1.3481470878693742E+02       0                       0                
   6   256   # heater1.Heater.flowModel.dps_fg[1]
  -2       0                       0                       0                
   6   256   # heater1.Heater.flowModel.dps_K[1]
@@ -5588,13 +5595,13 @@ double initialValue(2583,6)
   6   256   # heater1.Heater.flowModel.mu_nominal
  -2       0                       0                       0                
   6   257   # heater1.Heater.flowModel.continuousFlowReversal
- -2  7.1820947029116683E-04       0                 1.0000000000000000E+100
+ -2  6.1278177407094879E-04       0                 1.0000000000000000E+100
   6   256   # heater1.Heater.flowModel.mus[1]
- -2  7.1821780398408314E-04       0                  1.0000000000000000E+08
+ -2  6.1279133740901165E-04       0                  1.0000000000000000E+08
   6   256   # heater1.Heater.flowModel.mus_a[1]
- -2  7.1791512899101564E-04       0                  1.0000000000000000E+08
+ -2  6.1242057237719612E-04       0                  1.0000000000000000E+08
   6   256   # heater1.Heater.flowModel.mus_b[1]
- -2  9.9821441564994086E+02       0                 1.0000000000000000E+100
+ -2  9.9822359544896051E+02       0                 1.0000000000000000E+100
   6   256   # heater1.Heater.flowModel.ds[1]
  -2  2.4302807954803044E+06       0                 1.0000000000000000E+100
   6  1280   # heater1.Heater.flowModel.dp_fric_nominal
@@ -5610,19 +5617,19 @@ double initialValue(2583,6)
   1   280   # heater1.Heater.flowModel.firstOrder_dps_K[1].y_start
  -2       0                       0                       0                
   6   256   # heater1.Heater.flowModel.firstOrder_dps_K[1].u
- -2       0                       0                       0                
+ -2  1.0925553087489602E-42       0                       0                
   2   272   # heater1.Heater.flowModel.firstOrder_dps_K[1].y
- -2       0                       0                       0                
+ -2 -1.0925553087489602E-40       0                       0                
   3   256   # heater1.Heater.flowModel.firstOrder_dps_K[1].der(y)
- -2  6.2716629409448521E-01       0                     500                
+ -2  6.4205850369876538E-01       0                     500                
   6   256   # heater1.Heater.flowModel.mediaProps[1].lambda
- -2  4.1549105610628430E+03       0                  1.0000000000000000E+07
+ -2  4.1391034198455463E+03       0                  1.0000000000000000E+07
   6   256   # heater1.Heater.flowModel.mediaProps[1].cp
  -2       0                       0                       2                
   6   258   # heater1.Heater.flowModel.mediaProps[2].state.phase
- -2  6.2719513973535790E-01       0                     500                
+ -2  6.4209974510984180E-01       0                     500                
   6   256   # heater1.Heater.flowModel.mediaProps[2].lambda
- -2  4.1549125810399673E+03       0                  1.0000000000000000E+07
+ -2  4.1391146641111609E+03       0                  1.0000000000000000E+07
   6   256   # heater1.Heater.flowModel.mediaProps[2].cp
  -2       1                       0                       0                
   6   256   # heater1.Heater.flowModel.IN_con[1].length
@@ -5658,31 +5665,31 @@ double initialValue(2583,6)
   6   256   # heater1.Heater.heatTransfer.CFs[1, 1]
  -2       1                       0                       2                
   6   258   # heater1.Heater.heatTransfer.states_wall[1, 1].phase
- -2  1.5575013251580161E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9813747710051617E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater1.Heater.heatTransfer.states_wall[1, 1].h
- -2  9.9821462393530101E+02       0                  100000                
+ -2  9.9822396335508506E+02       0                  100000                
   6   256   # heater1.Heater.heatTransfer.states_wall[1, 1].d
- -2  1.0116417607213595E+01       0                       0                
+ -2  1.0163524436491018E+01       0                       0                
   6   256   # heater1.Heater.heatTransfer.m_flows[1]
- -2  1.7651718493123792E+05       0                       0                
+ -2  2.0784909076202498E+05       0                       0                
   6   256   # heater1.Heater.heatTransfer.Res[1]
- -2  4.7581172123182665E+00       0                       0                
+ -2  3.9504292922057025E+00       0                       0                
   6   256   # heater1.Heater.heatTransfer.Prs[1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater1.Heater.heatTransfer.alphas[1, 1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # heater1.Heater.heatTransfer.Nus[1, 1]
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater1.Heater.heatTransfer.Q_flows[1, 1]
  -2    3150                       0                       0                
   6  1280   # heater1.Heater.heatTransfer.Re_center
  -2     850                       0                       0                
   6  1280   # heater1.Heater.heatTransfer.Re_width
- -2  7.1821780398408314E-04       0                  1.0000000000000000E+08
+ -2  6.1279133740901165E-04       0                  1.0000000000000000E+08
   6   256   # heater1.Heater.heatTransfer.mediums[1].mu
- -2  6.2716629409448521E-01       0                     500                
+ -2  6.4205850369876538E-01       0                     500                
   6   256   # heater1.Heater.heatTransfer.mediums[1].lambda
- -2  4.1549105610628430E+03       0                  1.0000000000000000E+07
+ -2  4.1391034198455463E+03       0                  1.0000000000000000E+07
   6   256   # heater1.Heater.heatTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater1.Heater.internalHeatGen.nV
@@ -5718,9 +5725,9 @@ double initialValue(2583,6)
   6   256   # heater1.Heater.traceMassTransfer.Re_lam
  -2    4000                    2300                 1.0000000000000000E+100
   6   256   # heater1.Heater.traceMassTransfer.Re_turb
- -2  1.0116417607213595E+01       0                       0                
+ -2  1.0163524436491018E+01       0                       0                
   6   256   # heater1.Heater.traceMassTransfer.m_flows[1]
- -2  1.7651718493123792E+05       0                       0                
+ -2  2.0784909076202498E+05       0                       0                
   6   256   # heater1.Heater.traceMassTransfer.Res[1]
  -2  5.0000000000000000E-01       0                       0                
   6   256   # heater1.Heater.traceMassTransfer.xs[1]
@@ -5734,11 +5741,11 @@ double initialValue(2583,6)
   6  1280   # heater1.Heater.traceMassTransfer.Re_width
  -2       0                       0                       0                
   6  1282   # heater1.Heater.traceMassTransfer.nC_noT
- -2  7.1821780398408314E-04       0                  1.0000000000000000E+08
+ -2  6.1279133740901165E-04       0                  1.0000000000000000E+08
   6   256   # heater1.Heater.traceMassTransfer.mediums[1].mu
- -2  6.2716629409448521E-01       0                     500                
+ -2  6.4205850369876538E-01       0                     500                
   6   256   # heater1.Heater.traceMassTransfer.mediums[1].lambda
- -2  4.1549105610628430E+03       0                  1.0000000000000000E+07
+ -2  4.1391034198455463E+03       0                  1.0000000000000000E+07
   6   256   # heater1.Heater.traceMassTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # heater1.Heater.internalTraceGen.nV
@@ -5778,29 +5785,29 @@ double initialValue(2583,6)
   6   256   # heater1.Heater.Ts_wallFM_start[2]
  -2       0                       0                       2                
   6   258   # heater1.Heater.state_a.phase
- -2  1.5563923424372548E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9801961345875959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # heater1.Heater.state_a.h
- -2  9.9822212980019924E+02       0                  100000                
+ -2  9.9823815921910773E+02       0                  100000                
   6   256   # heater1.Heater.state_a.d
- -2  3.0821908840523838E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678339976284258E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.Heater.state_a.T
  -2       0                       0                       2                
   6   258   # heater1.Heater.state_b.phase
- -2  9.9820705912932874E+02       0                  100000                
+ -2  9.9820969984948943E+02       0                  100000                
   6   256   # heater1.Heater.state_b.d
- -2  3.0826188921827759E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1685194454554244E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.Heater.state_b.T
- -2  1.0115625197582062E+01       0                       0                
+ -2  1.0134246979432815E+01       0                       0                
   6   256   # heater1.Heater.m_flows[1]
- -2  1.0117210016845130E+01       0                 1.0000000000000000E+100
+ -2  1.0192801893549223E+01       0                 1.0000000000000000E+100
   6   256   # heater1.Heater.m_flows[2]
- -2  1.5743881596482066E+06       0                       0                
+ -2  2.0067796695628879E+06       0                       0                
   6   256   # heater1.Heater.H_flows[1]
- -2  1.5755349700010393E+06       0                       0                
+ -2  2.0198209137508103E+06       0                       0                
   6   256   # heater1.Heater.H_flows[2]
- -2  1.2500446435537880E+00       0                       0                
+ -2  1.2558536932360234E+00       0                       0                
   6   256   # heater1.Heater.vs[1]
- -2  2.9365692444630996E-12       0                       0                
+ -2 -1.0288280404600759E-11       0                       0                
   6   256   # heater1.Heater.Wb_flows[1]
  -1       1                       0                       0                
   1   281   # heater1.Heater.showName
@@ -5816,7 +5823,7 @@ double initialValue(2583,6)
   6   258   # heater1.Heater.n_colors
  -2       0                       0                       0                
   6   256   # heater1.Heater.dynColor[1]
- -2  6.3750000000000000E+01       0                       0                
+ -2  1.7531250000000000E+02       0                       0                
   6   256   # heater1.Heater.dynColor[2]
  -2     255                       0                       0                
   6   256   # heater1.Heater.dynColor[3]
@@ -5826,13 +5833,13 @@ double initialValue(2583,6)
   6  1412   # heater1.Heater.heatPorts_int[1, 1].Q_flow
  -2       1                       0                       2                
   6  1346   # heater1.Heater.statesFM[1].phase
- -2  9.9821462393530101E+02       0                  100000                
+ -2  9.9822396335508506E+02       0                  100000                
   6  1280   # heater1.Heater.statesFM[1].d
- -2 -1.9548005116903883E-01       0                       0                
+ -2 -7.2224750635096635E+00       0                       0                
   6  1280   # heater1.Heater.statesFM[1].der(d)
  -2       0                       0                       2                
   6  1282   # heater1.Heater.statesFM[2].phase
- -2  1.2501520324665283E+00       0                       0                
+ -2  1.2594893525654036E+00       0                       0                
   6  1280   # heater1.Heater.vsFM[2]
  -2       1                       0                       0                
   6  1280   # heater1.Heater.dlengthsFM[1]
@@ -5846,19 +5853,19 @@ double initialValue(2583,6)
   6  1280   # heater1.Heater.roughnessesFM[1]
  -2  2.5000000000000001E-05       0                 1.0000000000000000E+100
   6  1280   # heater1.Heater.roughnessesFM[2]
- -2  9.7455991277657095E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7484079120777015E+07  6.1165700000000004E+02  1.0000000000000000E+08
   2   272   # heater1.Heater.mediums[1].p
- -2 -3.9808779178705608E+05       0                       0                
+ -2 -1.7580243479718108E+07       0                       0                
   3   256   # heater1.Heater.mediums[1].der(p)
- -2  1.5572820643006460E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9816150013052949E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   2   272   # heater1.Heater.mediums[1].h
- -2 -7.7529505445092411E+01       0                       0                
+ -2 -1.7109591482702403E+04       0                       0                
   3   256   # heater1.Heater.mediums[1].der(h)
  -2       1                       0                       1                
   6   256   # heater1.Heater.mediums[1].X[1]
- -2  1.4596517662256164E+05 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  1.8064631339626989E+05 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # heater1.Heater.mediums[1].u
- -2  3.1935840294764103E+02       0                       0                
+ -2  3.7520263267250118E+02       0                       0                
   6   256   # heater1.Heater.mediums[1].der(u)
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # heater1.Heater.mediums[1].R_s
@@ -5868,15 +5875,15 @@ double initialValue(2583,6)
   6   257   # heater1.Heater.mediums[1].preferredMediumStates
  -2       1                       0                       0                
   6   257   # heater1.Heater.mediums[1].standardOrderComponents
- -2  3.5090493292587212E+01       0                       0                
+ -2  4.3667668156175068E+01       0                       0                
   6   256   # heater1.Heater.mediums[1].T_degC
- -2  9.7455991277657105E+01       0                       0                
+ -2  1.7484079120777017E+02       0                       0                
   6   256   # heater1.Heater.mediums[1].p_bar
- -2  5.8226073251349771E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  6.2774633740333661E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.Heater.mediums[1].sat.Tsat
  -2       0                       0                       0                
   6   769   # heater1.HeatSRC.use_port
- -2    3500                       0                       0                
+ -2    5500                       0                       0                
   6   256   # heater1.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # heater1.HeatSRC.showName
@@ -5918,19 +5925,19 @@ double initialValue(2583,6)
   6   258   # heater1.HeaterPipe.flowModel.n
  -2       0                       0                       2                
   6   258   # heater1.HeaterPipe.flowModel.states[1].phase
- -2  9.9822216527399587E+02       0                  100000                
+ -2  9.9823819414136847E+02       0                  100000                
   6   256   # heater1.HeaterPipe.flowModel.states[1].d
- -2  3.0821907330834642E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678338527563028E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.HeaterPipe.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # heater1.HeaterPipe.flowModel.states[2].phase
- -2  9.9821462393530101E+02       0                  100000                
+ -2  9.9822396335508506E+02       0                  100000                
   6   256   # heater1.HeaterPipe.flowModel.states[2].d
- -2  3.0824049329258719E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681766815617505E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # heater1.HeaterPipe.flowModel.states[2].T
- -2  1.2499372856535595E+00       0                       0                
+ -2  1.2522181788482094E+00       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.vs[1]
- -2  1.2499467287133910E+00       0                       0                
+ -2  1.2522360306028633E+00       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.nParallel
@@ -5952,25 +5959,25 @@ double initialValue(2583,6)
   6   256   # heater1.HeaterPipe.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # heater1.HeaterPipe.flowModel.m
- -2  5.2083246720433873E+00       0                       0                
+ -2  5.2179126395645516E+00       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.Ib_flows[1]
- -2 -5.6628310744681476E-01       0                       0                
+ -2 -5.5674118916840853E-01       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # heater1.HeaterPipe.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # heater1.HeaterPipe.flowModel.use_Ib_flows
- -2  9.9822216527399587E+02       0                  100000                
+ -2  9.9823819414136847E+02       0                  100000                
   6   256   # heater1.HeaterPipe.flowModel.rhos_act[1]
- -2  7.1852102489827622E-04       0                  1.0000000000000000E+08
+ -2  6.1316253043424351E-04       0                  1.0000000000000000E+08
   6   256   # heater1.HeaterPipe.flowModel.mus[1]
- -2  7.1821780398408314E-04       0                  1.0000000000000000E+08
+ -2  6.1279133740901165E-04       0                  1.0000000000000000E+08
   6   256   # heater1.HeaterPipe.flowModel.mus[2]
- -2  7.1852102489827622E-04       0                  1.0000000000000000E+08
+ -2  6.1316253043424351E-04       0                  1.0000000000000000E+08
   6   256   # heater1.HeaterPipe.flowModel.mus_act[1]
- -2  6.9848375394940376E+01       0                       0                
+ -2  6.8671424359083176E+01       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # heater1.HeaterPipe.flowModel.Re_turbulent
@@ -6002,11 +6009,11 @@ double initialValue(2583,6)
   6  1280   # heater1.HeaterPipe.flowModel.diameters[1]
  -2  1.1442053831735257E+00       0                 1.0000000000000000E+100
   6  1280   # heater1.HeaterPipe.flowModel.dp_fric_nominal
- -2  1.5572820643006460E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9816150013052949E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # heater1.port_a.h_outflow
  -2       1                       0                       0                
   6   257   # JetSuction.allowFlowReversal
- -2  1.5565945675896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803981623625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # JetSuction.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # JetSuction.port_a_exposesState
@@ -6044,21 +6051,21 @@ double initialValue(2583,6)
   6   258   # JetSuction.flowModel.n
  -2       0                       0                       2                
   6   258   # JetSuction.flowModel.states[1].phase
- -2  9.9825497187969518E+02       0                  100000                
+ -2  9.9827074878999349E+02       0                  100000                
   6   256   # JetSuction.flowModel.states[1].d
- -2  3.0820924996457558E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677392045250338E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetSuction.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # JetSuction.flowModel.states[2].phase
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # JetSuction.flowModel.states[2].h
- -2  9.9825665317697690E+02       0                  100000                
+ -2  9.9827258715880691E+02       0                  100000                
   6   256   # JetSuction.flowModel.states[2].d
- -2  3.0820633562468731E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677101300326001E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetSuction.flowModel.states[2].T
- -2 -4.8852907617386263E+00       0                       0                
+ -2 -4.8760099990419619E+00       0                       0                
   6   256   # JetSuction.flowModel.vs[1]
- -2 -4.8852825337683425E+00       0                       0                
+ -2 -4.8760010196260879E+00       0                       0                
   6   256   # JetSuction.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # JetSuction.flowModel.nParallel
@@ -6080,25 +6087,25 @@ double initialValue(2583,6)
   6   256   # JetSuction.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # JetSuction.flowModel.m
- -2 -3.5776494597357522E+00       0                       0                
+ -2 -3.5709093057934913E+00       0                       0                
   6   256   # JetSuction.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # JetSuction.flowModel.Ib_flows[1]
- -2  3.0948029632545548E+00       0                       0                
+ -2  3.0533482736973951E+00       0                       0                
   6   256   # JetSuction.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # JetSuction.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # JetSuction.flowModel.use_Ib_flows
- -2  9.9825665317697690E+02       0                  100000                
+ -2  9.9827258715880691E+02       0                  100000                
   6   256   # JetSuction.flowModel.rhos_act[1]
- -2  7.1866252067665165E-04       0                  1.0000000000000000E+08
+ -2  6.1327548086147015E-04       0                  1.0000000000000000E+08
   6   256   # JetSuction.flowModel.mus[1]
- -2  7.1870385498690496E-04       0                  1.0000000000000000E+08
+ -2  6.1330721457359598E-04       0                  1.0000000000000000E+08
   6   256   # JetSuction.flowModel.mus[2]
- -2  7.1870385498690496E-04       0                  1.0000000000000000E+08
+ -2  6.1330721457359598E-04       0                  1.0000000000000000E+08
   6   256   # JetSuction.flowModel.mus_act[1]
- -2 -1.5269179412778467E+03       0                       0                
+ -2 -1.5064649722240865E+03       0                       0                
   6   256   # JetSuction.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # JetSuction.flowModel.Re_turbulent
@@ -6132,7 +6139,7 @@ double initialValue(2583,6)
   6  1280   # JetSuction.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # ValveOutlet.allowFlowReversal
- -2  1.5565120607946237E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9803158529449647E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   292   # ValveOutlet.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # ValveOutlet.port_a_exposesState
@@ -6170,19 +6177,19 @@ double initialValue(2583,6)
   6   258   # ValveOutlet.flowModel.n
  -2       0                       0                       2                
   6   258   # ValveOutlet.flowModel.states[1].phase
- -2  9.9833993711719484E+02       0                  100000                
+ -2  9.9835578889292060E+02       0                  100000                
   6   256   # ValveOutlet.flowModel.states[1].d
- -2  3.0817139058186785E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1673698403192577E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ValveOutlet.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # ValveOutlet.flowModel.states[2].phase
- -2  9.9833186612691475E+02       0                  100000                
+ -2  9.9834430840227901E+02       0                  100000                
   6   256   # ValveOutlet.flowModel.states[2].d
- -2  3.0818503329970906E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1675701329690548E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ValveOutlet.flowModel.states[2].T
- -2  9.8840343254660041E+00       0                       0                
+ -2  9.8838773879321753E+00       0                       0                
   6   256   # ValveOutlet.flowModel.vs[1]
- -2  9.8841142327069491E+00       0                       0                
+ -2  9.8839910478798512E+00       0                       0                
   6   256   # ValveOutlet.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # ValveOutlet.flowModel.nParallel
@@ -6208,21 +6215,21 @@ double initialValue(2583,6)
   6   256   # ValveOutlet.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # ValveOutlet.flowModel.Ib_flows[1]
- -2 -1.5439096414047286E+01       0                       0                
+ -2 -1.5351168054038288E+01       0                       0                
   6   256   # ValveOutlet.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # ValveOutlet.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # ValveOutlet.flowModel.use_Ib_flows
- -2  9.9833993711719484E+02       0                  100000                
+ -2  9.9835578889292060E+02       0                  100000                
   6   256   # ValveOutlet.flowModel.rhos_act[1]
- -2  7.1920483509889215E-04       0                  1.0000000000000000E+08
+ -2  6.1370124009606924E-04       0                  1.0000000000000000E+08
   6   256   # ValveOutlet.flowModel.mus[1]
- -2  7.1901117378708377E-04       0                  1.0000000000000000E+08
+ -2  6.1348292394905078E-04       0                  1.0000000000000000E+08
   6   256   # ValveOutlet.flowModel.mus[2]
- -2  7.1920483509889215E-04       0                  1.0000000000000000E+08
+ -2  6.1370124009606924E-04       0                  1.0000000000000000E+08
   6   256   # ValveOutlet.flowModel.mus_act[1]
- -2  7.6173616193439811E+03       0                       0                
+ -2  7.5739794098660350E+03       0                       0                
   6   256   # ValveOutlet.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # ValveOutlet.flowModel.Re_turbulent
@@ -6256,7 +6263,7 @@ double initialValue(2583,6)
   6  1280   # ValveOutlet.flowModel.dp_fric_nominal
  -2       1                       0                       0                
   6   257   # JetPump.allowFlowReversal
- -2  1.5573768737670148E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9817098107716636E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # JetPump.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # JetPump.port_a_exposesState
@@ -6294,21 +6301,21 @@ double initialValue(2583,6)
   6   258   # JetPump.flowModel.n
  -2       0                       0                       2                
   6   258   # JetPump.flowModel.states[1].phase
- -2  1.5564871519036236E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9802909440539646E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # JetPump.flowModel.states[1].h
- -2  9.9825665317697690E+02       0                  100000                
+ -2  9.9827258715880691E+02       0                  100000                
   6   256   # JetPump.flowModel.states[1].d
- -2  3.0820633562468731E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1677101300326001E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetPump.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # JetPump.flowModel.states[2].phase
- -2  9.9821850096884020E+02       0                  100000                
+ -2  9.9822774492725387E+02       0                  100000                
   6   256   # JetPump.flowModel.states[2].d
- -2  3.0824005107297990E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1681727972719443E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # JetPump.flowModel.states[2].T
- -2  1.9998305642476414E+01       0                       0                
+ -2  2.0034800588197669E+01       0                       0                
   6   256   # JetPump.flowModel.vs[1]
- -2  1.9999069983668758E+01       0                       0                
+ -2  2.0035700588394683E+01       0                       0                
   6   256   # JetPump.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # JetPump.flowModel.nParallel
@@ -6330,25 +6337,25 @@ double initialValue(2583,6)
   6   256   # JetPump.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # JetPump.flowModel.m
- -2  3.6934676502671504E+00       0                       0                
+ -2  3.7002669283654064E+00       0                       0                
   6   256   # JetPump.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # JetPump.flowModel.Ib_flows[1]
- -2 -3.0879479727336328E+01       0                       0                
+ -2 -3.0894761276400256E+01       0                       0                
   6   256   # JetPump.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # JetPump.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # JetPump.flowModel.use_Ib_flows
- -2  9.9825665317697690E+02       0                  100000                
+ -2  9.9827258715880691E+02       0                  100000                
   6   256   # JetPump.flowModel.rhos_act[1]
- -2  7.1870385498690496E-04       0                  1.0000000000000000E+08
+ -2  6.1330721457359598E-04       0                  1.0000000000000000E+08
   6   256   # JetPump.flowModel.mus[1]
- -2  7.1822436542722998E-04       0                  1.0000000000000000E+08
+ -2  6.1279685965677240E-04       0                  1.0000000000000000E+08
   6   256   # JetPump.flowModel.mus[2]
- -2  7.1870385498690496E-04       0                  1.0000000000000000E+08
+ -2  6.1330721457359598E-04       0                  1.0000000000000000E+08
   6   256   # JetPump.flowModel.mus_act[1]
- -2  6.0941432682888582E+04       0                       0                
+ -2  6.0971591205693781E+04       0                       0                
   6   256   # JetPump.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # JetPump.flowModel.Re_turbulent
@@ -6392,9 +6399,9 @@ double initialValue(2583,6)
   6   256   # HX.Therm_cond
  -2       0                       0                       0                
   6   257   # HX.allowFlowReversal
- -2  3.0822289233763013E+02       0                 1.0000000000000000E+100
+ -2  3.1678693434595988E+02       0                 1.0000000000000000E+100
   6   256   # HX.Shell.summary.T_effective
- -2  3.0822289233763013E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678693434595988E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Shell.summary.T_max
  -2  5.0000000000000000E-01       0                       0                
   6   256   # HX.Shell.summary.xpos[1]
@@ -6430,13 +6437,13 @@ double initialValue(2583,6)
   6   256   # HX.Shell.hs_start[1]
  -2       1                       0                       1                
   6   256   # HX.Shell.Xs_start[1, 1]
- -2  4.5521771241760902E+00       0                 1.0000000000000000E+100
+ -2  4.5522519811822022E+00       0                 1.0000000000000000E+100
   6   256   # HX.Shell.ms[1]
- -2  3.0205138479288962E-07       0                       0                
+ -2  2.3513782512196713E-06       0                       0                
   6   256   # HX.Shell.der(ms[1])
- -2  6.6414406566936173E+05       0                       0                
+ -2  8.2179048041838058E+05       0                       0                
   6   256   # HX.Shell.Us[1]
- -2  1.4616078411256046E+03       0                       0                
+ -2  2.2835751345421550E+03       0                       0                
   6   256   # HX.Shell.der(Us[1])
  -1       1                       0                       0                
   1  1305   # HX.Shell.initialize_p
@@ -6516,7 +6523,7 @@ double initialValue(2583,6)
   1   280   # HX.Shell.flowModel.dp_small
  -2       0                       0                       0                
   6   256   # HX.Shell.flowModel.Ibs[1]
- -2  2.3525693450787943E+05       0                       0                
+ -2  2.7618680385253270E+05       0                       0                
   6   256   # HX.Shell.flowModel.Res[1]
  -2    3150                       0                       0                
   6  1280   # HX.Shell.flowModel.Re_center
@@ -6534,9 +6541,9 @@ double initialValue(2583,6)
   1   280   # HX.Shell.flowModel.taus[2]
  -2       0                       0                       0                
   6   256   # HX.Shell.flowModel.I_flows[1]
- -2 -2.5917501659960300E+00       0                       0                
+ -2 -2.5600229867214779E+00       0                       0                
   6   256   # HX.Shell.flowModel.Fs_p[1]
- -2  5.6832048577422950E+02       0                       0                
+ -2  5.6136333142432670E+02       0                       0                
   6   256   # HX.Shell.flowModel.dps_fg[1]
  -2       0                       0                       0                
   6   256   # HX.Shell.flowModel.dps_K[1]
@@ -6554,13 +6561,13 @@ double initialValue(2583,6)
   6   256   # HX.Shell.flowModel.mu_nominal
  -2       0                       0                       0                
   6   257   # HX.Shell.flowModel.continuousFlowReversal
- -2  7.1846559306324234E-04       0                 1.0000000000000000E+100
+ -2  6.1311817729555601E-04       0                 1.0000000000000000E+100
   6   256   # HX.Shell.flowModel.mus[1]
- -2  7.1846559306324234E-04       0                  1.0000000000000000E+08
+ -2  6.1311817729555601E-04       0                  1.0000000000000000E+08
   6   256   # HX.Shell.flowModel.mus_a[1]
- -2  7.1846383396581743E-04       0                  1.0000000000000000E+08
+ -2  6.1311680861520976E-04       0                  1.0000000000000000E+08
   6   256   # HX.Shell.flowModel.mus_b[1]
- -2  9.9820405087106519E+02       0                 1.0000000000000000E+100
+ -2  9.9822046555896043E+02       0                 1.0000000000000000E+100
   6   256   # HX.Shell.flowModel.ds[1]
  -2  1.2119151894273941E-01       0                 1.0000000000000000E+100
   6  1280   # HX.Shell.flowModel.dp_fric_nominal
@@ -6580,15 +6587,15 @@ double initialValue(2583,6)
   2   272   # HX.Shell.flowModel.firstOrder_dps_K[1].y
  -2       0                       0                       0                
   3   256   # HX.Shell.flowModel.firstOrder_dps_K[1].der(y)
- -2  6.2712255521369153E-01       0                     500                
+ -2  6.4200205476308991E-01       0                     500                
   6   256   # HX.Shell.flowModel.mediaProps[1].lambda
- -2  4.1550026226966520E+03       0                  1.0000000000000000E+07
+ -2  4.1391766117484767E+03       0                  1.0000000000000000E+07
   6   256   # HX.Shell.flowModel.mediaProps[1].cp
  -2       0                       0                       2                
   6   258   # HX.Shell.flowModel.mediaProps[2].state.phase
- -2  6.2712242875433466E-01       0                     500                
+ -2  6.4200191504613091E-01       0                     500                
   6   256   # HX.Shell.flowModel.mediaProps[2].lambda
- -2  4.1550040028984995E+03       0                  1.0000000000000000E+07
+ -2  4.1391778588292345E+03       0                  1.0000000000000000E+07
   6   256   # HX.Shell.flowModel.mediaProps[2].cp
  -2       1                       0                       0                
   6   256   # HX.Shell.flowModel.IN_con[1].length
@@ -6624,31 +6631,31 @@ double initialValue(2583,6)
   6   256   # HX.Shell.heatTransfer.CFs[1, 1]
  -2       1                       0                       2                
   6   258   # HX.Shell.heatTransfer.states_wall[1, 1].phase
- -2  1.5564238291834656E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9797673854833230E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.Shell.heatTransfer.states_wall[1, 1].h
- -2  9.9820405087106519E+02       0                  100000                
+ -2  9.9822046555896043E+02       0                  100000                
   6   256   # HX.Shell.heatTransfer.states_wall[1, 1].d
- -2  1.0115625348605040E+01       0                       0                
+ -2  1.0134248155120881E+01       0                       0                
   6   256   # HX.Shell.heatTransfer.m_flows[1]
- -2  2.3525665001768214E+05       0                       0                
+ -2  2.7618652762369183E+05       0                       0                
   6   256   # HX.Shell.heatTransfer.Res[1]
- -2  4.7601962306679653E+00       0                       0                
+ -2  3.9529537341373708E+00       0                       0                
   6   256   # HX.Shell.heatTransfer.Prs[1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # HX.Shell.heatTransfer.alphas[1, 1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # HX.Shell.heatTransfer.Nus[1, 1]
- -2 -1.3931193766378249E+03       0                       0                
+ -2 -2.1858740446482889E+03       0                       0                
   6   256   # HX.Shell.heatTransfer.Q_flows[1, 1]
  -2    3150                       0                       0                
   6  1280   # HX.Shell.heatTransfer.Re_center
  -2     850                       0                       0                
   6  1280   # HX.Shell.heatTransfer.Re_width
- -2  7.1846559306324234E-04       0                  1.0000000000000000E+08
+ -2  6.1311817729555601E-04       0                  1.0000000000000000E+08
   6   256   # HX.Shell.heatTransfer.mediums[1].mu
- -2  6.2712255521369153E-01       0                     500                
+ -2  6.4200205476308991E-01       0                     500                
   6   256   # HX.Shell.heatTransfer.mediums[1].lambda
- -2  4.1550026226966520E+03       0                  1.0000000000000000E+07
+ -2  4.1391766117484767E+03       0                  1.0000000000000000E+07
   6   256   # HX.Shell.heatTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # HX.Shell.internalHeatGen.nV
@@ -6684,9 +6691,9 @@ double initialValue(2583,6)
   6   256   # HX.Shell.traceMassTransfer.Re_lam
  -2    4000                    2300                 1.0000000000000000E+100
   6   256   # HX.Shell.traceMassTransfer.Re_turb
- -2  1.0115625348605040E+01       0                       0                
+ -2  1.0134248155120881E+01       0                       0                
   6   256   # HX.Shell.traceMassTransfer.m_flows[1]
- -2  2.3525665001768214E+05       0                       0                
+ -2  2.7618652762369183E+05       0                       0                
   6   256   # HX.Shell.traceMassTransfer.Res[1]
  -2  5.0000000000000000E-01       0                       0                
   6   256   # HX.Shell.traceMassTransfer.xs[1]
@@ -6700,11 +6707,11 @@ double initialValue(2583,6)
   6  1280   # HX.Shell.traceMassTransfer.Re_width
  -2       0                       0                       0                
   6  1282   # HX.Shell.traceMassTransfer.nC_noT
- -2  7.1846559306324234E-04       0                  1.0000000000000000E+08
+ -2  6.1311817729555601E-04       0                  1.0000000000000000E+08
   6   256   # HX.Shell.traceMassTransfer.mediums[1].mu
- -2  6.2712255521369153E-01       0                     500                
+ -2  6.4200205476308991E-01       0                     500                
   6   256   # HX.Shell.traceMassTransfer.mediums[1].lambda
- -2  4.1550026226966520E+03       0                  1.0000000000000000E+07
+ -2  4.1391766117484767E+03       0                  1.0000000000000000E+07
   6   256   # HX.Shell.traceMassTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # HX.Shell.internalTraceGen.nV
@@ -6744,31 +6751,31 @@ double initialValue(2583,6)
   6   256   # HX.Shell.Ts_wallFM_start[2]
  -2       0                       0                       2                
   6   258   # HX.Shell.state_a.phase
- -2  1.5590243517065959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844156789314927E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.Shell.state_a.h
- -2  9.9818023204959070E+02       0                  100000                
+ -2  9.9817632066460783E+02       0                  100000                
   6   256   # HX.Shell.state_a.d
- -2  3.0829078347278551E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1689343664686743E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Shell.state_a.T
  -2       0                       0                       2                
   6   258   # HX.Shell.state_b.phase
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.Shell.state_b.h
- -2  9.9820376222135360E+02       0                  100000                
+ -2  9.9822018006395490E+02       0                  100000                
   6   256   # HX.Shell.state_b.d
- -2  3.0822301517293249E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678705277286031E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Shell.state_b.T
- -2  1.0115625499630733E+01       0                       0                
+ -2  1.0134249330810004E+01       0                       0                
   6   256   # HX.Shell.m_flows[1]
- -2  1.0115625197579348E+01       0                 1.0000000000000000E+100
+ -2  1.0134246979431753E+01       0                 1.0000000000000000E+100
   6   256   # HX.Shell.m_flows[2]
- -2  1.5770506486668515E+06       0                       0                
+ -2  2.0110563266260361E+06       0                       0                
   6   256   # HX.Shell.H_flows[1]
- -2  1.5741959214490880E+06       0                       0                
+ -2  2.0065868774468456E+06       0                       0                
   6   256   # HX.Shell.H_flows[2]
- -2  2.2221510878568660E+00       0                       0                
+ -2  2.2262054466697281E+00       0                       0                
   6   256   # HX.Shell.vs[1]
- -2 -2.0080798656374783E-12       0                       0                
+ -2 -1.6328248638940197E-11       0                       0                
   6   256   # HX.Shell.Wb_flows[1]
  -1       1                       0                       0                
   1   281   # HX.Shell.showName
@@ -6784,7 +6791,7 @@ double initialValue(2583,6)
   6   258   # HX.Shell.n_colors
  -2       0                       0                       0                
   6   256   # HX.Shell.dynColor[1]
- -2  6.3750000000000000E+01       0                       0                
+ -2  1.7531250000000000E+02       0                       0                
   6   256   # HX.Shell.dynColor[2]
  -2     255                       0                       0                
   6   256   # HX.Shell.dynColor[3]
@@ -6794,13 +6801,13 @@ double initialValue(2583,6)
   6  1412   # HX.Shell.heatPorts_int[1, 1].Q_flow
  -2       1                       0                       2                
   6  1346   # HX.Shell.statesFM[1].phase
- -2  9.9820405087106519E+02       0                  100000                
+ -2  9.9822046555896043E+02       0                  100000                
   6  1280   # HX.Shell.statesFM[1].d
- -2  6.6234003565062975E-05       0                       0                
+ -2  5.1561159231527356E-04       0                       0                
   6  1280   # HX.Shell.statesFM[1].der(d)
  -2       0                       0                       2                
   6  1282   # HX.Shell.statesFM[2].phase
- -2  2.2221516972577637E+00       0                       0                
+ -2  2.2262058251080199E+00       0                       0                
   6  1280   # HX.Shell.vsFM[2]
  -2       1                       0                       0                
   6  1280   # HX.Shell.dlengthsFM[1]
@@ -6814,19 +6821,19 @@ double initialValue(2583,6)
   6  1280   # HX.Shell.roughnessesFM[1]
  -2  2.5000000000000001E-05       0                 1.0000000000000000E+100
   6  1280   # HX.Shell.roughnessesFM[2]
- -2  9.7068466401809324E+06  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.7445545629910097E+07  6.1165700000000004E+02  1.0000000000000000E+08
   2   272   # HX.Shell.mediums[1].p
- -2  6.4204005261807593E+04       0                       0                
+ -2  1.2425048023358009E+05       0                       0                
   3   256   # HX.Shell.mediums[1].der(p)
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   2   272   # HX.Shell.mediums[1].h
- -2  3.8538805385888088E+02       0                       0                
+ -2  6.2600607360583490E+02       0                       0                
   3   256   # HX.Shell.mediums[1].der(h)
  -2       1                       0                       1                
   6   256   # HX.Shell.mediums[1].X[1]
- -2  1.4589591915089788E+05 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  1.8052394371301142E+05 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # HX.Shell.mediums[1].u
- -2  3.2106917925029586E+02       0                       0                
+ -2  5.0154311841809744E+02       0                       0                
   6   256   # HX.Shell.mediums[1].der(u)
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # HX.Shell.mediums[1].R_s
@@ -6836,15 +6843,15 @@ double initialValue(2583,6)
   6   257   # HX.Shell.mediums[1].preferredMediumStates
  -2       1                       0                       0                
   6   257   # HX.Shell.mediums[1].standardOrderComponents
- -2  3.5072892337630151E+01       0                       0                
+ -2  4.3636934345959901E+01       0                       0                
   6   256   # HX.Shell.mediums[1].T_degC
- -2  9.7068466401809332E+01       0                       0                
+ -2  1.7445545629910097E+02       0                       0                
   6   256   # HX.Shell.mediums[1].p_bar
- -2  5.8196968783605985E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  6.2756501353196063E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Shell.mediums[1].sat.Tsat
  -2       1                       0                       0                
   6   257   # HX.HXPipe.allowFlowReversal
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.HXPipe.port_a.h_outflow
  -1       0                       0                       0                
   1  1305   # HX.HXPipe.port_a_exposesState
@@ -6882,21 +6889,21 @@ double initialValue(2583,6)
   6   258   # HX.HXPipe.flowModel.n
  -2       0                       0                       2                
   6   258   # HX.HXPipe.flowModel.states[1].phase
- -2  1.5590243517065959E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9844156789314927E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.HXPipe.flowModel.states[1].h
- -2  9.9818036768355546E+02       0                  100000                
+ -2  9.9817645482267142E+02       0                  100000                
   6   256   # HX.HXPipe.flowModel.states[1].d
- -2  3.0829072576999829E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1689338102106558E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.HXPipe.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # HX.HXPipe.flowModel.states[2].phase
- -2  9.9820405087106519E+02       0                  100000                
+ -2  9.9822046555896043E+02       0                  100000                
   6   256   # HX.HXPipe.flowModel.states[2].d
- -2  3.0822289233763013E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.1678693434595988E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.HXPipe.flowModel.states[2].T
- -2  2.2222038445926180E+00       0                       0                
+ -2  2.2263038608791192E+00       0                       0                
   6   256   # HX.HXPipe.flowModel.vs[1]
- -2  2.2221511210334515E+00       0                       0                
+ -2  2.2262057049351158E+00       0                       0                
   6   256   # HX.HXPipe.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # HX.HXPipe.flowModel.nParallel
@@ -6918,25 +6925,25 @@ double initialValue(2583,6)
   6   256   # HX.HXPipe.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # HX.HXPipe.flowModel.m
- -2  4.7533324222764808E+00       0                       0                
+ -2  4.7620837605476209E+00       0                       0                
   6   256   # HX.HXPipe.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # HX.HXPipe.flowModel.Ib_flows[1]
- -2 -1.2177232978347758E+00       0                       0                
+ -2 -1.2027929456594404E+00       0                       0                
   6   256   # HX.HXPipe.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # HX.HXPipe.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # HX.HXPipe.flowModel.use_Ib_flows
- -2  9.9818036768355546E+02       0                  100000                
+ -2  9.9817645482267142E+02       0                  100000                
   6   256   # HX.HXPipe.flowModel.rhos_act[1]
- -2  7.1750615172708318E-04       0                  1.0000000000000000E+08
+ -2  6.1196700024209914E-04       0                  1.0000000000000000E+08
   6   256   # HX.HXPipe.flowModel.mus[1]
- -2  7.1846559306324234E-04       0                  1.0000000000000000E+08
+ -2  6.1311817729555601E-04       0                  1.0000000000000000E+08
   6   256   # HX.HXPipe.flowModel.mus[2]
- -2  7.1750615172708318E-04       0                  1.0000000000000000E+08
+ -2  6.1196700024209914E-04       0                  1.0000000000000000E+08
   6   256   # HX.HXPipe.flowModel.mus_act[1]
- -2  2.6702307392284274E+02       0                       0                
+ -2  2.6374913760274649E+02       0                       0                
   6   256   # HX.HXPipe.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # HX.HXPipe.flowModel.Re_turbulent
@@ -6968,21 +6975,21 @@ double initialValue(2583,6)
   6  1280   # HX.HXPipe.flowModel.diameters[1]
  -2  4.1237105868443145E+00       0                 1.0000000000000000E+100
   6  1280   # HX.HXPipe.flowModel.dp_fric_nominal
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.port_a.h_outflow
- -2  1.5562023015896324E+05 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  1.9800058963625578E+05 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.port_b.h_outflow
  -1       1                       0                       0                
   1   281   # HX.cylinder.showName
  -2  1.0790955414364650E-02       0                       0                
   6   256   # HX.cylinder.R
- -2  1.3931193766378249E+03       0                       0                
+ -2  2.1858740446482889E+03       0                       0                
   6   388   # HX.cylinder.port_a.Q_flow
- -2  2.9318980325744388E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  2.9319926498874327E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   260   # HX.cylinder.port_b.T
  -2  1.1620000000000000E-01       0                       0                
   6   256   # HX.cylinder.r_out
- -2  2.9318980325744388E+02       0                 1.0000000000000000E+100
+ -2  2.9319926498874327E+02       0                 1.0000000000000000E+100
   6   256   # HX.Tube.summary.T_effective
  -2  5.0000000000000000E-01       0                       0                
   6   256   # HX.Tube.summary.xpos[1]
@@ -6996,7 +7003,7 @@ double initialValue(2583,6)
   6   257   # HX.Tube.allowFlowReversal
  -2      20                       0                  100000                
   6   388   # HX.Tube.port_a.m_flow
- -2  1.0233490120707636E+05  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.0233488320721847E+05  6.1165700000000004E+02  1.0000000000000000E+08
   6   292   # HX.Tube.port_b.p
  -1       1                       0                       0                
   1   280   # HX.Tube.nParallel
@@ -7022,13 +7029,13 @@ double initialValue(2583,6)
   6   256   # HX.Tube.hs_start[1]
  -2       1                       0                       1                
   6   256   # HX.Tube.Xs_start[1, 1]
- -2  4.5521555496113804E+00       0                 1.0000000000000000E+100
+ -2  4.5521466300839037E+00       0                 1.0000000000000000E+100
   6   256   # HX.Tube.ms[1]
- -2 -8.2189842487423448E-08       0                       0                
+ -2 -1.3032537182766646E-07       0                       0                
   6   256   # HX.Tube.der(ms[1])
- -2  3.8229426369338814E+05       0                       0                
+ -2  3.8247372929057083E+05       0                       0                
   6   256   # HX.Tube.Us[1]
- -2  1.6543530969331641E+00       0                       0                
+ -2  2.6221014733064294E+00       0                       0                
   6   256   # HX.Tube.der(Us[1])
  -1       1                       0                       0                
   1  1305   # HX.Tube.initialize_p
@@ -7108,7 +7115,7 @@ double initialValue(2583,6)
   1   280   # HX.Tube.flowModel.dp_small
  -2       0                       0                       0                
   6   256   # HX.Tube.flowModel.Ibs[1]
- -2  3.3796212420293805E+05       0                       0                
+ -2  3.3800171732836345E+05       0                       0                
   6   256   # HX.Tube.flowModel.Res[1]
  -2    3150                       0                       0                
   6  1280   # HX.Tube.flowModel.Re_center
@@ -7126,9 +7133,9 @@ double initialValue(2583,6)
   1   280   # HX.Tube.flowModel.taus[2]
  -2       0                       0                       0                
   6   256   # HX.Tube.flowModel.I_flows[1]
- -2 -9.8010635910915234E+00       0                       0                
+ -2 -9.8008889004600448E+00       0                       0                
   6   256   # HX.Tube.flowModel.Fs_p[1]
- -2  2.1491829321652804E+03       0                       0                
+ -2  2.1491446259018658E+03       0                       0                
   6   256   # HX.Tube.flowModel.dps_fg[1]
  -2       0                       0                       0                
   6   256   # HX.Tube.flowModel.dps_K[1]
@@ -7146,13 +7153,13 @@ double initialValue(2583,6)
   6   256   # HX.Tube.flowModel.mu_nominal
  -2       0                       0                       0                
   6   257   # HX.Tube.flowModel.continuousFlowReversal
- -2  1.0006285093835416E-03       0                 1.0000000000000000E+100
+ -2  1.0003968558658898E-03       0                 1.0000000000000000E+100
   6   256   # HX.Tube.flowModel.mus[1]
- -2  1.0006285093835416E-03       0                  1.0000000000000000E+08
+ -2  1.0003968558658898E-03       0                  1.0000000000000000E+08
   6   256   # HX.Tube.flowModel.mus_a[1]
- -2  9.7701090629662038E-04       0                  1.0000000000000000E+08
+ -2  9.7701090620777695E-04       0                  1.0000000000000000E+08
   6   256   # HX.Tube.flowModel.mus_b[1]
- -2  9.9819931998795096E+02       0                 1.0000000000000000E+100
+ -2  9.9819736410877147E+02       0                 1.0000000000000000E+100
   6   256   # HX.Tube.flowModel.ds[1]
  -2  1.2119151894273941E-01       0                 1.0000000000000000E+100
   6  1280   # HX.Tube.flowModel.dp_fric_nominal
@@ -7172,15 +7179,15 @@ double initialValue(2583,6)
   2   272   # HX.Tube.flowModel.firstOrder_dps_K[1].y
  -2       0                       0                       0                
   3   256   # HX.Tube.flowModel.firstOrder_dps_K[1].der(y)
- -2  5.9960412617505920E-01       0                     500                
+ -2  5.9961970263452424E-01       0                     500                
   6   256   # HX.Tube.flowModel.mediaProps[1].lambda
- -2  4.1847563045975139E+03       0                  1.0000000000000000E+07
+ -2  4.1847496731170895E+03       0                  1.0000000000000000E+07
   6   256   # HX.Tube.flowModel.mediaProps[1].cp
  -2       0                       0                       2                
   6   258   # HX.Tube.flowModel.mediaProps[2].state.phase
- -2  6.0121180311751221E-01       0                     500                
+ -2  6.0121180311441802E-01       0                     500                
   6   256   # HX.Tube.flowModel.mediaProps[2].lambda
- -2  4.1840994932963931E+03       0                  1.0000000000000000E+07
+ -2  4.1840994933488973E+03       0                  1.0000000000000000E+07
   6   256   # HX.Tube.flowModel.mediaProps[2].cp
  -2       1                       0                       0                
   6   256   # HX.Tube.flowModel.IN_con[1].length
@@ -7216,31 +7223,31 @@ double initialValue(2583,6)
   6   256   # HX.Tube.heatTransfer.CFs[1, 1]
  -2       1                       0                       2                
   6   258   # HX.Tube.heatTransfer.states_wall[1, 1].phase
- -2  8.4182598715647138E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  8.4222193670995519E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.Tube.heatTransfer.states_wall[1, 1].h
- -2  9.9819931998795096E+02       0                  100000                
+ -2  9.9819736410877147E+02       0                  100000                
   6   256   # HX.Tube.heatTransfer.states_wall[1, 1].d
- -2  2.0000000041094921E+01       0                       0                
+ -2  2.0000000065162688E+01       0                       0                
   6   256   # HX.Tube.heatTransfer.m_flows[1]
- -2  3.3397370262274542E+05       0                       0                
+ -2  3.3405103851671057E+05       0                       0                
   6   256   # HX.Tube.heatTransfer.Res[1]
- -2  6.9835851362708059E+00       0                       0                
+ -2  6.9817759442835001E+00       0                       0                
   6   256   # HX.Tube.heatTransfer.Prs[1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # HX.Tube.heatTransfer.alphas[1, 1]
  -2  9.9999999999999995E+59       0                       0                
   6   256   # HX.Tube.heatTransfer.Nus[1, 1]
- -2  1.3931193766378249E+03       0                       0                
+ -2  2.1858740446482889E+03       0                       0                
   6   256   # HX.Tube.heatTransfer.Q_flows[1, 1]
  -2    3150                       0                       0                
   6  1280   # HX.Tube.heatTransfer.Re_center
  -2     850                       0                       0                
   6  1280   # HX.Tube.heatTransfer.Re_width
- -2  1.0006285093835416E-03       0                  1.0000000000000000E+08
+ -2  1.0003968558658898E-03       0                  1.0000000000000000E+08
   6   256   # HX.Tube.heatTransfer.mediums[1].mu
- -2  5.9960412617505920E-01       0                     500                
+ -2  5.9961970263452424E-01       0                     500                
   6   256   # HX.Tube.heatTransfer.mediums[1].lambda
- -2  4.1847563045975139E+03       0                  1.0000000000000000E+07
+ -2  4.1847496731170895E+03       0                  1.0000000000000000E+07
   6   256   # HX.Tube.heatTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # HX.Tube.internalHeatGen.nV
@@ -7276,9 +7283,9 @@ double initialValue(2583,6)
   6   256   # HX.Tube.traceMassTransfer.Re_lam
  -2    4000                    2300                 1.0000000000000000E+100
   6   256   # HX.Tube.traceMassTransfer.Re_turb
- -2  2.0000000041094921E+01       0                       0                
+ -2  2.0000000065162688E+01       0                       0                
   6   256   # HX.Tube.traceMassTransfer.m_flows[1]
- -2  3.3397370262274542E+05       0                       0                
+ -2  3.3405103851671057E+05       0                       0                
   6   256   # HX.Tube.traceMassTransfer.Res[1]
  -2  5.0000000000000000E-01       0                       0                
   6   256   # HX.Tube.traceMassTransfer.xs[1]
@@ -7292,11 +7299,11 @@ double initialValue(2583,6)
   6  1280   # HX.Tube.traceMassTransfer.Re_width
  -2       0                       0                       0                
   6  1282   # HX.Tube.traceMassTransfer.nC_noT
- -2  1.0006285093835416E-03       0                  1.0000000000000000E+08
+ -2  1.0003968558658898E-03       0                  1.0000000000000000E+08
   6   256   # HX.Tube.traceMassTransfer.mediums[1].mu
- -2  5.9960412617505920E-01       0                     500                
+ -2  5.9961970263452424E-01       0                     500                
   6   256   # HX.Tube.traceMassTransfer.mediums[1].lambda
- -2  4.1847563045975139E+03       0                  1.0000000000000000E+07
+ -2  4.1847496731170895E+03       0                  1.0000000000000000E+07
   6   256   # HX.Tube.traceMassTransfer.mediums[1].cp
  -2       1                       1                 1.0000000000000000E+100
   6   258   # HX.Tube.internalTraceGen.nV
@@ -7336,29 +7343,29 @@ double initialValue(2583,6)
   6   256   # HX.Tube.Ts_wallFM_start[2]
  -2       0                       0                       2                
   6   258   # HX.Tube.state_a.phase
- -2  9.9820275487355434E+02       0                  100000                
+ -2  9.9820275484778233E+02       0                  100000                
   6   256   # HX.Tube.state_a.d
- -2  2.9317317547920317E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  2.9317317547929224E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Tube.state_a.T
  -2       0                       0                       2                
   6   258   # HX.Tube.state_b.phase
  -2  8.8197509537879610E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # HX.Tube.state_b.h
- -2  9.9799010130783722E+02       0                  100000                
+ -2  9.9799010129875114E+02       0                  100000                
   6   256   # HX.Tube.state_b.d
- -2  2.9417306111673270E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  2.9417306112079712E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Tube.state_b.T
  -2      20                       0                       0                
   6   256   # HX.Tube.m_flows[1]
- -2  2.0000000082189842E+01       0                 1.0000000000000000E+100
+ -2  2.0000000130325372E+01       0                 1.0000000000000000E+100
   6   256   # HX.Tube.m_flows[2]
- -2  1.6803206245423779E+06       0                       0                
+ -2  1.6803206234825645E+06       0                       0                
   6   256   # HX.Tube.H_flows[1]
- -2  1.6817120895659188E+06       0                       0                
+ -2  1.6825038754257394E+06       0                       0                
   6   256   # HX.Tube.H_flows[2]
- -2  4.3935229855672073E+00       0                       0                
+ -2  4.3935315995728486E+00       0                       0                
   6   256   # HX.Tube.vs[1]
- -2  7.2890829350810397E-14       0                       0                
+ -2 -9.1113715327050128E-14       0                       0                
   6   256   # HX.Tube.Wb_flows[1]
  -1       1                       0                       0                
   1   281   # HX.Tube.showName
@@ -7384,13 +7391,13 @@ double initialValue(2583,6)
   6  1412   # HX.Tube.heatPorts_int[1, 1].Q_flow
  -2       1                       0                       2                
   6  1346   # HX.Tube.statesFM[1].phase
- -2  9.9819931998795096E+02       0                  100000                
+ -2  9.9819736410877147E+02       0                  100000                
   6  1280   # HX.Tube.statesFM[1].d
- -2 -1.8022636526088580E-05       0                       0                
+ -2 -2.8577823432826110E-05       0                       0                
   6  1280   # HX.Tube.statesFM[1].der(d)
  -2       0                       0                       2                
   6  1282   # HX.Tube.statesFM[2].phase
- -2  4.3944440529106643E+00       0                       0                
+ -2  4.3944440635271169E+00       0                       0                
   6  1280   # HX.Tube.vsFM[2]
  -2       1                       0                       0                
   6  1280   # HX.Tube.dlengthsFM[1]
@@ -7404,19 +7411,19 @@ double initialValue(2583,6)
   6  1280   # HX.Tube.roughnessesFM[1]
  -2  2.5000000000000001E-05       0                 1.0000000000000000E+100
   6  1280   # HX.Tube.roughnessesFM[2]
- -2  1.0448408413924163E+05  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.0448402783312034E+05  6.1165700000000004E+02  1.0000000000000000E+08
   2   272   # HX.Tube.mediums[1].p
- -2 -5.0263369620035892E-04       0                       0                
+ -2  2.4144875049683027E-03       0                       0                
   3   256   # HX.Tube.mediums[1].der(p)
- -2  8.4085604132746637E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  8.4125193223104914E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   2   272   # HX.Tube.mediums[1].h
- -2  3.6493959162705658E-01       0                       0                
+ -2  5.7842515747228140E-01       0                       0                
   3   256   # HX.Tube.mediums[1].der(h)
  -2       1                       0                       1                
   6   256   # HX.Tube.mediums[1].X[1]
- -2  8.3980931566810104E+04 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  8.4020520508479574E+04 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # HX.Tube.mediums[1].u
- -2  3.6493820528879106E-01       0                       0                
+ -2  5.7841974190412215E-01       0                       0                
   6   256   # HX.Tube.mediums[1].der(u)
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # HX.Tube.mediums[1].R_s
@@ -7426,27 +7433,27 @@ double initialValue(2583,6)
   6   257   # HX.Tube.mediums[1].preferredMediumStates
  -2       1                       0                       0                
   6   257   # HX.Tube.mediums[1].standardOrderComponents
- -2  2.0039803257443907E+01       0                       0                
+ -2  2.0049264988743289E+01       0                       0                
   6   256   # HX.Tube.mediums[1].T_degC
- -2  1.0448408413924164E+00       0                       0                
+ -2  1.0448402783312036E+00       0                       0                
   6   256   # HX.Tube.mediums[1].p_bar
- -2  3.7398677073850058E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.7398675555967884E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.Tube.mediums[1].sat.Tsat
  -2      20                       0                  100000                
   6   388   # HX.port_a1.m_flow
  -2  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.port_a1.h_outflow
- -2 -2.0000000082189885E+01 -100000                       0                
+ -2 -2.0000000130325301E+01 -100000                       0                
   6   388   # HX.port_b1.m_flow
  -2  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # HX.port_b1.p
- -2  8.4085604132746637E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  8.4125193223104914E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.port_b1.h_outflow
  -2       1                       0                       0                
   6   257   # HX.HXTube.allowFlowReversal
  -2  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # HX.HXTube.port_b.p
- -2  8.4085604132746637E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  8.4125193223104914E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # HX.HXTube.port_b.h_outflow
  -1       0                       0                       0                
   1  1305   # HX.HXTube.port_a_exposesState
@@ -7484,9 +7491,9 @@ double initialValue(2583,6)
   6   258   # HX.HXTube.flowModel.n
  -2       0                       0                       2                
   6   258   # HX.HXTube.flowModel.states[1].phase
- -2  9.9819823644022256E+02       0                  100000                
+ -2  9.9819628056777412E+02       0                  100000                
   6   256   # HX.HXTube.flowModel.states[1].d
- -2  2.9319029003327319E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  2.9319975174163790E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # HX.HXTube.flowModel.states[1].T
  -2       0                       0                       2                
   6   258   # HX.HXTube.flowModel.states[2].phase
@@ -7498,9 +7505,9 @@ double initialValue(2583,6)
   6   256   # HX.HXTube.flowModel.states[2].T
  -2  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # HX.HXTube.flowModel.states[2].p
- -2  4.3935277637795940E+00       0                       0                
+ -2  4.3935363830614271E+00       0                       0                
   6   256   # HX.HXTube.flowModel.vs[1]
- -2  4.3944462976218031E+00       0                       0                
+ -2  4.3944463081982281E+00       0                       0                
   6   256   # HX.HXTube.flowModel.vs[2]
  -2       1                       0                       0                
   6   256   # HX.HXTube.flowModel.nParallel
@@ -7522,25 +7529,25 @@ double initialValue(2583,6)
   6   256   # HX.HXTube.flowModel.p_b_start
  -2       1                       0                       0                
   6   258   # HX.HXTube.flowModel.m
- -2  9.3980000386210261E+00       0                       0                
+ -2  9.3980000612398591E+00       0                       0                
   6   256   # HX.HXTube.flowModel.Is[1]
  -2       0                       0                       0                
   6   256   # HX.HXTube.flowModel.Ib_flows[1]
- -2 -4.6055204529766263E+00       0                       0                
+ -2 -4.6054383670131207E+00       0                       0                
   6   256   # HX.HXTube.flowModel.Fs_p[1]
  -2       1                       0                       0                
   6   257   # HX.HXTube.flowModel.useUpstreamScheme
  -2       0                       0                       0                
   6   257   # HX.HXTube.flowModel.use_Ib_flows
- -2  9.9819823644022256E+02       0                  100000                
+ -2  9.9819628056777412E+02       0                  100000                
   6   256   # HX.HXTube.flowModel.rhos_act[1]
- -2  1.0006175080034699E-03       0                  1.0000000000000000E+08
+ -2  1.0003858585585889E-03       0                  1.0000000000000000E+08
   6   256   # HX.HXTube.flowModel.mus[1]
  -2  9.7700592118635308E-04       0                  1.0000000000000000E+08
   6   256   # HX.HXTube.flowModel.mus[2]
- -2  1.0006175080034699E-03       0                  1.0000000000000000E+08
+ -2  1.0003858585585889E-03       0                  1.0000000000000000E+08
   6   256   # HX.HXTube.flowModel.mus_act[1]
- -2  1.0099012070763566E+03       0                       0                
+ -2  1.0098832072184741E+03       0                       0                
   6   256   # HX.HXTube.flowModel.dps_fg[1]
  -2    4000                       0                       0                
   6   256   # HX.HXTube.flowModel.Re_turbulent
@@ -7582,9 +7589,9 @@ double initialValue(2583,6)
   6   260   # HX.InletS_Shell.port.h_outflow
  -1       0                       0                 1.0000000000000000E+100
   1   282   # HX.InletS_Shell.precision
- -2  3.0829072576999829E+02       0                 1.0000000000000000E+100
+ -2  3.1689338102106558E+02       0                 1.0000000000000000E+100
   6   256   # HX.InletS_Shell.var
- -2  3.5140725769998312E+01       0                       0                
+ -2  4.3743381021065602E+01       0                       0                
   6   256   # HX.InletS_Shell.y
  -2       1                       0                       0                
   6   257   # HX.OutletS_Shell.allowFlowReversal
@@ -7596,9 +7603,9 @@ double initialValue(2583,6)
   6   260   # HX.OutletS_Shell.port.h_outflow
  -1       0                       0                 1.0000000000000000E+100
   1   282   # HX.OutletS_Shell.precision
- -2  3.0822301517293249E+02       0                 1.0000000000000000E+100
+ -2  3.1678705277286031E+02       0                 1.0000000000000000E+100
   6   256   # HX.OutletS_Shell.var
- -2  3.5073015172932514E+01       0                       0                
+ -2  4.3637052772860329E+01       0                       0                
   6   256   # HX.OutletS_Shell.y
  -2       1                       0                       0                
   6   257   # HX.OutletS_Tube.allowFlowReversal
@@ -7612,9 +7619,9 @@ double initialValue(2583,6)
   6   260   # HX.OutletS_Tube.port.h_outflow
  -1       0                       0                 1.0000000000000000E+100
   1   282   # HX.OutletS_Tube.precision
- -2  2.9319051876915393E+02       0                 1.0000000000000000E+100
+ -2  2.9319998046674158E+02       0                 1.0000000000000000E+100
   6   256   # HX.OutletS_Tube.var
- -2  2.0040518769153948E+01       0                       0                
+ -2  2.0049980466741602E+01       0                       0                
   6   256   # HX.OutletS_Tube.y
  -2       1                       0                       0                
   6   257   # HX.InletS_Tube.allowFlowReversal
@@ -7626,17 +7633,17 @@ double initialValue(2583,6)
   6   260   # HX.InletS_Tube.port.h_outflow
  -1       0                       0                 1.0000000000000000E+100
   1   282   # HX.InletS_Tube.precision
- -2  2.9317317547920317E+02       0                 1.0000000000000000E+100
+ -2  2.9317317547929224E+02       0                 1.0000000000000000E+100
   6   256   # HX.InletS_Tube.var
- -2  2.0023175479203189E+01       0                       0                
+ -2  2.0023175479292263E+01       0                       0                
   6   256   # HX.InletS_Tube.y
- -2  6.7710597065797629E-02       0                       0                
+ -2  1.0632824820527276E-01       0                       0                
   6   256   # HX.T_diff.y
  -1       1                       0                       0                
   1   280   # HX.T_diff.k1
  -1       1                       0                       0                
   1   280   # HX.T_diff.k2
- -2 -5.9906631121918963E-02       0                       0                
+ -2 -9.8488889829127402E-02       0                       0                
   6   256   # T_diff1.y
  -1       1                       0                       0                
   1   280   # T_diff1.k1
@@ -7706,13 +7713,13 @@ double initialValue(2583,6)
   1   281   # SecondaryLoop.showName
  -2       1                       0                       0                
   6   258   # SecondaryLoop.nPorts
- -2  9.9820275487355434E+02       0                  100000                
+ -2  9.9820275484778233E+02       0                  100000                
   6   256   # SecondaryLoop.medium.d
- -2  2.9317317547920317E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  2.9317317547929224E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # SecondaryLoop.medium.T
  -2       1                       0                       1                
   6   256   # SecondaryLoop.medium.X[1]
- -2  8.3911359021367985E+04 -1.0000000000000000E+08  1.0000000000000000E+08
+ -2  8.3911359024782112E+04 -1.0000000000000000E+08  1.0000000000000000E+08
   6   256   # SecondaryLoop.medium.u
  -2  4.6152311573456689E+02       0                  1.0000000000000000E+07
   6   256   # SecondaryLoop.medium.R_s
@@ -7724,17 +7731,17 @@ double initialValue(2583,6)
   6   257   # SecondaryLoop.medium.preferredMediumStates
  -2       1                       0                       0                
   6   257   # SecondaryLoop.medium.standardOrderComponents
- -2  2.0023175479203189E+01       0                       0                
+ -2  2.0023175479292263E+01       0                       0                
   6   256   # SecondaryLoop.medium.T_degC
- -2  1.0448408413924164E+00       0                       0                
+ -2  1.0448402783312036E+00       0                       0                
   6   256   # SecondaryLoop.medium.p_bar
- -2  3.7398677073850058E+02  2.7314999999999998E+02  2.2731500000000001E+03
+ -2  3.7398675555967884E+02  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # SecondaryLoop.medium.sat.Tsat
  -2     -20                 -100000                       0                
   6   388   # SecondaryLoop.ports[1].m_flow
- -2  1.0448408413924163E+05  6.1165700000000004E+02  1.0000000000000000E+08
+ -2  1.0448402783312034E+05  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # SecondaryLoop.ports[1].p
- -2  8.4016031227118889E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+ -2  8.4016031174128220E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # SecondaryLoop.ports[1].h_outflow
  -2       3                       1                       3                
   6  1282   # SecondaryLoop.flowDirection
@@ -7758,6 +7765,14 @@ double initialValue(2583,6)
   6  1280   # SecondaryLoop.T_in_internal
  -2       1                       0                       0                
   6  1280   # SecondaryLoop.X_in_internal[1]
+ -2      20                       0                       0                
+  6   256   # ramp.height
+ -1      20                       0                 1.0000000000000000E+100
+  1   280   # ramp.duration
+ -1       0                       0                       0                
+  1   280   # ramp.offset
+ -1     100                       0                       0                
+  1   280   # ramp.startTime
  -2  1.8015268000000001E-02  1.0000000000000000E-03  2.5000000000000000E-01
   6  1280   # _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
  -2  6.4709600000000000E+02       1                   10000                
@@ -7898,7 +7913,7 @@ double initialValue(2583,6)
 #   Which variables will be important for initialization and continue
 #   is indicated by value in column 6 & dsStartMasks.
 #
-char initialDescription(2583,126)
+char initialDescription(2588,126)
 Default ambient pressure [Pa|bar]
 Default ambient temperature [K|degC]
 Constant gravity acceleration [m/s2]
@@ -8089,6 +8104,7 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
+Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
@@ -10434,6 +10450,10 @@ Fixed value of composition [kg/kg]
 Needed to connect to conditional connector [kg/s]
 Needed to connect to conditional connector [K]
 Needed to connect to conditional connector [1]
+Height of ramps [kg/s]
+Duration of ramp (= 0.0 gives a Step) [s]
+Offset of output signal y [kg/s]
+Output y = offset for time < startTime [s]
 Molar mass [kg/mol]
 Critical temperature [K|degC]
 Critical pressure [Pa|bar]

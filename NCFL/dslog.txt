@@ -1,12 +1,12 @@
 Log-file of program ./dymosim
-(generated: Mon Jul  6 16:10:27 2026)
+(generated: Tue Jul  7 11:01:04 2026)
 
 dymosim started
 ... "INL_DT.Tests.NCFL_Total" simulating
 ... "dsin.txt" loading (dymosim input file)
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -4.55933e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -4.58256e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -22,110 +22,30 @@ Modelica.Media.Water.IF97_Utilities.rho_ph(Distance2Heaters.port_a.p, s1.port_b.
 Modelica.Media.Water.WaterIF97_ph.density_ph_Unique9(Distance2Heaters.port_a.p, s1.port_b.h_...
 
 Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 20
+Non-linear solver gave up after attempt: 55
 
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -379553 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.T_props_ph(
-HX.HXPipe.port_a.p, 
-HX.HXPipe.port_a.h_outflow_inStream, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(HX.HXPipe.port_a.p, HX.HXPipe.port_a.h_outflow_inStream, 0, 0))
-Modelica.Media.Water.IF97_Utilities.T_ph(HX.HXPipe.port_a.p, HX.HXPipe.port_a.h_outflow_inStream, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique10(HX.HXPipe.p...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 12
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -5.38421e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.T_props_ph(
-PumpPipe.port_b.p, 
-pump.port_a.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(PumpPipe.port_b.p, pump.port_a.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.T_ph(PumpPipe.port_b.p, pump.port_a.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique10(PumpPipe.port_b.p, pump.port_a.h_outflow, 0, 0)
-Modelica...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 5
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -2.88392e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-JetInlet.port_a.p, 
-ValveOutlet.port_b.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(JetInlet.port_a.p, ValveOutlet.port_b.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(JetInlet.port_a.p, ValveOutlet.port_b.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.density_ph_Unique9(JetInlet.port_a.p, ValveOutlet.port_...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 1
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -3.91775e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-ValveOutlet.port_a.p, 
-V_bot.port_b.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ValveOutlet.port_a.p, V_bot.port_b.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ValveOutlet.port_a.p, V_bot.port_b.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.density_ph_Unique9(ValveOutlet.port_a.p, V_bot.port_b.h_outflow,...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 4
-
-... "NCFL_Total_PyResults.mat" creating (simulation result file)
+Trying to solve non-linear system using global homotopy-method.
+... "NCFL_Total.mat" creating (simulation result file)
 
 Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
 
 Integration terminated successfully at T = 180
-   CPU-time for integration                : 5.86 seconds
-   CPU-time for one grid interval          : 3.26 milliseconds
-   CPU-time for initialization             : 0.035 seconds
-   Number of result points                 : 1802
+   CPU-time for integration                : 10.7 seconds
+   CPU-time for one grid interval          : 5.95 milliseconds
+   CPU-time for initialization             : 0.061 seconds
+   Number of result points                 : 1804
    Number of grid points                   : 1801
-   Number of accepted steps                : 81
-   Number of f-evaluations (dynamics)      : 160
-   Number of crossing function evaluations : 1881
-   Number of Jacobian-evaluations          : 32
-   Number of model time events             : 0
+   Number of accepted steps                : 231
+   Number of f-evaluations (dynamics)      : 483
+   Number of crossing function evaluations : 2031
+   Number of Jacobian-evaluations          : 238
+   Number of model time events             : 2
    Number of input time events             : 0
    Number of state events                  : 0
    Number of step events                   : 0
-   Minimum integration stepsize            : 3.19e-09
-   Maximum integration stepsize            : 31.6
+   Minimum integration stepsize            : 3.79e-09
+   Maximum integration stepsize            : 13.1
    Maximum integration order               : 3
 Calling terminal section
 ... "dsfinal.txt" creating (final states)

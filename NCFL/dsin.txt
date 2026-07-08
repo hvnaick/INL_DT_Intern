@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(2583,92)
+char initialName(2588,92)
 systemTF.p_ambient
 systemTF.T_ambient
 systemTF.g
@@ -293,6 +293,7 @@ Distance2Heaters.flowModel.continuousFlowReversal
 Distance2Heaters.flowModel.diameters[1]
 Distance2Heaters.flowModel.dp_fric_nominal
 PumpPipe.allowFlowReversal
+PumpPipe.port_a.m_flow
 PumpPipe.port_a.h_outflow
 PumpPipe.port_b.p
 PumpPipe.port_b.h_outflow
@@ -2638,6 +2639,10 @@ SecondaryLoop.X[1]
 SecondaryLoop.m_flow_in_internal
 SecondaryLoop.T_in_internal
 SecondaryLoop.X_in_internal[1]
+ramp.height
+ramp.duration
+ramp.offset
+ramp.startTime
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalTemperature
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalPressure
@@ -2687,7 +2692,7 @@ _GlobalScope.Modelica.Media.Water.waterConstants[1].SCRIT0
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltah
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltas
 
-double initialValue(2583,6)
+double initialValue(2588,6)
  -1  1.0132500000000000E+05       0                 1.0000000000000000E+100
   1   280   # systemTF.p_ambient
  -1  2.9314999999999998E+02       0                 1.0000000000000000E+100
@@ -2782,7 +2787,7 @@ double initialValue(2583,6)
   6   256   # data.Init_P
   0  2.9414999999999998E+02       0                 1.0000000000000000E+100
   6   256   # data.Init_T
- -1    3500                       0                       0                
+ -1    5500                       0                       0                
   1   280   # data.Heater_Power
  -1  5.1487916666666667E-01       0                       0                
   1   280   # data.Heater_Length
@@ -3068,6 +3073,8 @@ double initialValue(2583,6)
   6  1280   # Distance2Heaters.flowModel.dp_fric_nominal
   0       1                       0                       0                
   6   257   # PumpPipe.allowFlowReversal
+  0       0                       0                  100000                
+  6   388   # PumpPipe.port_a.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # PumpPipe.port_a.h_outflow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -3196,9 +3203,9 @@ double initialValue(2583,6)
   6  1280   # PumpPipe.flowModel.diameters[1]
   0       0                       0                 1.0000000000000000E+100
   6  1280   # PumpPipe.flowModel.dp_fric_nominal
-  0       0                       0                       0                
+  0       1                       0                       0                
   6   257   # pump.use_input
-  0       0                       0                  100000                
+  0       0                       0                       0                
   6   256   # pump.m_flow_nominal
   0       0                       0                       0                
   6   257   # pump.allowFlowReversal
@@ -7758,6 +7765,14 @@ double initialValue(2583,6)
   6  1280   # SecondaryLoop.T_in_internal
   0       1                       0                       0                
   6  1280   # SecondaryLoop.X_in_internal[1]
+  0       0                       0                       0                
+  6   256   # ramp.height
+ -1      20                       0                 1.0000000000000000E+100
+  1   280   # ramp.duration
+ -1       0                       0                       0                
+  1   280   # ramp.offset
+ -1     100                       0                       0                
+  1   280   # ramp.startTime
   0  1.8015268000000001E-02  1.0000000000000000E-03  2.5000000000000000E-01
   6  1280   # _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
   0  6.4709600000000000E+02       1                   10000                
@@ -7900,7 +7915,7 @@ double initialValue(2583,6)
 #   Which variables will be important for initialization and continue
 #   is indicated by value in column 6 & dsStartMasks.
 #
-char initialDescription(2583,126)
+char initialDescription(2588,126)
 Default ambient pressure [Pa|bar]
 Default ambient temperature [K|degC]
 Constant gravity acceleration [m/s2]
@@ -8091,6 +8106,7 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
+Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
@@ -10436,6 +10452,10 @@ Fixed value of composition [kg/kg]
 Needed to connect to conditional connector [kg/s]
 Needed to connect to conditional connector [K]
 Needed to connect to conditional connector [1]
+Height of ramps [kg/s]
+Duration of ramp (= 0.0 gives a Step) [s]
+Offset of output signal y [kg/s]
+Output y = offset for time < startTime [s]
 Molar mass [kg/mol]
 Critical temperature [K|degC]
 Critical pressure [Pa|bar]
