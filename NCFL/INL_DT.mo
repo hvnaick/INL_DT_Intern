@@ -5,26 +5,27 @@ package INL_DT
 
       replaceable package Medium = Modelica.Media.Water.StandardWater                             annotation (
          choicesAllMatching=true);
+      replaceable INL_DT.ControlSystems.AVO_CS CS constrainedby INL_DT.BaseClasses.CS_Dummy annotation(choicesAllMatching=true);
       TRANSFORM.Fluid.BoundaryConditions.Boundary_pT boundary1(
         redeclare package Medium = Medium,
         p=ncfl.data.Init_P,
         T=ncfl.data.Init_T,
         nPorts=1)
-        annotation (Placement(transformation(extent={{76,-14},{56,6}})));
+        annotation (Placement(transformation(extent={{68,54},{48,74}})));
       TRANSFORM.Fluid.BoundaryConditions.MassFlowSource_T SecondaryLoop(
         redeclare package Medium = Medium,
         m_flow=20,
         nPorts=1)
-        annotation (Placement(transformation(extent={{72,28},{52,48}})));
-      Components.NCFL ncfl(redeclare INL_DT.ControlSystems.RegularCS CS,
-                           redeclare package Medium =
-            Modelica.Media.Water.StandardWater)
+        annotation (Placement(transformation(extent={{74,-16},{54,4}})));
+      Components.NCFL ncfl(redeclare package Medium =
+            Modelica.Media.Water.StandardWater, redeclare
+          INL_DT.ControlSystems.NF_CS CS)
         annotation (Placement(transformation(extent={{-60,-16},{0,38}})));
     equation
-      connect(SecondaryLoop.ports[1], ncfl.port_b) annotation (Line(points={{52,
-              38},{6,38},{6,15.9091},{-21.12,15.9091}}, color={0,127,255}));
-      connect(boundary1.ports[1], ncfl.port_a) annotation (Line(points={{56,-4},
-              {6,-4},{6,7.80909},{-21.12,7.80909}}, color={0,127,255}));
+      connect(SecondaryLoop.ports[1], ncfl.port_a) annotation (Line(points={{54,
+              -6},{6,-6},{6,13.1},{0.75,13.1}}, color={0,127,255}));
+      connect(boundary1.ports[1], ncfl.port_b) annotation (Line(points={{48,64},
+              {6,64},{6,23},{0.75,23}}, color={0,127,255}));
       annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
             coordinateSystem(preserveAspectRatio=false)));
     end NCFL_Modular;
@@ -238,7 +239,7 @@ package INL_DT
         HX_Transfer=-10E3,
         Therm_cond=data.Thermal_Cond)
                            annotation (Placement(transformation(
-            extent={{-10,10},{10,-10}},
+            extent={{10,-10},{-10,10}},
             rotation=-90,
             origin={88,26})));
       Modelica.Blocks.Sources.RealExpression realExpression2(y=-stateDisplay2.T)
@@ -322,20 +323,12 @@ package INL_DT
         annotation (Line(points={{46,-170},{60,-170}}, color={0,127,255}));
       connect(PumpPipe.port_a, s4.port_b) annotation (Line(points={{80,-170},{86,-170},
               {86,-134}}, color={0,127,255}));
-      connect(s3.port_b, HX.port_a) annotation (Line(points={{86,54},{86,45},{
-              86.2,45},{86.2,36}}, color={0,127,255}));
-      connect(HX.port_b, DistanceAfterHX.port_a) annotation (Line(points={{86.2,
-              16},{86.2,-17},{86,-17},{86,-50}}, color={0,127,255}));
       connect(realExpression2.y, T_diff1.u1) annotation (Line(points={{-191,-20},
               {-166,-20},{-166,-24},{-156,-24}},
                                        color={0,0,127}));
       connect(realExpression3.y, T_diff1.u2) annotation (Line(points={{-191,-46},
               {-164,-46},{-164,-36},{-156,-36}},
                                              color={0,0,127}));
-      connect(SecondaryLoop.ports[1], HX.port_a1) annotation (Line(points={{188,
-              -6},{92,-6},{92,16}}, color={0,127,255}));
-      connect(HX.port_b1, boundary1.ports[1]) annotation (Line(points={{92,36},
-              {92,44},{174,44},{174,42},{180,42},{180,58}}, color={0,127,255}));
       connect(ramp.y, pump.in_m_flow) annotation (Line(points={{-7.4,-92},{22,
               -92},{22,-154},{20,-154},{20,-162.7},{36,-162.7}}, color={0,0,127}));
       connect(const.y, V_top.opening) annotation (Line(points={{-26.3,-57},{2,
@@ -343,6 +336,15 @@ package INL_DT
       connect(const.y, V_bot.opening) annotation (Line(points={{-26.3,-57},{
               -26.3,-58},{2,-58},{2,-126},{18,-126},{18,-162},{-6,-162}}, color
             ={0,0,127}));
+      connect(s3.port_b, HX.port_a_tube)
+        annotation (Line(points={{86,54},{84,54},{84,36}}, color={0,127,255}));
+      connect(DistanceAfterHX.port_a, HX.port_b_tube) annotation (Line(points={
+              {86,-50},{84,-50},{84,16}}, color={0,127,255}));
+      connect(HX.port_a_shell, SecondaryLoop.ports[1]) annotation (Line(points=
+              {{89.8,16},{89.8,-6},{188,-6}}, color={0,127,255}));
+      connect(HX.port_b_shell, boundary1.ports[1]) annotation (Line(points={{
+              89.8,36},{89.8,44},{174,44},{174,42},{180,42},{180,58}}, color={0,
+              127,255}));
       annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-220,
                 -200},{300,120}})),                                  Diagram(
             coordinateSystem(preserveAspectRatio=false, extent={{-220,-200},{300,
@@ -471,7 +473,7 @@ package INL_DT
       parameter Modelica.Units.SI.Length HXRadius = 0;
       parameter Modelica.Units.SI.Pressure Init_P = 101325;
       parameter Modelica.Units.SI.Power HX_Transfer = 0;
-      parameter Real Therm_cond = 0;
+      parameter Real Therm_cond = 35;
       parameter Boolean allowFlowReversal = false;
 
       replaceable package Medium = Modelica.Media.Water.StandardWater                             annotation (
@@ -502,18 +504,18 @@ package INL_DT
             extent={{4,-5},{-4,5}},
             rotation=180,
             origin={-33,20})));
-      TRANSFORM.Fluid.Interfaces.FluidPort_Flow
-                                port_a(redeclare package Medium = Medium, m_flow(
-            min=if allowFlowReversal then -Modelica.Constants.inf else 0))
+      TRANSFORM.Fluid.Interfaces.FluidPort_Flow port_a_shell(redeclare package
+          Medium = Medium, m_flow(min=if allowFlowReversal then -Modelica.Constants.inf
+               else 0))
         annotation (Placement(transformation(extent={{-110,8},{-90,28}})));
-      TRANSFORM.Fluid.Interfaces.FluidPort_State
-                                 port_b(redeclare package Medium = Medium, m_flow(
-            max=if allowFlowReversal then +Modelica.Constants.inf else 0))
+      TRANSFORM.Fluid.Interfaces.FluidPort_State port_b_shell(redeclare package
+          Medium = Medium, m_flow(max=if allowFlowReversal then +Modelica.Constants.inf
+               else 0))
         annotation (Placement(transformation(extent={{90,8},{110,28}})));
       TRANSFORM.HeatAndMassTransfer.Resistances.Heat.Cylinder cylinder(
         L=HXLength,
         r_in=HXRadius,
-        r_out=HXRadius*2 + 0.04,
+        r_out=HXRadius + 0.04,
         lambda=Therm_cond) annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=-90,
@@ -535,13 +537,13 @@ package INL_DT
             rotation=180,
             origin={-7,-35})));
 
-      TRANSFORM.Fluid.Interfaces.FluidPort_Flow
-                                port_a1(redeclare package Medium = Medium,
-          m_flow(min=if allowFlowReversal then -Modelica.Constants.inf else 0))
+      TRANSFORM.Fluid.Interfaces.FluidPort_Flow port_a_tube(redeclare package
+          Medium = Medium, m_flow(min=if allowFlowReversal then -Modelica.Constants.inf
+               else 0))
         annotation (Placement(transformation(extent={{90,-50},{110,-30}})));
-      TRANSFORM.Fluid.Interfaces.FluidPort_State
-                                 port_b1(redeclare package Medium = Medium,
-          m_flow(max=if allowFlowReversal then +Modelica.Constants.inf else 0))
+      TRANSFORM.Fluid.Interfaces.FluidPort_State port_b_tube(redeclare package
+          Medium = Medium, m_flow(max=if allowFlowReversal then +Modelica.Constants.inf
+               else 0))
         annotation (Placement(transformation(extent={{-110,-50},{-90,-30}})));
       Modelica.Fluid.Pipes.StaticPipe HXTube(
         redeclare package Medium = Medium,
@@ -573,24 +575,24 @@ package INL_DT
     equation
       connect(HXPipe.port_b, Shell.port_a) annotation (Line(points={{-29,20},{-29,
               21},{-12,21}}, color={0,127,255}));
-      connect(port_a, HXPipe.port_a) annotation (Line(points={{-100,18},{-98,18},{-98,
-              20},{-37,20}}, color={0,127,255}));
+      connect(port_a_shell, HXPipe.port_a) annotation (Line(points={{-100,18},{
+              -98,18},{-98,20},{-37,20}}, color={0,127,255}));
       connect(Shell.heatPorts[1, 1], cylinder.port_a) annotation (Line(points={
               {-7,18.5},{-7,9.25},{-6,9.25},{-6,-1}}, color={191,0,0}));
       connect(Tube.heatPorts[1, 1], cylinder.port_b) annotation (Line(points={{
               -7,-32.5},{-7,-25.25},{-6,-25.25},{-6,-15}}, color={191,0,0}));
       connect(Tube.port_b, HXTube.port_a) annotation (Line(points={{-12,-35},{
               -24.5,-35},{-24.5,-34},{-37,-34}}, color={0,127,255}));
-      connect(Tube.port_a, port_a1) annotation (Line(points={{-2,-35},{-2,-36},
+      connect(Tube.port_a, port_a_tube) annotation (Line(points={{-2,-35},{-2,-36},
               {84,-36},{84,-40},{100,-40}}, color={0,127,255}));
-      connect(HXTube.port_b, port_b1) annotation (Line(points={{-45,-34},{-84,
+      connect(HXTube.port_b, port_b_tube) annotation (Line(points={{-45,-34},{-84,
               -34},{-84,-40},{-100,-40}}, color={0,127,255}));
-      connect(port_a, InletS_Shell.port) annotation (Line(points={{-100,18},{
-              -98,18},{-98,20},{-60,20}}, color={0,127,255}));
+      connect(port_a_shell, InletS_Shell.port) annotation (Line(points={{-100,
+              18},{-98,18},{-98,20},{-60,20}}, color={0,127,255}));
       connect(Shell.port_b, OutletS_Shell.port) annotation (Line(points={{-2,21},
               {17,21},{17,20},{36,20}}, color={0,127,255}));
-      connect(OutletS_Shell.port, port_b) annotation (Line(points={{36,20},{36,
-              18},{100,18}}, color={0,127,255}));
+      connect(OutletS_Shell.port, port_b_shell) annotation (Line(points={{36,20},
+              {36,18},{100,18}}, color={0,127,255}));
       connect(HXTube.port_b, OutletS_Tube.port)
         annotation (Line(points={{-45,-34},{-62,-34}}, color={0,127,255}));
       connect(Tube.port_a, InletS_Tube.port) annotation (Line(points={{-2,-35},
@@ -854,7 +856,7 @@ characteristic N = f(M, C, R, K*).</p>
         port_b(redeclare package Medium = Modelica.Media.Water.StandardWater),
         port_a(redeclare package Medium = Modelica.Media.Water.StandardWater));
 
-      BaseClasses.Data_NCFL data(Heater_Length=1.5446375/3, Thermal_Cond=35)
+      BaseClasses.Data_NCFL data(Heater_Length=1.5446375/3)
         annotation (Placement(transformation(extent={{78,102},{98,122}})));
       Modelica.Fluid.Pipes.StaticPipe Slant(
         redeclare package Medium = Medium,
@@ -888,8 +890,10 @@ characteristic N = f(M, C, R, K*).</p>
             extent={{-10,-10},{10,10}},
             rotation=180,
             origin={70,-188})));
-      TRANSFORM.Fluid.Machines.Pump_SimpleMassFlow pump(redeclare package Medium =
+      TRANSFORM.Fluid.Machines.Pump_SimpleMassFlow pump(redeclare package
+          Medium =
             Medium,
+        use_input=true,
         m_flow_nominal=data.Pump_Mflow,
         allowFlowReversal=false)
         annotation (Placement(transformation(extent={{46,-198},{26,-178}})));
@@ -924,7 +928,7 @@ characteristic N = f(M, C, R, K*).</p>
             extent={{-10,-10},{10,10}},
             rotation=90,
             origin={-64,-114})));
-      NHES.Fluid.Sensors.stateDisplay stateDisplay
+      NHES.Fluid.Sensors.stateDisplay SD1
         annotation (Placement(transformation(extent={{-134,-130},{-80,-100}})));
       NHES.Fluid.Sensors.stateSensor s2(redeclare package Medium = Medium)
         annotation (Placement(transformation(
@@ -941,11 +945,11 @@ characteristic N = f(M, C, R, K*).</p>
             extent={{10,-10},{-10,10}},
             rotation=90,
             origin={86,-142})));
-      NHES.Fluid.Sensors.stateDisplay stateDisplay1
+      NHES.Fluid.Sensors.stateDisplay SD2
         annotation (Placement(transformation(extent={{-134,64},{-80,94}})));
-      NHES.Fluid.Sensors.stateDisplay stateDisplay2
+      NHES.Fluid.Sensors.stateDisplay SD3
         annotation (Placement(transformation(extent={{0,22},{54,52}})));
-      NHES.Fluid.Sensors.stateDisplay stateDisplay3
+      NHES.Fluid.Sensors.stateDisplay SD4
         annotation (Placement(transformation(extent={{2,-104},{56,-74}})));
       Modelica.Fluid.Pipes.StaticPipe V1_Inlet(
         redeclare package Medium = Medium,
@@ -961,18 +965,18 @@ characteristic N = f(M, C, R, K*).</p>
       Modelica.Fluid.Valves.ValveIncompressible V_top(
         redeclare package Medium = Medium,
         dp_nominal=data.Init_P,
-        m_flow_nominal=data.Pump_Mflow/2)
+        m_flow_nominal=data.Pump_Mflow)
         annotation (Placement(transformation(extent={{12,-170},{-8,-150}})));
       Modelica.Fluid.Valves.ValveIncompressible V_bot(
         redeclare package Medium = Medium,
         dp_nominal=data.Init_P,
-        m_flow_nominal=data.Pump_Mflow/2)
+        m_flow_nominal=data.Pump_Mflow)
         annotation (Placement(transformation(extent={{4,-198},{-16,-178}})));
-      Modelica.Blocks.Sources.RealExpression realExpression(y=stateDisplay1.T)
+      Modelica.Blocks.Sources.RealExpression realExpression(y=SD2.T)
         annotation (Placement(transformation(extent={{-210,2},{-190,22}})));
-      Modelica.Blocks.Sources.RealExpression realExpression1(y=-stateDisplay.T)
+      Modelica.Blocks.Sources.RealExpression realExpression1(y=-SD1.T)
         annotation (Placement(transformation(extent={{-210,-24},{-190,-4}})));
-      Modelica.Blocks.Math.Add T_diff
+      Modelica.Blocks.Math.Add T_diff_HL
         annotation (Placement(transformation(extent={{-152,-8},{-132,12}})));
       Modelica.Fluid.Pipes.StaticPipe JetInlet(
         redeclare package Medium = Medium,
@@ -1052,14 +1056,14 @@ characteristic N = f(M, C, R, K*).</p>
         HX_Transfer=-10E3,
         Therm_cond=data.Thermal_Cond)
                            annotation (Placement(transformation(
-            extent={{-10,10},{10,-10}},
+            extent={{10,-10},{-10,10}},
             rotation=-90,
-            origin={88,8})));
-      Modelica.Blocks.Sources.RealExpression realExpression2(y=-stateDisplay2.T)
+            origin={88,10})));
+      Modelica.Blocks.Sources.RealExpression realExpression2(y=-SD3.T)
         annotation (Placement(transformation(extent={{-212,-48},{-192,-28}})));
-      Modelica.Blocks.Sources.RealExpression realExpression3(y=stateDisplay3.T)
+      Modelica.Blocks.Sources.RealExpression realExpression3(y=SD4.T)
         annotation (Placement(transformation(extent={{-212,-74},{-192,-54}})));
-      Modelica.Blocks.Math.Add T_diff1
+      Modelica.Blocks.Math.Add T_diff_CL
         annotation (Placement(transformation(extent={{-154,-58},{-134,-38}})));
     equation
       connect(DistanceAfterHX.port_b, volume.port_a[1])
@@ -1073,26 +1077,24 @@ characteristic N = f(M, C, R, K*).</p>
         annotation (Line(points={{10,82},{86,82},{86,56}},   color={0,127,255}));
       connect(volume.port_b[1], s4.port_a)
         annotation (Line(points={{86,-122},{86,-132}}, color={0,127,255}));
-      connect(s1.statePort, stateDisplay.statePort) annotation (Line(points={{-64.05,
-              -113.95},{-48,-113.95},{-48,-144},{-50,-144},{-50,-160},{-107,-160},{-107,
-              -118.9}},                                                     color
-            ={0,0,0}));
-      connect(s2.statePort, stateDisplay1.statePort) annotation (Line(points={{-64.05,
-              68.05},{-64.05,80},{-78,80},{-78,58},{-107,58},{-107,75.1}}, color=
-              {0,0,0}));
-      connect(s3.statePort, stateDisplay2.statePort) annotation (Line(points={{85.95,
-              45.95},{60,45.95},{60,16},{27,16},{27,33.1}},           color={0,0,
-              0}));
-      connect(s4.statePort, stateDisplay3.statePort) annotation (Line(points={{85.95,
-              -142.05},{29,-142.05},{29,-92.9}},         color={0,0,0}));
+      connect(s1.statePort, SD1.statePort) annotation (Line(points={{-64.05,-113.95},
+              {-48,-113.95},{-48,-144},{-50,-144},{-50,-160},{-107,-160},{-107,
+              -118.9}}, color={0,0,0}));
+      connect(s2.statePort, SD2.statePort) annotation (Line(points={{-64.05,
+              68.05},{-64.05,80},{-78,80},{-78,58},{-107,58},{-107,75.1}},
+            color={0,0,0}));
+      connect(s3.statePort, SD3.statePort) annotation (Line(points={{85.95,
+              45.95},{60,45.95},{60,16},{27,16},{27,33.1}}, color={0,0,0}));
+      connect(s4.statePort, SD4.statePort) annotation (Line(points={{85.95,-142.05},
+              {29,-142.05},{29,-92.9}}, color={0,0,0}));
       connect(V1_Inlet.port_a, s4.port_b) annotation (Line(points={{48,-160},{86,-160},
               {86,-152}}, color={0,127,255}));
       connect(V1_Inlet.port_b, V_top.port_a)
         annotation (Line(points={{28,-160},{12,-160}}, color={0,127,255}));
-      connect(realExpression.y, T_diff.u1) annotation (Line(points={{-189,12},{-164,
-              12},{-164,8},{-154,8}},        color={0,0,127}));
-      connect(realExpression1.y, T_diff.u2) annotation (Line(points={{-189,-14},{-162,
-              -14},{-162,-4},{-154,-4}},    color={0,0,127}));
+      connect(realExpression.y, T_diff_HL.u1) annotation (Line(points={{-189,12},
+              {-164,12},{-164,8},{-154,8}}, color={0,0,127}));
+      connect(realExpression1.y, T_diff_HL.u2) annotation (Line(points={{-189,-14},
+              {-162,-14},{-162,-4},{-154,-4}}, color={0,0,127}));
       connect(DistanceAfterHeaters.port_b, s2.port_a)
         annotation (Line(points={{-64,52},{-64,58}}, color={0,127,255}));
       connect(heater3.port_b, DistanceAfterHeaters.port_a) annotation (Line(
@@ -1121,29 +1123,184 @@ characteristic N = f(M, C, R, K*).</p>
         annotation (Line(points={{46,-188},{60,-188}}, color={0,127,255}));
       connect(PumpPipe.port_a, s4.port_b) annotation (Line(points={{80,-188},{86,-188},
               {86,-152}}, color={0,127,255}));
-      connect(s3.port_b, HX.port_a) annotation (Line(points={{86,36},{86,27},{86.2,27},
-              {86.2,18}},          color={0,127,255}));
-      connect(HX.port_b, DistanceAfterHX.port_a) annotation (Line(points={{86.2,-2},
-              {86.2,-35},{86,-35},{86,-68}},     color={0,127,255}));
-      connect(realExpression2.y, T_diff1.u1) annotation (Line(points={{-191,-38},{-166,
-              -38},{-166,-42},{-156,-42}},
-                                       color={0,0,127}));
-      connect(realExpression3.y, T_diff1.u2) annotation (Line(points={{-191,-64},{-164,
-              -64},{-164,-54},{-156,-54}},   color={0,0,127}));
-      connect(port_a, HX.port_a1) annotation (Line(points={{104,-6},{96,-6},{96,-2},
-              {92,-2}}, color={0,127,255}));
-      connect(port_b, HX.port_b1) annotation (Line(points={{104,60},{104,24},{92,24},
-              {92,18}}, color={0,127,255}));
+      connect(realExpression2.y, T_diff_CL.u1) annotation (Line(points={{-191,-38},
+              {-166,-38},{-166,-42},{-156,-42}}, color={0,0,127}));
+      connect(realExpression3.y, T_diff_CL.u2) annotation (Line(points={{-191,-64},
+              {-164,-64},{-164,-54},{-156,-54}}, color={0,0,127}));
+      connect(actuatorBus.TopValve_Opening, V_top.opening) annotation (Line(
+          points={{30,100},{30,58},{-6,58},{-6,-144},{2,-144},{2,-152}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.BotValve_Opening, V_bot.opening) annotation (Line(
+          points={{30,100},{30,58},{-6,58},{-6,-144},{18,-144},{18,-180},{-6,-180}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+
+      connect(s3.port_b, HX.port_a_tube) annotation (Line(points={{86,36},{86,
+              28},{84,28},{84,20}}, color={0,127,255}));
+      connect(HX.port_b_tube, DistanceAfterHX.port_a) annotation (Line(points={
+              {84,2.66454e-15},{84,-2},{86,-2},{86,-68}}, color={0,127,255}));
+      connect(port_a, HX.port_a_shell) annotation (Line(points={{104,-6},{89.8,
+              -6},{89.8,1.77636e-15}}, color={0,127,255}));
+      connect(HX.port_b_shell, port_b) annotation (Line(points={{89.8,20},{89.8,
+              30},{90,30},{90,60},{104,60}}, color={0,127,255}));
+      connect(actuatorBus.Pump_Power, pump.in_m_flow) annotation (Line(
+          points={{30,100},{30,-68},{62,-68},{62,-174},{36,-174},{36,-180.7}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{-3,6},{-3,6}},
+          horizontalAlignment=TextAlignment.Right));
       annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-220,
-                -200},{280,240}})),                                  Diagram(
-            coordinateSystem(preserveAspectRatio=false, extent={{-220,-200},{280,240}})));
+                -200},{100,160}})),                                  Diagram(
+            coordinateSystem(preserveAspectRatio=false, extent={{-220,-200},{100,160}})));
     end NCFL;
   end Components;
 
   package ControlSystems
     model RegularCS
       extends BaseClasses.CS_Dummy;
+
     end RegularCS;
+
+    model AVO_CS
+      extends BaseClasses.CS_Dummy;
+      Modelica.Blocks.Sources.Constant const(k=1)
+        annotation (Placement(transformation(extent={{-70,34},{-50,54}})));
+      Modelica.Blocks.Sources.Constant const1(k=20)
+        annotation (Placement(transformation(extent={{-70,68},{-50,88}})));
+    equation
+      connect(actuatorBus.TopValve_Opening, const.y) annotation (Line(
+          points={{30,-100},{30,44},{-49,44}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.BotValve_Opening, const.y) annotation (Line(
+          points={{30,-100},{30,44},{-49,44}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.Pump_Power, const1.y) annotation (Line(
+          points={{30,-100},{30,78},{-49,78}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+    end AVO_CS;
+
+    model TVC_CS
+      extends BaseClasses.CS_Dummy;
+      Modelica.Blocks.Sources.Constant const1(k=1)
+        annotation (Placement(transformation(extent={{-52,18},{-32,38}})));
+      Modelica.Blocks.Sources.Constant const2(k=20)
+        annotation (Placement(transformation(extent={{-54,-16},{-34,4}})));
+      Modelica.Blocks.Sources.Pulse pulse(
+        width=10,
+        period=190,
+        offset=0,
+        startTime=0)
+        annotation (Placement(transformation(extent={{-50,62},{-30,82}})));
+    equation
+      connect(actuatorBus.BotValve_Opening, const1.y) annotation (Line(
+          points={{30,-100},{30,28},{-31,28}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.Pump_Power, const2.y) annotation (Line(
+          points={{30,-100},{30,-6},{-33,-6}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.TopValve_Opening, pulse.y) annotation (Line(
+          points={{30,-100},{30,72},{-29,72}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+    end TVC_CS;
+
+    model NF_CS
+      extends BaseClasses.CS_Dummy;
+      Modelica.Blocks.Sources.Pulse pulse(
+        amplitude=20,
+        width=10,
+        period=190,
+        offset=0,
+        startTime=0)
+        annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
+      Modelica.Blocks.Sources.Pulse pulse1(
+        width=10,
+        period=190,
+        offset=0,
+        startTime=0)
+        annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
+      Modelica.Blocks.Sources.Constant const1(k=0)
+        annotation (Placement(transformation(extent={{-90,36},{-70,56}})));
+      Modelica.Blocks.Sources.Constant const3(k=1)
+        annotation (Placement(transformation(extent={{-40,60},{-20,80}})));
+    equation
+      connect(actuatorBus.Pump_Power, pulse.y) annotation (Line(
+          points={{30,-100},{30,-10},{-19,-10}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.BotValve_Opening, pulse1.y) annotation (Line(
+          points={{30,-100},{30,30},{-19,30}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.TopValve_Opening, const3.y) annotation (Line(
+          points={{30,-100},{30,70},{-19,70}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+    end NF_CS;
   end ControlSystems;
 
   package BaseClasses
@@ -1180,7 +1337,7 @@ characteristic N = f(M, C, R, K*).</p>
       parameter Modelica.Units.SI.Length HX_L = 0.4699 annotation(Dialog(tab="Components", group="Heat Exchanger"));
       parameter Modelica.Units.SI.Length HX_radius = 0.0381 annotation(Dialog(tab="Components", group="Heat Exchanger"));
       parameter Modelica.Units.SI.Power HX_Transfer = 0 annotation(Dialog(tab="Components", group="Heat Exchanger"));
-      parameter Real Thermal_Cond = 0 annotation(Dialog(tab="Components", group="Heat Exchanger"));
+      parameter Real Thermal_Cond = 35 annotation(Dialog(tab="Components", group="Heat Exchanger"));
 
       //Secondary Loop
       parameter Modelica.Units.SI.Temperature sec_T annotation(Dialog(tab="System", group="Secondary Loop"));
@@ -1342,27 +1499,6 @@ characteristic N = f(M, C, R, K*).</p>
     partial model CS_Dummy
       extends BaseClasses.Partial_ControlSystem;
       extends NHES.Icons.DummyIcon;
-      Modelica.Blocks.Sources.Constant const(k=1)
-        annotation (Placement(transformation(extent={{-62,42},{-52,52}})));
-    equation
-      connect(actuatorBus.TopValve, const.y) annotation (Line(
-          points={{30,-100},{30,47},{-51.5,47}},
-          color={111,216,99},
-          pattern=LinePattern.Dash,
-          thickness=0.5), Text(
-          string="%first",
-          index=-1,
-          extent={{6,3},{6,3}},
-          horizontalAlignment=TextAlignment.Left));
-      connect(actuatorBus.BotValve, const.y) annotation (Line(
-          points={{30,-100},{30,47},{-51.5,47}},
-          color={111,216,99},
-          pattern=LinePattern.Dash,
-          thickness=0.5), Text(
-          string="%first",
-          index=-1,
-          extent={{6,3},{6,3}},
-          horizontalAlignment=TextAlignment.Left));
     end CS_Dummy;
 
     partial model Partial_EventDriver

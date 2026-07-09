@@ -1,12 +1,69 @@
 Log-file of program ./dymosim
-(generated: Tue Jul  7 11:01:04 2026)
+(generated: Thu Jul  9 11:47:40 2026)
 
 dymosim started
-... "INL_DT.Tests.NCFL_Total" simulating
+... "INL_DT.Tests.NCFL_Modular" simulating
 ... "dsin.txt" loading (dymosim input file)
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -4.58256e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -4.63328e+06 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_pT
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT
+Modelica.Media.Water.IF97_Utilities.h_props_pT(
+SecondaryLoop.medium.p, 
+293.15, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT(SecondaryLoop.medium.p, 293.15, 0))
+Modelica.Media.Water.IF97_Utilities.h_pT(SecondaryLoop.medium.p, SecondaryLoop.T_in_internal, 0)
+Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT_Unique18(SecondaryLoop.medium.p, SecondaryLoop.T_in_internal, 0, 0)
+Modelic...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 7
+
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -4.62236e+06 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.T_props_ph(
+ncfl.heater1.HeaterPipe.port_a.p, 
+ncfl.heater1.HeaterPipe.port_a.h_outflow_inStream, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater1.HeaterPipe.port_a.p, ncfl.heater1.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.heater1.HeaterPipe.port_a.p, ncfl.heater1.HeaterPipe.port_a.h_outflow_i...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 15
+
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -10520.2 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.T_props_ph(
+ncfl.heater2.HeaterPipe.port_a.p, 
+ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outflow_i...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 1
+
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -10520.2 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -15,39 +72,97 @@ Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
 Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
 Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-Distance2Heaters.port_a.p, 
-s1.port_b.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(Distance2Heaters.port_a.p, s1.port_b.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(Distance2Heaters.port_a.p, s1.port_b.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.density_ph_Unique9(Distance2Heaters.port_a.p, s1.port_b.h_...
+ncfl.heater3.HeaterPipe.port_a.p, 
+ncfl.heater3.HeaterPipe.port_a.h_outflow_inStream, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater3.HeaterPipe.port_a.p, ncfl.heater3.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.heater3.HeaterPipe.port_a.p, ncfl.heater3.HeaterPipe.port_a.h_outfl...
 
 Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 55
+Non-linear solver gave up after attempt: 1
 
-Trying to solve non-linear system using global homotopy-method.
-... "NCFL_Total.mat" creating (simulation result file)
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -5.35219e+06 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.T_props_ph(
+ncfl.PumpPipe.port_b.p, 
+ncfl.pump.port_a.h_outflow, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.PumpPipe.port_b.p, ncfl.pump.port_a.h_outflow, 0, 0))
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.PumpPipe.port_b.p, ncfl.pump.port_a.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.PumpPipe.port_b.p, nc...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 5
+
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -2.93797e+06 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.rho_props_ph(
+ncfl.JetInlet.port_a.p, 
+ncfl.ValveOutlet.port_b.h_outflow, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetInlet.port_a.p, ncfl.ValveOutlet.port_b.h_outflow, 0, 0))
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.JetInlet.port_a.p, ncfl.ValveOutlet.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl....
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 4
+
+Error: The following error was detected at time: 0
+  IF97 medium function tsat called with too low pressure
+p = -3.9759e+06 Pa <= 611.657 Pa (triple point pressure)
+  Failed condition: p > 611.657
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
+Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.rho_props_ph(
+ncfl.ValveOutlet.port_a.p, 
+ncfl.V_bot.port_b.h_outflow, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.ValveOutlet.port_a.p, ncfl.V_bot.port_b.h_outflow, 0, 0))
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.ValveOutlet.port_a.p, ncfl.V_bot.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.ValveOutl...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 4
+
+... "NCFL_Modular.mat" creating (simulation result file)
 
 Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
 
 Integration terminated successfully at T = 180
-   CPU-time for integration                : 10.7 seconds
-   CPU-time for one grid interval          : 5.95 milliseconds
-   CPU-time for initialization             : 0.061 seconds
-   Number of result points                 : 1804
+   CPU-time for integration                : 21.2 seconds
+   CPU-time for one grid interval          : 11.8 milliseconds
+   CPU-time for initialization             : 0.071 seconds
+   Number of result points                 : 1803
    Number of grid points                   : 1801
-   Number of accepted steps                : 231
-   Number of f-evaluations (dynamics)      : 483
-   Number of crossing function evaluations : 2031
-   Number of Jacobian-evaluations          : 238
-   Number of model time events             : 2
+   Number of accepted steps                : 305
+   Number of f-evaluations (dynamics)      : 626
+   Number of crossing function evaluations : 2105
+   Number of Jacobian-evaluations          : 333
+   Number of model time events             : 1
    Number of input time events             : 0
    Number of state events                  : 0
    Number of step events                   : 0
-   Minimum integration stepsize            : 3.79e-09
-   Maximum integration stepsize            : 13.1
+   Minimum integration stepsize            : 3.42e-09
+   Maximum integration stepsize            : 7.47
    Maximum integration order               : 3
 Calling terminal section
 ... "dsfinal.txt" creating (final states)
 
-SUCCESSFUL simulation of INL_DT.Tests.NCFL_Total
+SUCCESSFUL simulation of INL_DT.Tests.NCFL_Modular
