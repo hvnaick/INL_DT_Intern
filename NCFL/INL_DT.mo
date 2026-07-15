@@ -5,7 +5,7 @@ package INL_DT
 
       replaceable package Medium = Modelica.Media.Water.StandardWater                             annotation (
          choicesAllMatching=true);
-      replaceable INL_DT.ControlSystems.AVO_CS CS constrainedby INL_DT.BaseClasses.CS_Dummy annotation(choicesAllMatching=true);
+      //replaceable INL_DT.ControlSystems.TVC_CS CS constrainedby INL_DT.ControlSystems.RegularCS annotation(choicesAllMatching=true);
       TRANSFORM.Fluid.BoundaryConditions.Boundary_pT boundary1(
         redeclare package Medium = Medium,
         p=ncfl.data.Init_P,
@@ -19,13 +19,13 @@ package INL_DT
         annotation (Placement(transformation(extent={{74,-16},{54,4}})));
       Components.NCFL ncfl(redeclare package Medium =
             Modelica.Media.Water.StandardWater, redeclare
-          INL_DT.ControlSystems.NF_CS CS)
-        annotation (Placement(transformation(extent={{-60,-16},{0,38}})));
+          INL_DT.ControlSystems.TVC_CS CS)
+        annotation (Placement(transformation(extent={{-62,-16},{-2,38}})));
     equation
-      connect(SecondaryLoop.ports[1], ncfl.port_a) annotation (Line(points={{54,
-              -6},{6,-6},{6,13.1},{0.75,13.1}}, color={0,127,255}));
+      connect(SecondaryLoop.ports[1], ncfl.port_a) annotation (Line(points={{54,-6},
+              {6,-6},{6,13.1},{-1.25,13.1}},    color={0,127,255}));
       connect(boundary1.ports[1], ncfl.port_b) annotation (Line(points={{48,64},
-              {6,64},{6,23},{0.75,23}}, color={0,127,255}));
+              {6,64},{6,23},{-1.25,23}},color={0,127,255}));
       annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
             coordinateSystem(preserveAspectRatio=false)));
     end NCFL_Modular;
@@ -812,7 +812,7 @@ package INL_DT
           Rectangle(extent={{-100,8},{-40,-8}},  fillColor={0,120,255}, fillPattern=FillPattern.Solid),
           Polygon(points={{-40,8},{-20,4},{-20,-4},{-40,-8}},
                   fillColor={0,80,200}, fillPattern=FillPattern.Solid),
-          Rectangle(extent={{-6,-40},{6,-100}}, fillColor={0,180,120}, fillPattern=FillPattern.Solid),
+          Rectangle(extent={{-6,-10},{6,-94}},  fillColor={0,180,120}, fillPattern=FillPattern.Solid),
           Rectangle(extent={{-20,12},{30,-12}}, fillColor={30,30,180}, fillPattern=FillPattern.Solid),
           Polygon(points={{30,12},{90,20},{90,-20},{30,-12}},
                   fillColor={0,60,160}, fillPattern=FillPattern.Solid),
@@ -1176,7 +1176,7 @@ characteristic N = f(M, C, R, K*).</p>
     end RegularCS;
 
     model AVO_CS
-      extends BaseClasses.CS_Dummy;
+      extends RegularCS;
       Modelica.Blocks.Sources.Constant const(k=1)
         annotation (Placement(transformation(extent={{-70,34},{-50,54}})));
       Modelica.Blocks.Sources.Constant const1(k=20)
@@ -1212,7 +1212,7 @@ characteristic N = f(M, C, R, K*).</p>
     end AVO_CS;
 
     model TVC_CS
-      extends BaseClasses.CS_Dummy;
+      extends RegularCS;
       Modelica.Blocks.Sources.Constant const1(k=1)
         annotation (Placement(transformation(extent={{-52,18},{-32,38}})));
       Modelica.Blocks.Sources.Constant const2(k=20)
@@ -1253,8 +1253,8 @@ characteristic N = f(M, C, R, K*).</p>
           horizontalAlignment=TextAlignment.Left));
     end TVC_CS;
 
-    model NF_CS
-      extends BaseClasses.CS_Dummy;
+    model NF_BV_CS
+      extends RegularCS;
       Modelica.Blocks.Sources.Pulse pulse(
         amplitude=20,
         width=10,
@@ -1300,7 +1300,7 @@ characteristic N = f(M, C, R, K*).</p>
           index=-1,
           extent={{6,3},{6,3}},
           horizontalAlignment=TextAlignment.Left));
-    end NF_CS;
+    end NF_BV_CS;
   end ControlSystems;
 
   package BaseClasses
@@ -1367,7 +1367,8 @@ characteristic N = f(M, C, R, K*).</p>
 
     partial model Partial_ControlSystem
 
-      extends NHES.Systems.BaseClasses.Partial_ControlSystem;
+      //extends NHES.Systems.BaseClasses.Partial_ControlSystem;
+      extends Partial_ControlSystem_Master;
 
       NHES.Systems.EnergyStorage.PCM_HITB.BaseClasses.SignalSubBus_ActuatorInput
         actuatorBus annotation (Placement(transformation(extent={{10,-120},{50,
@@ -1519,6 +1520,24 @@ characteristic N = f(M, C, R, K*).</p>
                 100}})));
 
     end Partial_EventDriver;
+
+    partial model Partial_ControlSystem_Master
+
+      annotation (
+        defaultComponentName="CS",
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+                100,100}})),
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+                100}}), graphics={Bitmap(extent={{-100,-100},{100,100}}, fileName
+                = "modelica://NHES/Resources/Images/Systems/controlSystem.jpg"),
+                      Text(
+              extent={{-94,-76},{94,-84}},
+              lineColor={0,0,0},
+              lineThickness=1,
+              fillColor={255,255,237},
+              fillPattern=FillPattern.Solid,
+              textString="Control System")}));
+    end Partial_ControlSystem_Master;
   end BaseClasses;
   annotation (uses(TRANSFORM(version="1.0"), Modelica(version="4.0.0"),
       NHES(version="2")));

@@ -19,6 +19,7 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from dymola.model_management import ModelManagement
 sys.path.insert(0, r"C:\Program Files\Dymola 2023x\Modelica\Library\python_interface\dymola.egg")
 
 from dymola.dymola_interface import DymolaInterface
@@ -77,16 +78,31 @@ else:
 # ====================================
 
 # In[53]:
-#Get Dymola error log for debugging
+#Get Dymola error log for debugging and set model path, change path to alternate CS structure
 
 dymola.getLastErrorLog()
+#model_path = "INL_DT.Tests.NCFL_Modular"
+model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.TVC_CS CS))'
+# ====================================
+
+# In[]
+#Debugging
+
+#dymola.getParameterValue(model_path)
+text, readonly = dymola.getClassText(model_path, includeAnnotations=False, formatted=False)
+print(text)
 
 # ====================================
 
 # In[ ]:
 #Translate Dymola simulation for NCFL model
-model_path = "INL_DT.Tests.NCFL_Modular"
+
+#model_path = "INL_DT.Tests.NCFL_Modular(redeclare INL_DT.ControlSystems.TVC_CS CS)"
 result = dymola.translateModel(model_path)
+
+log, n_errors, n_warnings, n_info = dymola.getLastError()
+print(log)
+print("errors:", n_errors)
 if result:
     print("NCFL_Modular translated successfully")
 else:
@@ -96,8 +112,8 @@ else:
 # ====================================
 
 # In[]
-#Include any modifications to the simulation in the following line
-dymola.ExecuteCommand('NCFL_Modular.CS = redeclare INL_DT.ControlSystems.AVO_CS CS')
+#Include any modifications to the simulation in the following line that can be made after translation
+dymola.ExecuteCommand('ncfl.data.Heater_Power = 3.5E3')
 
 # ====================================
 
@@ -114,34 +130,78 @@ if result:
     print("Simulation succeeded")
 else:
     print("Simulation failed")
-    print(dymola.getLastErrorLog())
-
-# ====================================
-
-# In[]
-# Example of how to read .mat files using the Dymola interface
-result_file = "NCFL_Modular_PyResults.mat"
-all_vars = dymola.readTrajectoryNames(result_file)
-n_samples = dymola.readTrajectorySize(result_file)
+    print(dymola.getLastErrorLog()) 
 
 # ====================================
 
 # In[]
 # Function to automatically read dymola .mat given file and component reading
-def plot_dymola(file, comp):
-    n_samples = dymola.readTrajectorySize(file)
-    data = dymola.readTrajectory(file, ["Time", comp], n_samples)
-    data = np.array(data)
+def plot_dymola(file, comps, labels=None, xlabel="Time [s]", ylabel=None,
+                 title=None, save_path=None, show=True):
 
-    plt.plot(data[0], data[1])
-    plt.savefig("Output.png")
+    if isinstance(comps, str):
+        comps = [comps]
+
+    if labels is not None and len(labels) != len(comps):
+        raise ValueError("labels must be the same length as comps")
+
+    fig, ax = plt.subplots()
+
+    for i, comp in enumerate(comps):
+        try:
+            n_samples = dymola.readTrajectorySize(file)
+            raw = dymola.readTrajectory(file, ["Time", comp], n_samples)
+        except Exception as e:
+            print(f"Warning: failed to read '{comp}' from {file}: {e}")
+            continue
+
+        data = np.array(raw)
+
+        if data.shape[0] < 2:
+            print(f"Warning: unexpected data shape for '{comp}': {data.shape}")
+            continue
+
+        time = data[0]
+        values = data[1]
+
+        label = labels[i] if labels is not None else comp
+        ax.plot(time, values, label=label)
+
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel if ylabel is not None else "Value")
+    if title:
+        ax.set_title(title)
+    if len(comps) > 1 or labels:
+        ax.legend()
+    ax.grid(True, alpha=0.3)
+
+    fig.tight_layout()
+
+    out_path = save_path if save_path is not None else "Output.png"
+    fig.savefig(out_path, dpi=150)
+
+    if show:
+        plt.show()
+
+    return fig, ax
 # ====================================
 
 # In[]
-#plot_dymola(result_file, "T_diff.y")
-plot_dymola(result_file, "ncfl.T_diff.y")
+
+plot_dymola(result_file, "ncfl.data.Heater_Power",
+            ylabel="Temperature Difference [K]",
+            title="Cold Leg Temperature Difference")
+
+
+plot_dymola(result_file,
+            ["ncfl.T_diff_CL.y", "ncfl.T_diff_HL.y"],
+            labels=["Cold Leg", "Hot Leg"],
+            ylabel="Temperature Difference [K]",
+            title="Loop Temperature Differences",
+            save_path="TempDiff_Comparison.png")
 
 # ====================================
+
 
 # In[]
 #Run if need to get working directory for project
@@ -150,22 +210,6 @@ print(cwd)
 
 # ====================================
 
-# In[]
-#Running multiple CS cases in Dymola through Python
-control_systems = ["TVC_CS", "AVO_CS"]
-
-for cs in control_systems:
-    dymola.ExecuteCommand(f'NCFL_Modular.CS = redeclare INL_DT.ControlSystems.{cs} CS')
-    result = dymola.translateModel(model_path)
-    if result:
-        result_file = f"NCFL_Modular_{cs}_PyResults"
-        dymola.simulateModel(model_path, startTime=0.0, stopTime=180.0,
-                              outputInterval=0.1, resultFile=result_file)
-    else:
-        print(f"Translation failed for {cs}")
-        print(dymola.getLastErrorLog())
-
-# ====================================
 
 # In[55]:
 #Close Dymola after work is complete
@@ -174,16 +218,4 @@ dymola.close()
 
 # ====================================
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
+# %%

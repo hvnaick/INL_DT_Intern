@@ -1,5 +1,5 @@
 Log-file of program ./dymosim
-(generated: Thu Jul  9 11:47:40 2026)
+(generated: Wed Jul 15 08:28:41 2026)
 
 dymosim started
 ... "INL_DT.Tests.NCFL_Modular" simulating
@@ -140,28 +140,28 @@ Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.ValveOutl...
 Non-linear solver will silently attempt to handle this problem.
 Non-linear solver gave up after attempt: 4
 
-... "NCFL_Modular.mat" creating (simulation result file)
+... "NCFL_Modular_PyResults.mat" creating (simulation result file)
 
 Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
 
 Integration terminated successfully at T = 180
-   CPU-time for integration                : 21.2 seconds
-   CPU-time for one grid interval          : 11.8 milliseconds
-   CPU-time for initialization             : 0.071 seconds
-   Number of result points                 : 1803
+   CPU-time for integration                : 6.25 seconds
+   CPU-time for one grid interval          : 3.47 milliseconds
+   CPU-time for initialization             : 0.028 seconds
+   Number of result points                 : 1802
    Number of grid points                   : 1801
-   Number of accepted steps                : 305
-   Number of f-evaluations (dynamics)      : 626
-   Number of crossing function evaluations : 2105
-   Number of Jacobian-evaluations          : 333
-   Number of model time events             : 1
+   Number of accepted steps                : 102
+   Number of f-evaluations (dynamics)      : 210
+   Number of crossing function evaluations : 1902
+   Number of Jacobian-evaluations          : 63
+   Number of model time events             : 0
    Number of input time events             : 0
    Number of state events                  : 0
    Number of step events                   : 0
    Minimum integration stepsize            : 3.42e-09
-   Maximum integration stepsize            : 7.47
-   Maximum integration order               : 3
+   Maximum integration stepsize            : 11.9
+   Maximum integration order               : 4
 Calling terminal section
 ... "dsfinal.txt" creating (final states)
 

@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(2617,92)
+char initialName(2595,92)
 systemTF.p_ambient
 systemTF.T_ambient
 systemTF.g
@@ -141,8 +141,6 @@ system.m_flow_nominal
 system.eps_m_flow
 system.dp_small
 system.m_flow_small
-CS.const.k
-CS.const1.k
 boundary1.showName
 boundary1.nPorts
 boundary1.medium.p
@@ -202,26 +200,8 @@ SecondaryLoop.X[1]
 SecondaryLoop.m_flow_in_internal
 SecondaryLoop.T_in_internal
 SecondaryLoop.X_in_internal[1]
-ncfl.CS.pulse.amplitude
-ncfl.CS.pulse.width
-ncfl.CS.pulse.period
-ncfl.CS.pulse.nperiod
-ncfl.CS.pulse.offset
-ncfl.CS.pulse.startTime
-ncfl.CS.pulse.T_width
-ncfl.CS.pulse.T_start
-ncfl.CS.pulse.count
-ncfl.CS.pulse1.amplitude
-ncfl.CS.pulse1.width
-ncfl.CS.pulse1.period
-ncfl.CS.pulse1.nperiod
-ncfl.CS.pulse1.offset
-ncfl.CS.pulse1.startTime
-ncfl.CS.pulse1.T_width
-ncfl.CS.pulse1.T_start
-ncfl.CS.pulse1.count
+ncfl.CS.const.k
 ncfl.CS.const1.k
-ncfl.CS.const3.k
 ncfl.data.Slant
 ncfl.data.Height
 ncfl.data.Width
@@ -377,7 +357,6 @@ ncfl.Distance2Heaters.flowModel.continuousFlowReversal
 ncfl.Distance2Heaters.flowModel.diameters[1]
 ncfl.Distance2Heaters.flowModel.dp_fric_nominal
 ncfl.PumpPipe.allowFlowReversal
-ncfl.PumpPipe.port_a.m_flow
 ncfl.PumpPipe.port_a.h_outflow
 ncfl.PumpPipe.port_b.p
 ncfl.PumpPipe.port_b.h_outflow
@@ -820,7 +799,6 @@ ncfl.V_bot.checkValve
 ncfl.V_bot.dp_small
 ncfl.V_bot.Kv2Av
 ncfl.V_bot.Cv2Av
-ncfl.V_bot.opening
 ncfl.V_bot.minLimiter.uMin
 ncfl.V_bot.minLimiter.y
 ncfl.V_bot.Re_turbulent
@@ -2721,7 +2699,7 @@ _GlobalScope.Modelica.Media.Water.waterConstants[1].SCRIT0
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltah
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltas
 
-double initialValue(2617,6)
+double initialValue(2595,6)
  -1  1.0132500000000000E+05       0                 1.0000000000000000E+100
   1   280   # systemTF.p_ambient
  -1  2.9314999999999998E+02       0                 1.0000000000000000E+100
@@ -2798,10 +2776,6 @@ double initialValue(2617,6)
   1   280   # system.dp_small
  -1  1.0000000000000000E-02       0                 1.0000000000000000E+100
   1   280   # system.m_flow_small
- -1       1                       0                       0                
-  1   280   # CS.const.k
- -1      20                       0                       0                
-  1   280   # CS.const1.k
  -1       1                       0                       0                
   1   281   # boundary1.showName
   0       1                       0                       0                
@@ -2920,46 +2894,10 @@ double initialValue(2617,6)
   6  1280   # SecondaryLoop.T_in_internal
   0       1                       0                       0                
   6  1280   # SecondaryLoop.X_in_internal[1]
- -1      20                       0                       0                
-  1   280   # ncfl.CS.pulse.amplitude
- -1      10                  9.9999999999999997E-61     100                
-  1   280   # ncfl.CS.pulse.width
- -1     190                  9.9999999999999997E-61 1.0000000000000000E+100
-  1   280   # ncfl.CS.pulse.period
- -1      -1                       0                       0                
-  1   282   # ncfl.CS.pulse.nperiod
- -1       0                       0                       0                
-  1   280   # ncfl.CS.pulse.offset
- -1       0                       0                       0                
-  1   280   # ncfl.CS.pulse.startTime
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.pulse.T_width
-  0       0                       0                       0                
-  6  1344   # ncfl.CS.pulse.T_start
-  0       0                       0                       0                
-  6  1346   # ncfl.CS.pulse.count
- -1       1                       0                       0                
-  1   280   # ncfl.CS.pulse1.amplitude
- -1      10                  9.9999999999999997E-61     100                
-  1   280   # ncfl.CS.pulse1.width
- -1     190                  9.9999999999999997E-61 1.0000000000000000E+100
-  1   280   # ncfl.CS.pulse1.period
- -1      -1                       0                       0                
-  1   282   # ncfl.CS.pulse1.nperiod
- -1       0                       0                       0                
-  1   280   # ncfl.CS.pulse1.offset
- -1       0                       0                       0                
-  1   280   # ncfl.CS.pulse1.startTime
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.pulse1.T_width
-  0       0                       0                       0                
-  6  1344   # ncfl.CS.pulse1.T_start
-  0       0                       0                       0                
-  6  1346   # ncfl.CS.pulse1.count
- -1       0                       0                       0                
-  1   280   # ncfl.CS.const1.k
  -1       1                       0                       1                
-  1   280   # ncfl.CS.const3.k
+  1   280   # ncfl.CS.const.k
+ -1      20                       0                  100000                
+  1   280   # ncfl.CS.const1.k
  -1  3.3019999999999999E-01       0                       0                
   1   280   # ncfl.data.Slant
  -1  7.1627999999999998E+00       0                       0                
@@ -3270,8 +3208,6 @@ double initialValue(2617,6)
   6  1280   # ncfl.Distance2Heaters.flowModel.dp_fric_nominal
   0       1                       0                       0                
   6   257   # ncfl.PumpPipe.allowFlowReversal
-  0       0                       0                  100000                
-  6   452   # ncfl.PumpPipe.port_a.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.PumpPipe.port_a.h_outflow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -3351,7 +3287,7 @@ double initialValue(2617,6)
   0       1                       0                       0                
   6   258   # ncfl.PumpPipe.flowModel.m
   0       0                       0                       0                
-  6   320   # ncfl.PumpPipe.flowModel.Is[1]
+  6   256   # ncfl.PumpPipe.flowModel.Is[1]
   0       0                       0                       0                
   6   256   # ncfl.PumpPipe.flowModel.Ib_flows[1]
   0       0                       0                       0                
@@ -4156,12 +4092,10 @@ double initialValue(2617,6)
   6   256   # ncfl.V_bot.Kv2Av
   0  2.4000000000000001E-05       0                       0                
   6   256   # ncfl.V_bot.Cv2Av
-  0       0                       0                       1                
-  6   320   # ncfl.V_bot.opening
   0       0                       0                       0                
   6  1280   # ncfl.V_bot.minLimiter.uMin
   0       0                       0                       0                
-  6  1344   # ncfl.V_bot.minLimiter.y
+  6  1280   # ncfl.V_bot.minLimiter.y
   0    4000                       0                       0                
   6   256   # ncfl.V_bot.Re_turbulent
   0       0                       0                       0                
@@ -4255,7 +4189,7 @@ double initialValue(2617,6)
   0       1                       0                       0                
   6   258   # ncfl.JetInlet.flowModel.m
   0       0                       0                       0                
-  6   320   # ncfl.JetInlet.flowModel.Is[1]
+  6   256   # ncfl.JetInlet.flowModel.Is[1]
   0       0                       0                       0                
   6   256   # ncfl.JetInlet.flowModel.Ib_flows[1]
   0       0                       0                       0                
@@ -6409,7 +6343,7 @@ double initialValue(2617,6)
   0       1                       0                       0                
   6   258   # ncfl.ValveOutlet.flowModel.m
   0       0                       0                       0                
-  6   320   # ncfl.ValveOutlet.flowModel.Is[1]
+  6   256   # ncfl.ValveOutlet.flowModel.Is[1]
   0       0                       0                       0                
   6   256   # ncfl.ValveOutlet.flowModel.Ib_flows[1]
   0       0                       0                       0                
@@ -8002,7 +7936,7 @@ double initialValue(2617,6)
 #   Which variables will be important for initialization and continue
 #   is indicated by value in column 6 & dsStartMasks.
 #
-char initialDescription(2617,126)
+char initialDescription(2595,126)
 Default ambient pressure [Pa|bar]
 Default ambient temperature [K|degC]
 Constant gravity acceleration [m/s2]
@@ -8041,8 +7975,6 @@ Default nominal mass flow rate [kg/s]
 Regularization of zero flow for |m_flow| < eps_m_flow*m_flow_nominal [1]
 Default small pressure drop for regularization of laminar and zero flow [Pa|bar]
 Default small mass flow rate for regularization of laminar and zero flow [kg/s]
-Constant output value
-Constant output value
 [:#(type=Boolean)]
 Number of ports [:#(type=Integer)]
 Absolute pressure of medium [Pa|bar]
@@ -8102,26 +8034,8 @@ Fixed value of composition [kg/kg]
 Needed to connect to conditional connector [kg/s]
 Needed to connect to conditional connector [K]
 Needed to connect to conditional connector [1]
-Amplitude of pulse [kg/s]
-Width of pulse in % of period
-Time for one period [s]
-Number of periods (< 0 means infinite number of periods) [:#(type=Integer)]
-Offset of output signal y [kg/s]
-Output y = offset for time < startTime [s]
-[s]
-Start time of current period [s]
-Period count [:#(type=Integer)]
-Amplitude of pulse
-Width of pulse in % of period
-Time for one period [s]
-Number of periods (< 0 means infinite number of periods) [:#(type=Integer)]
-Offset of output signal y
-Output y = offset for time < startTime [s]
-[s]
-Start time of current period [s]
-Period count [:#(type=Integer)]
 Constant output value
-Constant output value
+Constant output value [kg/s]
 [m]
 [m]
 [m]
@@ -8277,7 +8191,6 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
-Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
@@ -8720,7 +8633,6 @@ Reverse flow stopped [:#(type=Boolean)]
 Regularisation of zero flow [Pa|bar]
 Conversion factor [m2]
 Conversion factor [m2]
-Valve position in the range 0..1
 Lower limit of input signal
 Connector of Real output signal
 cf. straight pipe for fully open valve -- dp_turbulent increases for closing valve [1]
