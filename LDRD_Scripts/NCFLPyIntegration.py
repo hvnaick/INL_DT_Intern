@@ -19,7 +19,6 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from dymola.model_management import ModelManagement
 sys.path.insert(0, r"C:\Program Files\Dymola 2023x\Modelica\Library\python_interface\dymola.egg")
 
 from dymola.dymola_interface import DymolaInterface
@@ -28,15 +27,6 @@ dymola = DymolaInterface()
 
 # ====================================
 
-# In[54]:
-#Additional checks to see if Dymola interface is loaded
-print("\nDymola version:")
-print(dymola.ExecuteCommand("DymolaVersion()"))
-
-print("\nSimple test:")
-print(dymola.ExecuteCommand("true"))
-
-# ====================================
 
 # In[49]:
 #Loading TRANSFORM and NHES libraries into Dymola instance
@@ -48,27 +38,18 @@ NCFL = dymola.openModel(r"C:\INL LDRD Project Files\NCFL\INL_DT.mo", mustRead=Tr
 # ====================================
 
 # In[51]:
-#Is TRANSFORM loaded?
+#Are the libraries loaded?
 
 if TRANSFORM:
     print("TRANSFORM Loaded")
 else:
     print("TRANSFORM failed to load")
 
-# ====================================
-
-# In[52]:
-#Is NHES loaded?
 
 if NHES:
     print("HYBRID Loaded")
 else:
     print("HYBRID failed to load")
-
-# ====================================
-
-# In[56]:
-#Is the NCFL loaded?
 
 if NCFL:
     print("NCFL Loaded")
@@ -77,21 +58,22 @@ else:
 
 # ====================================
 
+
+
 # In[53]:
 #Get Dymola error log for debugging and set model path, change path to alternate CS structure
 
 dymola.getLastErrorLog()
 #model_path = "INL_DT.Tests.NCFL_Modular"
-model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.TVC_CS CS))'
+model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.Dynamic_CS CS))'
+CS_path = 'INL_DT.ControlSystems.Dynamic_CS'
 # ====================================
 
 # In[]
-#Debugging
-
-#dymola.getParameterValue(model_path)
-text, readonly = dymola.getClassText(model_path, includeAnnotations=False, formatted=False)
-print(text)
-
+#Include any modifications to the simulation in the following line 
+#dymola.ExecuteCommand('ncfl.data.Heater_Power = 3.5E3;2.5E3')
+dymola.ExecuteCommand('INL_DT.ControlSystems.Dynamic_CS.HeaterPower.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/Heater_static.txt"')
+dymola.ExecuteCommand('INL_DT.ControlSystems.Dynamic_CS.HeaterPower.tableName = "Heater_static"')
 # ====================================
 
 # In[ ]:
@@ -111,11 +93,7 @@ else:
 
 # ====================================
 
-# In[]
-#Include any modifications to the simulation in the following line that can be made after translation
-dymola.ExecuteCommand('ncfl.data.Heater_Power = 3.5E3')
 
-# ====================================
 
 # In[]
 #Run simulation and store results in "NCFL_Total_PyResults" or "NCFL_Modular_PyResults," potentially make changes to model here as well:
@@ -133,6 +111,7 @@ else:
     print(dymola.getLastErrorLog()) 
 
 # ====================================
+
 
 # In[]
 # Function to automatically read dymola .mat given file and component reading
@@ -187,8 +166,11 @@ def plot_dymola(file, comps, labels=None, xlabel="Time [s]", ylabel=None,
 # ====================================
 
 # In[]
+#Run the plotting function for specified data streams
 
-plot_dymola(result_file, "ncfl.data.Heater_Power",
+result_file = "NCFL_Modular_PyResults.mat"
+
+plot_dymola(result_file, "ncfl.CS.HeaterPower.y[1]",
             ylabel="Temperature Difference [K]",
             title="Cold Leg Temperature Difference")
 
@@ -201,6 +183,7 @@ plot_dymola(result_file,
             save_path="TempDiff_Comparison.png")
 
 # ====================================
+
 
 
 # In[]

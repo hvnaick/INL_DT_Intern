@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(2595,92)
+char initialName(2678,92)
 systemTF.p_ambient
 systemTF.T_ambient
 systemTF.g
@@ -141,37 +141,6 @@ system.m_flow_nominal
 system.eps_m_flow
 system.dp_small
 system.m_flow_small
-boundary1.showName
-boundary1.nPorts
-boundary1.medium.p
-boundary1.medium.d
-boundary1.medium.T
-boundary1.medium.X[1]
-boundary1.medium.u
-boundary1.medium.R_s
-boundary1.medium.MM
-boundary1.medium.state.phase
-boundary1.medium.state.p
-boundary1.medium.preferredMediumStates
-boundary1.medium.standardOrderComponents
-boundary1.medium.T_degC
-boundary1.medium.p_bar
-boundary1.medium.sat.psat
-boundary1.medium.sat.Tsat
-boundary1.ports[1].m_flow
-boundary1.ports[1].p
-boundary1.ports[1].h_outflow
-boundary1.flowDirection
-boundary1.use_p_in
-boundary1.use_T_in
-boundary1.use_X_in
-boundary1.use_C_in
-boundary1.p
-boundary1.T
-boundary1.X[1]
-boundary1.p_in_internal
-boundary1.T_in_internal
-boundary1.X_in_internal[1]
 SecondaryLoop.showName
 SecondaryLoop.nPorts
 SecondaryLoop.medium.d
@@ -200,8 +169,90 @@ SecondaryLoop.X[1]
 SecondaryLoop.m_flow_in_internal
 SecondaryLoop.T_in_internal
 SecondaryLoop.X_in_internal[1]
-ncfl.CS.const.k
-ncfl.CS.const1.k
+ncfl.CS.PumpPower.nout
+ncfl.CS.PumpPower.tableOnFile
+ncfl.CS.PumpPower.verboseRead
+ncfl.CS.PumpPower.columns[1]
+ncfl.CS.PumpPower.smoothness
+ncfl.CS.PumpPower.extrapolation
+ncfl.CS.PumpPower.timeScale
+ncfl.CS.PumpPower.offset[1]
+ncfl.CS.PumpPower.startTime
+ncfl.CS.PumpPower.shiftTime
+ncfl.CS.PumpPower.timeEvents
+ncfl.CS.PumpPower.verboseExtrapolation
+ncfl.CS.PumpPower.t_min
+ncfl.CS.PumpPower.t_max
+ncfl.CS.PumpPower.t_minScaled
+ncfl.CS.PumpPower.t_maxScaled
+ncfl.CS.PumpPower.p_offset[1]
+ncfl.CS.PumpPower.tableID.id
+ncfl.CS.PumpPower.nextTimeEvent
+ncfl.CS.PumpPower.nextTimeEventScaled
+ncfl.CS.PumpPower.timeScaled
+ncfl.CS.BotValve.nout
+ncfl.CS.BotValve.tableOnFile
+ncfl.CS.BotValve.verboseRead
+ncfl.CS.BotValve.columns[1]
+ncfl.CS.BotValve.smoothness
+ncfl.CS.BotValve.extrapolation
+ncfl.CS.BotValve.timeScale
+ncfl.CS.BotValve.offset[1]
+ncfl.CS.BotValve.startTime
+ncfl.CS.BotValve.shiftTime
+ncfl.CS.BotValve.timeEvents
+ncfl.CS.BotValve.verboseExtrapolation
+ncfl.CS.BotValve.t_min
+ncfl.CS.BotValve.t_max
+ncfl.CS.BotValve.t_minScaled
+ncfl.CS.BotValve.t_maxScaled
+ncfl.CS.BotValve.p_offset[1]
+ncfl.CS.BotValve.tableID.id
+ncfl.CS.BotValve.nextTimeEvent
+ncfl.CS.BotValve.nextTimeEventScaled
+ncfl.CS.BotValve.timeScaled
+ncfl.CS.TopValve.nout
+ncfl.CS.TopValve.tableOnFile
+ncfl.CS.TopValve.verboseRead
+ncfl.CS.TopValve.columns[1]
+ncfl.CS.TopValve.smoothness
+ncfl.CS.TopValve.extrapolation
+ncfl.CS.TopValve.timeScale
+ncfl.CS.TopValve.offset[1]
+ncfl.CS.TopValve.startTime
+ncfl.CS.TopValve.shiftTime
+ncfl.CS.TopValve.timeEvents
+ncfl.CS.TopValve.verboseExtrapolation
+ncfl.CS.TopValve.t_min
+ncfl.CS.TopValve.t_max
+ncfl.CS.TopValve.t_minScaled
+ncfl.CS.TopValve.t_maxScaled
+ncfl.CS.TopValve.p_offset[1]
+ncfl.CS.TopValve.tableID.id
+ncfl.CS.TopValve.nextTimeEvent
+ncfl.CS.TopValve.nextTimeEventScaled
+ncfl.CS.TopValve.timeScaled
+ncfl.CS.HeaterPower.nout
+ncfl.CS.HeaterPower.tableOnFile
+ncfl.CS.HeaterPower.verboseRead
+ncfl.CS.HeaterPower.columns[1]
+ncfl.CS.HeaterPower.smoothness
+ncfl.CS.HeaterPower.extrapolation
+ncfl.CS.HeaterPower.timeScale
+ncfl.CS.HeaterPower.offset[1]
+ncfl.CS.HeaterPower.startTime
+ncfl.CS.HeaterPower.shiftTime
+ncfl.CS.HeaterPower.timeEvents
+ncfl.CS.HeaterPower.verboseExtrapolation
+ncfl.CS.HeaterPower.t_min
+ncfl.CS.HeaterPower.t_max
+ncfl.CS.HeaterPower.t_minScaled
+ncfl.CS.HeaterPower.t_maxScaled
+ncfl.CS.HeaterPower.p_offset[1]
+ncfl.CS.HeaterPower.tableID.id
+ncfl.CS.HeaterPower.nextTimeEvent
+ncfl.CS.HeaterPower.nextTimeEventScaled
+ncfl.CS.HeaterPower.timeScaled
 ncfl.data.Slant
 ncfl.data.Height
 ncfl.data.Width
@@ -223,6 +274,7 @@ ncfl.data.sec_T
 ncfl.data.sec_Mflow
 ncfl.port_a.m_flow
 ncfl.port_a.h_outflow
+ncfl.port_b.m_flow
 ncfl.port_b.p
 ncfl.port_b.h_outflow
 ncfl.Slant.allowFlowReversal
@@ -357,6 +409,7 @@ ncfl.Distance2Heaters.flowModel.continuousFlowReversal
 ncfl.Distance2Heaters.flowModel.diameters[1]
 ncfl.Distance2Heaters.flowModel.dp_fric_nominal
 ncfl.PumpPipe.allowFlowReversal
+ncfl.PumpPipe.port_a.m_flow
 ncfl.PumpPipe.port_a.h_outflow
 ncfl.PumpPipe.port_b.p
 ncfl.PumpPipe.port_b.h_outflow
@@ -760,6 +813,7 @@ ncfl.V_top.checkValve
 ncfl.V_top.dp_small
 ncfl.V_top.Kv2Av
 ncfl.V_top.Cv2Av
+ncfl.V_top.opening
 ncfl.V_top.minLimiter.uMin
 ncfl.V_top.minLimiter.y
 ncfl.V_top.Re_turbulent
@@ -799,6 +853,7 @@ ncfl.V_bot.checkValve
 ncfl.V_bot.dp_small
 ncfl.V_bot.Kv2Av
 ncfl.V_bot.Cv2Av
+ncfl.V_bot.opening
 ncfl.V_bot.minLimiter.uMin
 ncfl.V_bot.minLimiter.y
 ncfl.V_bot.Re_turbulent
@@ -939,7 +994,6 @@ ncfl.heater3.bruh
 ncfl.heater3.HeaterLength
 ncfl.heater3.HeaterRadius
 ncfl.heater3.Init_P
-ncfl.heater3.HeaterPower
 ncfl.heater3.allowFlowReversal
 ncfl.heater3.Heater.summary.T_effective
 ncfl.heater3.Heater.summary.T_max
@@ -1229,6 +1283,7 @@ ncfl.heater3.HeaterPipe.flowModel.constantPressureLossCoefficient
 ncfl.heater3.HeaterPipe.flowModel.continuousFlowReversal
 ncfl.heater3.HeaterPipe.flowModel.diameters[1]
 ncfl.heater3.HeaterPipe.flowModel.dp_fric_nominal
+ncfl.heater3.HeaterPower
 ncfl.heater3.port_a.m_flow
 ncfl.heater3.port_a.p
 ncfl.heater3.port_a.h_outflow
@@ -1236,7 +1291,6 @@ ncfl.heater2.bruh
 ncfl.heater2.HeaterLength
 ncfl.heater2.HeaterRadius
 ncfl.heater2.Init_P
-ncfl.heater2.HeaterPower
 ncfl.heater2.allowFlowReversal
 ncfl.heater2.Heater.summary.T_effective
 ncfl.heater2.Heater.summary.T_max
@@ -1533,7 +1587,6 @@ ncfl.heater1.bruh
 ncfl.heater1.HeaterLength
 ncfl.heater1.HeaterRadius
 ncfl.heater1.Init_P
-ncfl.heater1.HeaterPower
 ncfl.heater1.allowFlowReversal
 ncfl.heater1.Heater.summary.T_effective
 ncfl.heater1.Heater.summary.T_max
@@ -2650,6 +2703,36 @@ ncfl.HX.T_diff.k2
 ncfl.T_diff_CL.y
 ncfl.T_diff_CL.k1
 ncfl.T_diff_CL.k2
+boundary.showName
+boundary.nPorts
+boundary.medium.p
+boundary.medium.d
+boundary.medium.T
+boundary.medium.X[1]
+boundary.medium.u
+boundary.medium.R_s
+boundary.medium.MM
+boundary.medium.state.phase
+boundary.medium.state.p
+boundary.medium.preferredMediumStates
+boundary.medium.standardOrderComponents
+boundary.medium.T_degC
+boundary.medium.p_bar
+boundary.medium.sat.psat
+boundary.medium.sat.Tsat
+boundary.ports[1].p
+boundary.ports[1].h_outflow
+boundary.flowDirection
+boundary.use_p_in
+boundary.use_T_in
+boundary.use_X_in
+boundary.use_C_in
+boundary.p
+boundary.T
+boundary.X[1]
+boundary.p_in_internal
+boundary.T_in_internal
+boundary.X_in_internal[1]
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalTemperature
 _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].criticalPressure
@@ -2699,7 +2782,7 @@ _GlobalScope.Modelica.Media.Water.waterConstants[1].SCRIT0
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltah
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltas
 
-double initialValue(2595,6)
+double initialValue(2678,6)
  -1  1.0132500000000000E+05       0                 1.0000000000000000E+100
   1   280   # systemTF.p_ambient
  -1  2.9314999999999998E+02       0                 1.0000000000000000E+100
@@ -2777,68 +2860,6 @@ double initialValue(2595,6)
  -1  1.0000000000000000E-02       0                 1.0000000000000000E+100
   1   280   # system.m_flow_small
  -1       1                       0                       0                
-  1   281   # boundary1.showName
-  0       1                       0                       0                
-  6   258   # boundary1.nPorts
-  0  1.0132500000000000E+05       0                 1.0000000000000000E+100
-  6   256   # boundary1.medium.p
-  0     150                       0                  100000                
-  6   256   # boundary1.medium.d
-  0     500                  2.7314999999999998E+02  2.2731500000000001E+03
-  6   256   # boundary1.medium.T
-  0       1                       0                       1                
-  6   256   # boundary1.medium.X[1]
-  0       0                 -1.0000000000000000E+08  1.0000000000000000E+08
-  6   256   # boundary1.medium.u
-  0  4.6152311573456689E+02       0                  1.0000000000000000E+07
-  6   256   # boundary1.medium.R_s
-  0  1.8015268000000001E-02  1.0000000000000000E-03  2.5000000000000000E-01
-  6   256   # boundary1.medium.MM
-  0       1                       0                       2                
-  6   258   # boundary1.medium.state.phase
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
-  6   256   # boundary1.medium.state.p
-  0       0                       0                       0                
-  6   257   # boundary1.medium.preferredMediumStates
-  0       1                       0                       0                
-  6   257   # boundary1.medium.standardOrderComponents
-  0       0                       0                       0                
-  6   256   # boundary1.medium.T_degC
-  0  1.0132500000000000E+00       0                       0                
-  6   256   # boundary1.medium.p_bar
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
-  6   256   # boundary1.medium.sat.psat
-  0  3.7312430000048056E+02  2.7314999999999998E+02  2.2731500000000001E+03
-  6   256   # boundary1.medium.sat.Tsat
-  0       0                       0                  100000                
-  6   388   # boundary1.ports[1].m_flow
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
-  6   260   # boundary1.ports[1].p
-  0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
-  6   260   # boundary1.ports[1].h_outflow
-  0       3                       1                       3                
-  6  1282   # boundary1.flowDirection
-  0       0                       0                       0                
-  6   769   # boundary1.use_p_in
-  0       0                       0                       0                
-  6   769   # boundary1.use_T_in
-  0       0                       0                       0                
-  6   769   # boundary1.use_X_in
-  0       0                       0                       0                
-  6   769   # boundary1.use_C_in
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
-  6   256   # boundary1.p
-  0  2.9414999999999998E+02  2.7314999999999998E+02  2.2731500000000001E+03
-  6   256   # boundary1.T
-  0       1                       0                       1                
-  6   256   # boundary1.X[1]
-  0  1.0132500000000000E+05       0                       0                
-  6  1280   # boundary1.p_in_internal
-  0  2.9414999999999998E+02       0                       0                
-  6  1280   # boundary1.T_in_internal
-  0       1                       0                       0                
-  6  1280   # boundary1.X_in_internal[1]
- -1       1                       0                       0                
   1   281   # SecondaryLoop.showName
   0       1                       0                       0                
   6   258   # SecondaryLoop.nPorts
@@ -2894,10 +2915,174 @@ double initialValue(2595,6)
   6  1280   # SecondaryLoop.T_in_internal
   0       1                       0                       0                
   6  1280   # SecondaryLoop.X_in_internal[1]
- -1       1                       0                       1                
-  1   280   # ncfl.CS.const.k
- -1      20                       0                  100000                
-  1   280   # ncfl.CS.const1.k
+  0       1                       1                 1.0000000000000000E+100
+  6   258   # ncfl.CS.PumpPower.nout
+  0       1                       0                       0                
+  6   257   # ncfl.CS.PumpPower.tableOnFile
+ -1       1                       0                       0                
+  1   281   # ncfl.CS.PumpPower.verboseRead
+  0       2                       0                       0                
+  6   258   # ncfl.CS.PumpPower.columns[1]
+  0       2                       1                       6                
+  6   258   # ncfl.CS.PumpPower.smoothness
+  0       2                       1                       4                
+  6   258   # ncfl.CS.PumpPower.extrapolation
+  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
+  6   256   # ncfl.CS.PumpPower.timeScale
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.PumpPower.offset[1]
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.PumpPower.startTime
+  0       0                       0                       0                
+  6   256   # ncfl.CS.PumpPower.shiftTime
+ -1       3                       1                       3                
+  1   282   # ncfl.CS.PumpPower.timeEvents
+  0       0                       0                       0                
+  6   257   # ncfl.CS.PumpPower.verboseExtrapolation
+  0       0                       0                       0                
+  6   256   # ncfl.CS.PumpPower.t_min
+  0       0                       0                       0                
+  6   256   # ncfl.CS.PumpPower.t_max
+  0       0                       0                       0                
+  6   256   # ncfl.CS.PumpPower.t_minScaled
+  0       0                       0                       0                
+  6   256   # ncfl.CS.PumpPower.t_maxScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.PumpPower.p_offset[1]
+  0       0                       0                       0                
+  6  1282   # ncfl.CS.PumpPower.tableID.id
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.PumpPower.nextTimeEvent
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.PumpPower.nextTimeEventScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.PumpPower.timeScaled
+  0       1                       1                 1.0000000000000000E+100
+  6   258   # ncfl.CS.BotValve.nout
+  0       1                       0                       0                
+  6   257   # ncfl.CS.BotValve.tableOnFile
+ -1       1                       0                       0                
+  1   281   # ncfl.CS.BotValve.verboseRead
+  0       2                       0                       0                
+  6   258   # ncfl.CS.BotValve.columns[1]
+  0       2                       1                       6                
+  6   258   # ncfl.CS.BotValve.smoothness
+  0       2                       1                       4                
+  6   258   # ncfl.CS.BotValve.extrapolation
+  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
+  6   256   # ncfl.CS.BotValve.timeScale
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.BotValve.offset[1]
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.BotValve.startTime
+  0       0                       0                       0                
+  6   256   # ncfl.CS.BotValve.shiftTime
+ -1       3                       1                       3                
+  1   282   # ncfl.CS.BotValve.timeEvents
+  0       0                       0                       0                
+  6   257   # ncfl.CS.BotValve.verboseExtrapolation
+  0       0                       0                       0                
+  6   256   # ncfl.CS.BotValve.t_min
+  0       0                       0                       0                
+  6   256   # ncfl.CS.BotValve.t_max
+  0       0                       0                       0                
+  6   256   # ncfl.CS.BotValve.t_minScaled
+  0       0                       0                       0                
+  6   256   # ncfl.CS.BotValve.t_maxScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.BotValve.p_offset[1]
+  0       0                       0                       0                
+  6  1282   # ncfl.CS.BotValve.tableID.id
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.BotValve.nextTimeEvent
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.BotValve.nextTimeEventScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.BotValve.timeScaled
+  0       1                       1                 1.0000000000000000E+100
+  6   258   # ncfl.CS.TopValve.nout
+  0       1                       0                       0                
+  6   257   # ncfl.CS.TopValve.tableOnFile
+ -1       1                       0                       0                
+  1   281   # ncfl.CS.TopValve.verboseRead
+  0       2                       0                       0                
+  6   258   # ncfl.CS.TopValve.columns[1]
+  0       2                       1                       6                
+  6   258   # ncfl.CS.TopValve.smoothness
+  0       2                       1                       4                
+  6   258   # ncfl.CS.TopValve.extrapolation
+  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
+  6   256   # ncfl.CS.TopValve.timeScale
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.TopValve.offset[1]
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.TopValve.startTime
+  0       0                       0                       0                
+  6   256   # ncfl.CS.TopValve.shiftTime
+ -1       3                       1                       3                
+  1   282   # ncfl.CS.TopValve.timeEvents
+  0       0                       0                       0                
+  6   257   # ncfl.CS.TopValve.verboseExtrapolation
+  0       0                       0                       0                
+  6   256   # ncfl.CS.TopValve.t_min
+  0       0                       0                       0                
+  6   256   # ncfl.CS.TopValve.t_max
+  0       0                       0                       0                
+  6   256   # ncfl.CS.TopValve.t_minScaled
+  0       0                       0                       0                
+  6   256   # ncfl.CS.TopValve.t_maxScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.TopValve.p_offset[1]
+  0       0                       0                       0                
+  6  1282   # ncfl.CS.TopValve.tableID.id
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.TopValve.nextTimeEvent
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.TopValve.nextTimeEventScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.TopValve.timeScaled
+  0       1                       1                 1.0000000000000000E+100
+  6   258   # ncfl.CS.HeaterPower.nout
+  0       1                       0                       0                
+  6   257   # ncfl.CS.HeaterPower.tableOnFile
+ -1       1                       0                       0                
+  1   281   # ncfl.CS.HeaterPower.verboseRead
+  0       2                       0                       0                
+  6   258   # ncfl.CS.HeaterPower.columns[1]
+  0       2                       1                       6                
+  6   258   # ncfl.CS.HeaterPower.smoothness
+  0       2                       1                       4                
+  6   258   # ncfl.CS.HeaterPower.extrapolation
+  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
+  6   256   # ncfl.CS.HeaterPower.timeScale
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.HeaterPower.offset[1]
+ -1       0                       0                       0                
+  1   280   # ncfl.CS.HeaterPower.startTime
+  0       0                       0                       0                
+  6   256   # ncfl.CS.HeaterPower.shiftTime
+ -1       3                       1                       3                
+  1   282   # ncfl.CS.HeaterPower.timeEvents
+  0       0                       0                       0                
+  6   257   # ncfl.CS.HeaterPower.verboseExtrapolation
+  0       0                       0                       0                
+  6   256   # ncfl.CS.HeaterPower.t_min
+  0       0                       0                       0                
+  6   256   # ncfl.CS.HeaterPower.t_max
+  0       0                       0                       0                
+  6   256   # ncfl.CS.HeaterPower.t_minScaled
+  0       0                       0                       0                
+  6   256   # ncfl.CS.HeaterPower.t_maxScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.HeaterPower.p_offset[1]
+  0       0                       0                       0                
+  6  1282   # ncfl.CS.HeaterPower.tableID.id
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.HeaterPower.nextTimeEvent
+  0       0                       0                       0                
+  6  1352   # ncfl.CS.HeaterPower.nextTimeEventScaled
+  0       0                       0                       0                
+  6  1280   # ncfl.CS.HeaterPower.timeScaled
  -1  3.3019999999999999E-01       0                       0                
   1   280   # ncfl.data.Slant
  -1  7.1627999999999998E+00       0                       0                
@@ -2912,8 +3097,8 @@ double initialValue(2595,6)
   1   280   # ncfl.data.JetPump_D
  -1  3.6512499999999998E-01       0                       0                
   1   280   # ncfl.data.JetPump_L
-  0  1.0132500000000000E+05       0                       0                
-  6   256   # ncfl.data.Init_P
+ -1  1.0132500000000000E+05       0                       0                
+  1   280   # ncfl.data.Init_P
   0  2.9414999999999998E+02       0                 1.0000000000000000E+100
   6   256   # ncfl.data.Init_T
  -1    5500                       0                       0                
@@ -2940,7 +3125,9 @@ double initialValue(2595,6)
   6   388   # ncfl.port_a.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.port_a.h_outflow
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0       0                 -100000                       0                
+  6   388   # ncfl.port_b.m_flow
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # ncfl.port_b.p
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.port_b.h_outflow
@@ -2978,9 +3165,9 @@ double initialValue(2595,6)
   6   256   # ncfl.Slant.V
   0       0                       0                       0                
   6   256   # ncfl.Slant.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Slant.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Slant.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.Slant.m_flow_start
@@ -3018,9 +3205,9 @@ double initialValue(2595,6)
   6   258   # ncfl.Slant.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.Slant.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Slant.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Slant.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.Slant.flowModel.m
@@ -3110,9 +3297,9 @@ double initialValue(2595,6)
   6   256   # ncfl.Distance2Heaters.V
  -1  6.0166249999999999E-01       0                       0                
   1   280   # ncfl.Distance2Heaters.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Distance2Heaters.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Distance2Heaters.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.Distance2Heaters.m_flow_start
@@ -3150,9 +3337,9 @@ double initialValue(2595,6)
   6   258   # ncfl.Distance2Heaters.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.Distance2Heaters.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Distance2Heaters.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.Distance2Heaters.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.Distance2Heaters.flowModel.m
@@ -3208,6 +3395,8 @@ double initialValue(2595,6)
   6  1280   # ncfl.Distance2Heaters.flowModel.dp_fric_nominal
   0       1                       0                       0                
   6   257   # ncfl.PumpPipe.allowFlowReversal
+  0       0                       0                  100000                
+  6   388   # ncfl.PumpPipe.port_a.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.PumpPipe.port_a.h_outflow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -3238,9 +3427,9 @@ double initialValue(2595,6)
   6   256   # ncfl.PumpPipe.V
  -1  2.9999999999999999E-01       0                       0                
   1   280   # ncfl.PumpPipe.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.PumpPipe.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.PumpPipe.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.PumpPipe.m_flow_start
@@ -3280,9 +3469,9 @@ double initialValue(2595,6)
   6   258   # ncfl.PumpPipe.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.PumpPipe.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.PumpPipe.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.PumpPipe.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.PumpPipe.flowModel.m
@@ -3380,9 +3569,9 @@ double initialValue(2595,6)
   6   256   # ncfl.DistanceAfterHX.V
  -1      -4                       0                       0                
   1   280   # ncfl.DistanceAfterHX.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHX.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHX.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.DistanceAfterHX.m_flow_start
@@ -3420,9 +3609,9 @@ double initialValue(2595,6)
   6   258   # ncfl.DistanceAfterHX.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.DistanceAfterHX.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHX.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHX.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.DistanceAfterHX.flowModel.m
@@ -3490,7 +3679,7 @@ double initialValue(2595,6)
   6   258   # ncfl.volume.substanceDynamics
   0       1                       1                       4                
   6   258   # ncfl.volume.traceDynamics
-  0  1.0132500000000000E+05       0                 1.0000000000000000E+100
+  0       0                       0                 1.0000000000000000E+100
   6   256   # ncfl.volume.p_start
   0       1                       0                       0                
   6   257   # ncfl.volume.use_T_start
@@ -3500,8 +3689,8 @@ double initialValue(2595,6)
   6   256   # ncfl.volume.h_start
  -1       1                       0                       1                
   1   280   # ncfl.volume.X_start[1]
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
-  6   288   # ncfl.volume.medium.p
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
+  6   256   # ncfl.volume.medium.p
   0       0                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # ncfl.volume.medium.h
   0       0                       0                  100000                
@@ -3844,9 +4033,9 @@ double initialValue(2595,6)
   6   256   # ncfl.V1_Inlet.V
  -1       0                       0                       0                
   1   280   # ncfl.V1_Inlet.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.V1_Inlet.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.V1_Inlet.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.V1_Inlet.m_flow_start
@@ -3886,9 +4075,9 @@ double initialValue(2595,6)
   6   258   # ncfl.V1_Inlet.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.V1_Inlet.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.V1_Inlet.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.V1_Inlet.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.V1_Inlet.flowModel.m
@@ -3954,7 +4143,7 @@ double initialValue(2595,6)
   6  1281   # ncfl.V_top.port_b_exposesState
  -1       1                       0                       0                
   1  1305   # ncfl.V_top.showDesignFlowDirection
-  0  1.0132500000000000E+05 -9.9999999999999995E+59  1.0000000000000000E+08
+  0  5.0000000000000000E+06 -9.9999999999999995E+59  1.0000000000000000E+08
   6   256   # ncfl.V_top.dp_start
   0       0                 -100000                  100000                
   6   256   # ncfl.V_top.m_flow_start
@@ -3964,8 +4153,8 @@ double initialValue(2595,6)
   6   257   # ncfl.V_top.show_T
   0       1                       0                       0                
   6   257   # ncfl.V_top.show_V_flow
-  0  1.0132500000000000E+05       0                       0                
-  6   288   # ncfl.V_top.dp
+  0       0                       0                       0                
+  6   256   # ncfl.V_top.dp
   0       0                       0                       0                
   6   256   # ncfl.V_top.V_flow
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
@@ -3992,7 +4181,7 @@ double initialValue(2595,6)
   1   280   # ncfl.V_top.Kv
  -1       0                       0                       0                
   1   280   # ncfl.V_top.Cv
-  0  1.0132500000000000E+05       0                       0                
+  0       0                       0                       0                
   6   256   # ncfl.V_top.dp_nominal
   0       0                 -100000                  100000                
   6   256   # ncfl.V_top.m_flow_nominal
@@ -4014,6 +4203,8 @@ double initialValue(2595,6)
   6   256   # ncfl.V_top.Kv2Av
   0  2.4000000000000001E-05       0                       0                
   6   256   # ncfl.V_top.Cv2Av
+  0       0                       0                       1                
+  6   256   # ncfl.V_top.opening
   0       0                       0                       0                
   6  1280   # ncfl.V_top.minLimiter.uMin
   0       0                       0                       0                
@@ -4032,7 +4223,7 @@ double initialValue(2595,6)
   6  1281   # ncfl.V_bot.port_b_exposesState
  -1       1                       0                       0                
   1  1305   # ncfl.V_bot.showDesignFlowDirection
-  0  1.0132500000000000E+05 -9.9999999999999995E+59  1.0000000000000000E+08
+  0  5.0000000000000000E+06 -9.9999999999999995E+59  1.0000000000000000E+08
   6   256   # ncfl.V_bot.dp_start
   0       0                 -100000                  100000                
   6   256   # ncfl.V_bot.m_flow_start
@@ -4042,8 +4233,8 @@ double initialValue(2595,6)
   6   257   # ncfl.V_bot.show_T
   0       1                       0                       0                
   6   257   # ncfl.V_bot.show_V_flow
-  0  1.0132500000000000E+05       0                       0                
-  6   288   # ncfl.V_bot.dp
+  0       0                       0                       0                
+  6   256   # ncfl.V_bot.dp
   0       0                       0                       0                
   6   256   # ncfl.V_bot.V_flow
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
@@ -4070,7 +4261,7 @@ double initialValue(2595,6)
   1   280   # ncfl.V_bot.Kv
  -1       0                       0                       0                
   1   280   # ncfl.V_bot.Cv
-  0  1.0132500000000000E+05       0                       0                
+  0       0                       0                       0                
   6   256   # ncfl.V_bot.dp_nominal
   0       0                 -100000                  100000                
   6   256   # ncfl.V_bot.m_flow_nominal
@@ -4092,6 +4283,8 @@ double initialValue(2595,6)
   6   256   # ncfl.V_bot.Kv2Av
   0  2.4000000000000001E-05       0                       0                
   6   256   # ncfl.V_bot.Cv2Av
+  0       0                       0                       1                
+  6   256   # ncfl.V_bot.opening
   0       0                       0                       0                
   6  1280   # ncfl.V_bot.minLimiter.uMin
   0       0                       0                       0                
@@ -4140,9 +4333,9 @@ double initialValue(2595,6)
   6   256   # ncfl.JetInlet.V
  -1  2.5400000000000000E-01       0                       0                
   1   280   # ncfl.JetInlet.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetInlet.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetInlet.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetInlet.m_flow_start
@@ -4182,9 +4375,9 @@ double initialValue(2595,6)
   6   258   # ncfl.JetInlet.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetInlet.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetInlet.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetInlet.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.JetInlet.flowModel.m
@@ -4268,9 +4461,9 @@ double initialValue(2595,6)
   6   256   # ncfl.DistanceAfterHeaters.V
  -1       0                       0                       0                
   1   280   # ncfl.DistanceAfterHeaters.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHeaters.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHeaters.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.DistanceAfterHeaters.m_flow_start
@@ -4308,9 +4501,9 @@ double initialValue(2595,6)
   6   258   # ncfl.DistanceAfterHeaters.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.DistanceAfterHeaters.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHeaters.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.DistanceAfterHeaters.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.DistanceAfterHeaters.flowModel.m
@@ -4372,10 +4565,8 @@ double initialValue(2595,6)
   6   256   # ncfl.heater3.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # ncfl.heater3.Init_P
-  0       0                       0                       0                
-  6   256   # ncfl.heater3.HeaterPower
-  0       0                       0                       0                
-  6   257   # ncfl.heater3.allowFlowReversal
+ -1       0                       0                       0                
+  1   281   # ncfl.heater3.allowFlowReversal
   0  2.8814999999999998E+02       0                 1.0000000000000000E+100
   6   256   # ncfl.heater3.Heater.summary.T_effective
   0  2.9314999999999998E+02  2.7314999999999998E+02  2.2731500000000001E+03
@@ -4824,10 +5015,10 @@ double initialValue(2595,6)
   6   256   # ncfl.heater3.Heater.mediums[1].p_bar
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ncfl.heater3.Heater.mediums[1].sat.Tsat
-  0       0                       0                       0                
+  0       1                       0                       0                
   6   769   # ncfl.heater3.HeatSRC.use_port
-  0       0                       0                       0                
-  6   256   # ncfl.heater3.HeatSRC.Q_flow
+ -1       0                       0                       0                
+  1   280   # ncfl.heater3.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # ncfl.heater3.HeatSRC.showName
   0       1                       0                       0                
@@ -4952,6 +5143,8 @@ double initialValue(2595,6)
   6  1280   # ncfl.heater3.HeaterPipe.flowModel.diameters[1]
   0       0                       0                 1.0000000000000000E+100
   6  1280   # ncfl.heater3.HeaterPipe.flowModel.dp_fric_nominal
+  0       0                       0                       0                
+  6   256   # ncfl.heater3.HeaterPower
   0      20                       0                  100000                
   6   388   # ncfl.heater3.port_a.m_flow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -4966,10 +5159,8 @@ double initialValue(2595,6)
   6   256   # ncfl.heater2.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # ncfl.heater2.Init_P
-  0       0                       0                       0                
-  6   256   # ncfl.heater2.HeaterPower
-  0       0                       0                       0                
-  6   257   # ncfl.heater2.allowFlowReversal
+ -1       0                       0                       0                
+  1   281   # ncfl.heater2.allowFlowReversal
   0  2.8814999999999998E+02       0                 1.0000000000000000E+100
   6   256   # ncfl.heater2.Heater.summary.T_effective
   0  2.9314999999999998E+02  2.7314999999999998E+02  2.2731500000000001E+03
@@ -5418,10 +5609,10 @@ double initialValue(2595,6)
   6   256   # ncfl.heater2.Heater.mediums[1].p_bar
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ncfl.heater2.Heater.mediums[1].sat.Tsat
-  0       0                       0                       0                
+  0       1                       0                       0                
   6   769   # ncfl.heater2.HeatSRC.use_port
-  0       0                       0                       0                
-  6   256   # ncfl.heater2.HeatSRC.Q_flow
+ -1       0                       0                       0                
+  1   280   # ncfl.heater2.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # ncfl.heater2.HeatSRC.showName
   0       1                       0                       0                
@@ -5560,10 +5751,8 @@ double initialValue(2595,6)
   6   256   # ncfl.heater1.HeaterRadius
  -1  1.0132500000000000E+05       0                       0                
   1   280   # ncfl.heater1.Init_P
-  0       0                       0                       0                
-  6   256   # ncfl.heater1.HeaterPower
-  0       0                       0                       0                
-  6   257   # ncfl.heater1.allowFlowReversal
+ -1       0                       0                       0                
+  1   281   # ncfl.heater1.allowFlowReversal
   0  2.8814999999999998E+02       0                 1.0000000000000000E+100
   6   256   # ncfl.heater1.Heater.summary.T_effective
   0  2.9314999999999998E+02  2.7314999999999998E+02  2.2731500000000001E+03
@@ -6012,10 +6201,10 @@ double initialValue(2595,6)
   6   256   # ncfl.heater1.Heater.mediums[1].p_bar
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ncfl.heater1.Heater.mediums[1].sat.Tsat
-  0       0                       0                       0                
+  0       1                       0                       0                
   6   769   # ncfl.heater1.HeatSRC.use_port
-  0       0                       0                       0                
-  6   256   # ncfl.heater1.HeatSRC.Q_flow
+ -1       0                       0                       0                
+  1   280   # ncfl.heater1.HeatSRC.Q_flow
  -1       1                       0                       0                
   1   281   # ncfl.heater1.HeatSRC.showName
   0       1                       0                       0                
@@ -6170,9 +6359,9 @@ double initialValue(2595,6)
   6   256   # ncfl.JetSuction.V
  -1       0                       0                       0                
   1   280   # ncfl.JetSuction.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetSuction.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetSuction.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetSuction.m_flow_start
@@ -6212,9 +6401,9 @@ double initialValue(2595,6)
   6   258   # ncfl.JetSuction.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetSuction.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetSuction.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetSuction.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.JetSuction.flowModel.m
@@ -6296,9 +6485,9 @@ double initialValue(2595,6)
   6   256   # ncfl.ValveOutlet.V
  -1       0                       0                       0                
   1   280   # ncfl.ValveOutlet.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.ValveOutlet.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.ValveOutlet.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.ValveOutlet.m_flow_start
@@ -6336,9 +6525,9 @@ double initialValue(2595,6)
   6   258   # ncfl.ValveOutlet.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.ValveOutlet.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.ValveOutlet.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.ValveOutlet.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.ValveOutlet.flowModel.m
@@ -6420,9 +6609,9 @@ double initialValue(2595,6)
   6   256   # ncfl.JetPump.V
   0       0                       0                       0                
   6   256   # ncfl.JetPump.height_ab
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetPump.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetPump.p_b_start
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetPump.m_flow_start
@@ -6462,9 +6651,9 @@ double initialValue(2595,6)
   6   258   # ncfl.JetPump.flowModel.momentumDynamics
   0  1.0000000000000000E-02 -100000                  100000                
   6   256   # ncfl.JetPump.flowModel.m_flow_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetPump.flowModel.p_a_start
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.JetPump.flowModel.p_b_start
   0       1                       0                       0                
   6   258   # ncfl.JetPump.flowModel.m
@@ -6546,7 +6735,7 @@ double initialValue(2595,6)
   6   257   # ncfl.HX.Shell.allowFlowReversal
   0      20                       0                  100000                
   6   388   # ncfl.HX.Shell.port_a.m_flow
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # ncfl.HX.Shell.port_b.p
  -1       1                       0                       0                
   1   280   # ncfl.HX.Shell.nParallel
@@ -6708,9 +6897,9 @@ double initialValue(2595,6)
   6  1280   # ncfl.HX.Shell.flowModel.dp_fric_nominal
   0       0                       0                       2                
   6   258   # ncfl.HX.Shell.flowModel.states[2].phase
-  0  8.8197509537879610E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+  0  8.4011811167136795E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # ncfl.HX.Shell.flowModel.states[2].h
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.HX.Shell.flowModel.states[2].p
  -1       1                       0                       0                
   1   280   # ncfl.HX.Shell.flowModel.firstOrder_dps_K[1].k
@@ -6732,13 +6921,13 @@ double initialValue(2595,6)
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[1].cp
   0       0                       0                       2                
   6   258   # ncfl.HX.Shell.flowModel.mediaProps[2].state.phase
-  0  8.8197509537879610E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+  0  8.4011811167136795E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[2].state.h
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[2].state.p
-  0  8.8197509537879610E+04       0                       0                
+  0  8.4011811167136795E+04       0                       0                
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[2].h
-  0  1.0132500000000000E+05       0                       0                
+  0  100000                       0                       0                
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[2].p
   0       1                       0                     500                
   6   256   # ncfl.HX.Shell.flowModel.mediaProps[2].lambda
@@ -6906,13 +7095,13 @@ double initialValue(2595,6)
   6   256   # ncfl.HX.Shell.state_a.T
   0       0                       0                       2                
   6   258   # ncfl.HX.Shell.state_b.phase
-  0  8.8197509537879610E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+  0  8.4011811167136795E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   256   # ncfl.HX.Shell.state_b.h
   0     150                       0                  100000                
   6   256   # ncfl.HX.Shell.state_b.d
   0     500                  2.7314999999999998E+02  2.2731500000000001E+03
   6   256   # ncfl.HX.Shell.state_b.T
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   256   # ncfl.HX.Shell.state_b.p
   0       0                       0                       0                
   6   256   # ncfl.HX.Shell.m_flows[1]
@@ -6956,9 +7145,9 @@ double initialValue(2595,6)
   6  1280   # ncfl.HX.Shell.statesFM[1].der(d)
   0       0                       0                       2                
   6  1282   # ncfl.HX.Shell.statesFM[2].phase
-  0  8.8197509537879610E+04 -1.0000000000000000E+10  1.0000000000000000E+10
+  0  8.4011811167136795E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6  1280   # ncfl.HX.Shell.statesFM[2].h
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6  1280   # ncfl.HX.Shell.statesFM[2].p
   0       0                       0                       0                
   6  1280   # ncfl.HX.Shell.vsFM[2]
@@ -7132,7 +7321,7 @@ double initialValue(2595,6)
   6   388   # ncfl.HX.port_a_shell.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.HX.port_a_shell.h_outflow
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # ncfl.HX.port_b_shell.p
  -1       1                       0                       0                
   1   281   # ncfl.HX.cylinder.showName
@@ -7744,7 +7933,7 @@ double initialValue(2595,6)
   1   281   # ncfl.HX.OutletS_Shell.showName
   0       0                 -9.9999999999999995E+59  100000                
   6   388   # ncfl.HX.OutletS_Shell.port.m_flow
-  0  1.0132500000000000E+05  6.1165700000000004E+02  1.0000000000000000E+08
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
   6   260   # ncfl.HX.OutletS_Shell.port.p
   0  8.4013058152596903E+04 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.HX.OutletS_Shell.port.h_outflow
@@ -7794,6 +7983,66 @@ double initialValue(2595,6)
   1   280   # ncfl.T_diff_CL.k1
  -1       1                       0                       0                
   1   280   # ncfl.T_diff_CL.k2
+ -1       1                       0                       0                
+  1   281   # boundary.showName
+  0       1                       0                       0                
+  6   258   # boundary.nPorts
+  0  100000                       0                 1.0000000000000000E+100
+  6   256   # boundary.medium.p
+  0     150                       0                  100000                
+  6   256   # boundary.medium.d
+  0     500                  2.7314999999999998E+02  2.2731500000000001E+03
+  6   256   # boundary.medium.T
+  0       1                       0                       1                
+  6   256   # boundary.medium.X[1]
+  0       0                 -1.0000000000000000E+08  1.0000000000000000E+08
+  6   256   # boundary.medium.u
+  0  4.6152311573456689E+02       0                  1.0000000000000000E+07
+  6   256   # boundary.medium.R_s
+  0  1.8015268000000001E-02  1.0000000000000000E-03  2.5000000000000000E-01
+  6   256   # boundary.medium.MM
+  0       1                       0                       2                
+  6   258   # boundary.medium.state.phase
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
+  6   256   # boundary.medium.state.p
+  0       0                       0                       0                
+  6   257   # boundary.medium.preferredMediumStates
+  0       1                       0                       0                
+  6   257   # boundary.medium.standardOrderComponents
+  0       0                       0                       0                
+  6   256   # boundary.medium.T_degC
+  0       1                       0                       0                
+  6   256   # boundary.medium.p_bar
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
+  6   256   # boundary.medium.sat.psat
+  0  3.7275591861133785E+02  2.7314999999999998E+02  2.2731500000000001E+03
+  6   256   # boundary.medium.sat.Tsat
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
+  6   260   # boundary.ports[1].p
+  0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
+  6   260   # boundary.ports[1].h_outflow
+  0       3                       1                       3                
+  6  1282   # boundary.flowDirection
+  0       0                       0                       0                
+  6   769   # boundary.use_p_in
+  0       0                       0                       0                
+  6   769   # boundary.use_T_in
+  0       0                       0                       0                
+  6   769   # boundary.use_X_in
+  0       0                       0                       0                
+  6   769   # boundary.use_C_in
+  0  100000                  6.1165700000000004E+02  1.0000000000000000E+08
+  6   256   # boundary.p
+  0  2.9314999999999998E+02  2.7314999999999998E+02  2.2731500000000001E+03
+  6   256   # boundary.T
+  0       1                       0                       1                
+  6   256   # boundary.X[1]
+  0  100000                       0                       0                
+  6  1280   # boundary.p_in_internal
+  0  2.9314999999999998E+02       0                       0                
+  6  1280   # boundary.T_in_internal
+  0       1                       0                       0                
+  6  1280   # boundary.X_in_internal[1]
   0  1.8015268000000001E-02  1.0000000000000000E-03  2.5000000000000000E-01
   6  1280   # _GlobalScope.Modelica.Media.Water.WaterIF97_ph.fluidConstants[1].molarMass
   0  6.4709600000000000E+02       1                   10000                
@@ -7936,7 +8185,7 @@ double initialValue(2595,6)
 #   Which variables will be important for initialization and continue
 #   is indicated by value in column 6 & dsStartMasks.
 #
-char initialDescription(2595,126)
+char initialDescription(2678,126)
 Default ambient pressure [Pa|bar]
 Default ambient temperature [K|degC]
 Constant gravity acceleration [m/s2]
@@ -7977,37 +8226,6 @@ Default small pressure drop for regularization of laminar and zero flow [Pa|bar]
 Default small mass flow rate for regularization of laminar and zero flow [kg/s]
 [:#(type=Boolean)]
 Number of ports [:#(type=Integer)]
-Absolute pressure of medium [Pa|bar]
-Density of medium [kg/m3|g/cm3]
-Temperature of medium [K|degC]
-Mass fractions (= (component mass)/total mass  m_i/m) [kg/kg]
-Specific internal energy of medium [J/kg]
-Gas constant (of mixture if applicable) [J/(kg.K)]
-Molar mass (of mixture or single fluid) [kg/mol]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Pressure [Pa|bar]
-= true if StateSelect.prefer shall be used for the independent property variables of the medium [:#(type=Boolean)]
-If true, and reducedX = true, the last element of X will be computed from the other ones [:#(type=Boolean)]
-Temperature of medium in [degC] [degC;]
-Absolute pressure of medium in [bar] [bar]
-Saturation pressure [Pa|bar]
-Saturation temperature [K|degC]
-Mass flow rate from the connection point into the component [kg/s]
-Thermodynamic pressure in the connection point [Pa|bar]
-Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
-Allowed flow direction [:#(type=Modelica.Fluid.Types.PortFlowDirection)]
-Get the pressure from the input connector [:#(type=Boolean)]
-Get the temperature from the input connector [:#(type=Boolean)]
-Get the composition from the input connector [:#(type=Boolean)]
-Get the trace substances from the input connector [:#(type=Boolean)]
-Fixed value of pressure [Pa|bar]
-Fixed value of temperature [K|degC]
-Fixed value of composition [kg/kg]
-Needed to connect to conditional connector [Pa]
-Needed to connect to conditional connector [K]
-Needed to connect to conditional connector [1]
-[:#(type=Boolean)]
-Number of ports [:#(type=Integer)]
 Density of medium [kg/m3|g/cm3]
 Temperature of medium [K|degC]
 Mass fractions (= (component mass)/total mass  m_i/m) [kg/kg]
@@ -8034,8 +8252,90 @@ Fixed value of composition [kg/kg]
 Needed to connect to conditional connector [kg/s]
 Needed to connect to conditional connector [K]
 Needed to connect to conditional connector [1]
-Constant output value
-Constant output value [kg/s]
+Number of outputs [:#(type=Integer)]
+= true, if table is defined on file or in function usertab [:#(type=Boolean)]
+= true, if info message that file is loading is to be printed [:#(type=Boolean)]
+Columns of table to be interpolated [:#(type=Integer)]
+Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
+Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
+Time scale of first table column [s]
+Offsets of output signals
+Output = offset for time < startTime [s]
+Shift time of first table column [s]
+Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
+= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
+Minimum abscissa value defined in table [s]
+Maximum abscissa value defined in table [s]
+Minimum (scaled) abscissa value defined in table [1]
+Maximum (scaled) abscissa value defined in table [1]
+Offsets of output signals
+[:#(type=Integer)]
+Next time event instant [s]
+Next scaled time event instant [1]
+Scaled time [1]
+Number of outputs [:#(type=Integer)]
+= true, if table is defined on file or in function usertab [:#(type=Boolean)]
+= true, if info message that file is loading is to be printed [:#(type=Boolean)]
+Columns of table to be interpolated [:#(type=Integer)]
+Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
+Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
+Time scale of first table column [s]
+Offsets of output signals
+Output = offset for time < startTime [s]
+Shift time of first table column [s]
+Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
+= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
+Minimum abscissa value defined in table [s]
+Maximum abscissa value defined in table [s]
+Minimum (scaled) abscissa value defined in table [1]
+Maximum (scaled) abscissa value defined in table [1]
+Offsets of output signals
+[:#(type=Integer)]
+Next time event instant [s]
+Next scaled time event instant [1]
+Scaled time [1]
+Number of outputs [:#(type=Integer)]
+= true, if table is defined on file or in function usertab [:#(type=Boolean)]
+= true, if info message that file is loading is to be printed [:#(type=Boolean)]
+Columns of table to be interpolated [:#(type=Integer)]
+Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
+Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
+Time scale of first table column [s]
+Offsets of output signals
+Output = offset for time < startTime [s]
+Shift time of first table column [s]
+Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
+= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
+Minimum abscissa value defined in table [s]
+Maximum abscissa value defined in table [s]
+Minimum (scaled) abscissa value defined in table [1]
+Maximum (scaled) abscissa value defined in table [1]
+Offsets of output signals
+[:#(type=Integer)]
+Next time event instant [s]
+Next scaled time event instant [1]
+Scaled time [1]
+Number of outputs [:#(type=Integer)]
+= true, if table is defined on file or in function usertab [:#(type=Boolean)]
+= true, if info message that file is loading is to be printed [:#(type=Boolean)]
+Columns of table to be interpolated [:#(type=Integer)]
+Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
+Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
+Time scale of first table column [s]
+Offsets of output signals
+Output = offset for time < startTime [s]
+Shift time of first table column [s]
+Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
+= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
+Minimum abscissa value defined in table [s]
+Maximum abscissa value defined in table [s]
+Minimum (scaled) abscissa value defined in table [1]
+Maximum (scaled) abscissa value defined in table [1]
+Offsets of output signals
+[:#(type=Integer)]
+Next time event instant [s]
+Next scaled time event instant [1]
+Scaled time [1]
 [m]
 [m]
 [m]
@@ -8057,6 +8357,7 @@ Constant output value [kg/s]
 [kg/s]
 Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
+Mass flow rate from the connection point into the component [kg/s]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
@@ -8191,6 +8492,7 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
+Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
@@ -8594,6 +8896,7 @@ Reverse flow stopped [:#(type=Boolean)]
 Regularisation of zero flow [Pa|bar]
 Conversion factor [m2]
 Conversion factor [m2]
+Valve position in the range 0..1
 Lower limit of input signal
 Connector of Real output signal
 cf. straight pipe for fully open valve -- dp_turbulent increases for closing valve [1]
@@ -8633,6 +8936,7 @@ Reverse flow stopped [:#(type=Boolean)]
 Regularisation of zero flow [Pa|bar]
 Conversion factor [m2]
 Conversion factor [m2]
+Valve position in the range 0..1
 Lower limit of input signal
 Connector of Real output signal
 cf. straight pipe for fully open valve -- dp_turbulent increases for closing valve [1]
@@ -8773,7 +9077,303 @@ Pressure loss for nominal conditions [Pa|bar]
 [m]
 [m]
 [Pa|bar]
+[:#(type=Boolean)]
+Unit cell mass averaged temperature [K|degC]
+Maximum temperature [K|degC]
+x-position for physical location reference
+x-position for physical location reference
+x-position for physical location reference normalized by total length
+x-position for physical location reference normalized by total length
+= true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
+Number of parallel components [1]
+Number of discrete volumes [:#(type=Integer)]
+Discretized volumes [m3]
+Formulation of energy balances [:#(type=Modelica.Fluid.Types.Dynamics)]
+Formulation of mass balances [:#(type=Modelica.Fluid.Types.Dynamics)]
+Formulation of substance balances [:#(type=Modelica.Fluid.Types.Dynamics)]
+Formulation of trace substance balances [:#(type=Modelica.Fluid.Types.Dynamics)]
+Pressure [Pa|bar]
+Use T_start if true, otherwise h_start [:#(type=Boolean)]
+Temperature [K|degC]
+Specific enthalpy [J/kg]
+Mass fraction [1]
+Mass [kg]
+der(Mass) [kg/s]
+Internal energy [J]
+der(Internal energy) [W]
+= true to set up initial equations for pressure [:#(type=Boolean)]
+Pressure at port a [Pa|bar]
+Pressure at port b [Pa|bar]
+Temperature at port a [K|degC]
+Temperature at port b [K|degC]
+Specific enthalpy at port a [J/kg]
+Specific enthalpy at port b [J/kg]
+Mass fraction at port a [1]
+Mass fraction at port b [1]
+Mass flow rate at port_a [kg/s]
+Mass flow rate at port_b [kg/s]
+Mass flow rates [kg/s]
+Mass flow rates [kg/s]
+Index for Icon figure [:#(type=Integer)]
+Number of volume nodes [:#(type=Integer)]
+Number of transfer (heat/mass) surfaces [:#(type=Integer)]
+Unit cell length [m]
+Average heights of surface asperities [m]
+Vertical angle from the horizontal (-pi/2 <= x <= pi/2) [rad|deg]
+Height(port_b) - Height(port_a) [m]
+Elevation at port_a: Reference value only. No impact on calculations. [m]
+Elevation at port_b: Reference value only. No impact on calculations. [m]
+Fractional lengths [1]
+Number of discrete flow models [:#(type=Integer)]
+Gravitational acceleration [m/s2]
+Formulation of momentum balance [:#(type=Modelica.Fluid.Types.Dynamics)]
+Pressure changes {p[2]-p[1],...,p[n+1]-p[n]} [Pa|bar]
+Mass flow rates [kg/s]
+Length of flow model [m]
+Average height of surface asperities [m]
+Average height of surface asperities [m]
+Height(states[2:nFM+1]) - Height(states[1:nFM]) [m]
+= true to allow flow reversal, false restricts to design direction (m_flows >= zeros(m)) [:#(type=Boolean)]
+Laminar transition Reynolds number [1]
+Turbulent transition Reynolds number [1]
+= true, use m_flow = f(dp), otherwise dp = f(m_flow) [:#(type=Boolean)]
+Within regularization if |m_flows| < m_flow_small (may be wider for large discontinuities in static head) [kg/s]
+Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head) [Pa|bar]
+Flow of momentum across boundaries and source/sink in volumes [N]
+Reynolds number [1]
+Re smoothing transition center [1]
+Re smoothing transition width [1]
+Minor loss coefficients. Flow in direction a -> b [1]
+Minor loss coefficients. Flow in direction b -> a [1]
+= true to consider differences in flow of momentum through boundaries [:#(type=Boolean)]
+Time Constant for first order delay of {dps_K,dps_add} [s]
+Time Constant for first order delay of {dps_K,dps_add} [s]
+Flow of momentum across boundaries [N]
+Pressure forces [N]
+Pressure drop between states [Pa|bar]
+Minor form-losses (K-loss) [Pa|bar]
+Nominal pressure loss (only for nominal models) [Pa|bar]
+Nominal mass flow rate [kg/s]
+= true, if d_nominal is used, otherwise computed from medium [:#(type=Boolean)]
+Nominal density (e.g., rho_liquidWater = 995, rho_air = 1.2) [kg/m3|g/cm3]
+= true, if mu_nominal is used, otherwise computed from medium [:#(type=Boolean)]
+Nominal dynamic viscosity (e.g., mu_liquidWater = 1e-3, mu_air = 1.8e-5) [Pa.s]
+= true if the pressure loss is continuous around zero flow [:#(type=Boolean)]
+[Pa.s]
+[Pa.s]
+[Pa.s]
+[kg/m3|g/cm3]
+pressure loss for nominal conditions [Pa|bar]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Gain [1]
+Time Constant [s]
+Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
+Initial or guess value of output (= state)
+Connector of Real input signal
+Connector of Real output signal
+der(Connector of Real output signal)
+Thermal conductivity [W/(m.K)]
+Specific heat capacity [J/(kg.K)]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Thermal conductivity [W/(m.K)]
+Specific heat capacity [J/(kg.K)]
+Length of pipe [m]
+Absolute roughness of pipe at port_a, with a default for a smooth steel pipe [m]
+Absolute roughness of pipe at port_b, with a default for a smooth steel pipe [m]
+Turbulent transition point if Re >= Re_turbulent [1]
+= true to use the HeatTransfer model [:#(type=Boolean)]
+Number of parallel components [1]
+Number of heat transfer segments [:#(type=Integer)]
+Number of heat transfer surfaces [:#(type=Integer)]
+Flag for models to handle ideal boundary [:#(type=Integer)]
+Characteristic length of heat transfer segment [m]
+Average height of surface asperities [m]
+[K|degC]
+Laminar transition Reynolds number [1]
+Turbulent transition Reynolds number [1]
+Correction Factor: Q = CF*alpha*A*dT [1]
+if non-uniform then set [1]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Specific enthalpy [J/kg]
+Density [kg/m3|g/cm3]
+Fluid mass flow rate [kg/s]
+Reynolds number [1]
+Prandtl number [1]
+Coefficient of heat transfer [W/(m2.K)]
+Nusselt number [1]
+Heat flow rate [W]
+Re smoothing transition center [1]
+Re smoothing transition width [1]
+Dynamic viscosity [Pa.s]
+Thermal conductivity [W/(m.K)]
+Specific heat capacity [J/(kg.K)]
+Number of discrete volumes [:#(type=Integer)]
+Volumes length [m]
+Internal heat generated [W]
+Per volume heat generation [W]
+if non-uniform then set Q_gens [W]
+= true to use the TraceMassTransfer model [:#(type=Boolean)]
+Number of parallel components [1]
+Number of mass transfer segments [:#(type=Integer)]
+Number of mass transfer surfaces [:#(type=Integer)]
+Flag for models to handle ideal boundary [:#(type=Integer)]
+Characteristic length of transfer segment [m]
+Average height of surface asperities [m]
+[:#(type=Integer)]
+Number of substances [:#(type=Integer)]
+Diffusion Coefficient [m2/s]
+Laminar transition Reynolds number [1]
+Turbulent transition Reynolds number [1]
+Fluid mass flow rate [kg/s]
+Reynolds number [1]
+Position of local mass transfer calculation [m]
+Number of substances [:#(type=Integer)]
+[mol]
+Re smoothing transition center [1]
+Re smoothing transition width [1]
+# of species not transfered from fluid [:#(type=Integer)]
+Dynamic viscosity [Pa.s]
+Thermal conductivity [W/(m.K)]
+Specific heat capacity [J/(kg.K)]
+Number of discrete volumes [:#(type=Integer)]
+Volumes length [m]
+=true, p is calculated at port_a else m_flow [:#(type=Boolean)]
+=true, p is calculated at port_b else m_flow [:#(type=Boolean)]
+Formulation of momentum balances [:#(type=Modelica.Fluid.Types.Dynamics)]
+Gravitational acceleration [m/s2]
+=true to take port properties for flow models from internal control volumes [:#(type=Boolean)]
+=true to lump pressure states together [:#(type=Boolean)]
+Location of pressure for flow calculations [:#(type=TRANSFORM.Fluid.Types.LumpedLocation)]
+number of flow models in flowModel [:#(type=Integer)]
+[:#(type=Integer)]
+[:#(type=Integer)]
+Index of control volume with representative state if useLumpedPressure [:#(type=Integer)]
+[Pa|bar]
+[Pa|bar]
+[kg/s]
+[K|degC]
+[K|degC]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Specific enthalpy [J/kg]
+Density [kg/m3|g/cm3]
+Temperature [K|degC]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Density [kg/m3|g/cm3]
+Temperature [K|degC]
+Mass flow rates across segment boundaries [kg/s]
+Mass flow rates across segment boundaries [kg/s]
+Enthalpy flow rates across segment boundaries [W]
+Enthalpy flow rates across segment boundaries [W]
+mean velocities in flow segments [m/s]
+Mechanical power, p*der(V) etc. [W]
+[:#(type=Boolean)]
+[:#(type=Boolean)]
+Toggle dynamic color display [:#(type=Boolean)]
+val <= val_min is mapped to colorMap[1,:] []
+val >= val_max is mapped to colorMap[end,:] []
+Number of colors in the colorMap, multiples of 4 is best [:#(type=Integer)]
+
+
+
+= false to not calculate p*der(V) [Wb_flows] for energy equation [:#(type=Boolean)]
+Heat flow rate (positive if flowing from outside into the component) [W]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Density [kg/m3|g/cm3]
+der(Density) [Pa.m-2.s]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Mean velocities in flow segments [m/s]
+Lengths of flow segments [m]
+Differences in heights between flow segments [m]
+Hydraulic diameters of flow segments [m]
+Wetted perimeters of flow segments [m]
+Average heights of surface asperities [m]
+Average heights of surface asperities [m]
+Absolute pressure of medium [Pa|bar]
+der(Absolute pressure of medium) [Pa/s]
+Specific enthalpy of medium [J/kg]
+der(Specific enthalpy of medium) [m2/s3]
+Mass fractions (= (component mass)/total mass  m_i/m) [kg/kg]
+Specific internal energy of medium [J/kg]
+der(Specific internal energy of medium) [m2/s3]
+Gas constant (of mixture if applicable) [J/(kg.K)]
+Molar mass (of mixture or single fluid) [kg/mol]
+= true if StateSelect.prefer shall be used for the independent property variables of the medium [:#(type=Boolean)]
+If true, and reducedX = true, the last element of X will be computed from the other ones [:#(type=Boolean)]
+Temperature of medium in [degC] [degC;]
+Absolute pressure of medium in [bar] [bar]
+Saturation temperature [K|degC]
+=true then use input port [:#(type=Boolean)]
+Heat flow rate at port [W]
+[:#(type=Boolean)]
+= true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
+= true if port_a exposes the state of a fluid volume [:#(type=Boolean)]
+= true if port_b.p exposes the state of a fluid volume [:#(type=Boolean)]
+= false to hide the arrow in the model icon [:#(type=Boolean)]
+Number of identical parallel pipes [1]
+Length [m]
+= true, if cross sectional area is circular [:#(type=Boolean)]
+Diameter of circular pipe [m]
+Inner cross section area [m2]
+Inner perimeter [m]
+Average height of surface asperities (default: smooth steel pipe) [m|mm]
+Volume size [m3]
+Height(port_b) - Height(port_a) [m]
+Start value of pressure at port a [Pa|bar]
+Start value of pressure at port b [Pa|bar]
+Start value for mass flow rate [kg/s]
+= true, use m_flow = f(dp), otherwise dp = f(m_flow) [:#(type=Boolean)]
+Number of discrete flow volumes [:#(type=Integer)]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Density [kg/m3|g/cm3]
+Temperature [K|degC]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Density [kg/m3|g/cm3]
+Temperature [K|degC]
+Mean velocities of fluid flow [m/s]
+Mean velocities of fluid flow [m/s]
+Number of identical parallel flow devices [1]
+Characteristic dimensions for fluid flow (diameters for pipe flow) [m]
+Characteristic dimensions for fluid flow (diameters for pipe flow) [m]
+Constant gravity acceleration [m/s2]
+= true, if flow reversal is enabled, otherwise restrict flow to design direction (states[1] -> states[n+1]) [:#(type=Boolean)]
+Formulation of momentum balance [:#(type=Modelica.Fluid.Types.Dynamics)]
+Start value of mass flow rates [kg/s]
+Start value for p[1] at design inflow [Pa|bar]
+Start value for p[n+1] at design outflow [Pa|bar]
+Number of flow segments [:#(type=Integer)]
+Momenta of flow segments [kg.m/s]
+Flow of momentum across boundaries [N]
+Pressure forces [N]
+= false to average upstream and downstream properties across flow segments [:#(type=Boolean)]
+= true to consider differences in flow of momentum through boundaries [:#(type=Boolean)]
+Actual density per segment [kg/m3|g/cm3]
+[Pa.s]
+[Pa.s]
+Actual viscosity per segment [Pa.s]
+Pressure drop between states [Pa|bar]
+Start of turbulent regime, depending on type of flow device [1]
+= true, if Reynolds numbers are included for plotting [:#(type=Boolean)]
+= true, if rho_nominal is used, otherwise computed from medium [:#(type=Boolean)]
+Nominal density (e.g., rho_liquidWater = 995, rho_air = 1.2) [kg/m3|g/cm3]
+= true, if mu_nominal is used, otherwise computed from medium [:#(type=Boolean)]
+Nominal dynamic viscosity (e.g., mu_liquidWater = 1e-3, mu_air = 1.8e-5) [Pa.s]
+Re_turbulent used internally; to be defined by extending class [1]
+Nominal pressure loss (only for nominal models) [Pa|bar]
+Nominal mass flow rate [kg/s]
+Within regularization if |m_flows| < m_flow_small (may be wider for large discontinuities in static head) [kg/s]
+Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head) [Pa|bar]
+= true, if the pressure loss does not depend on fluid states [:#(type=Boolean)]
+= true, if the pressure loss is continuous around zero flow [:#(type=Boolean)]
+Mean diameters between segments [m]
+Pressure loss for nominal conditions [Pa|bar]
 [W]
+Mass flow rate from the connection point into the component [kg/s]
+Thermodynamic pressure in the connection point [Pa|bar]
+Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
+
+[m]
+[m]
+[Pa|bar]
 [:#(type=Boolean)]
 Unit cell mass averaged temperature [K|degC]
 Maximum temperature [K|degC]
@@ -9070,304 +9670,6 @@ Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/k
 [m]
 [m]
 [Pa|bar]
-[W]
-[:#(type=Boolean)]
-Unit cell mass averaged temperature [K|degC]
-Maximum temperature [K|degC]
-x-position for physical location reference
-x-position for physical location reference
-x-position for physical location reference normalized by total length
-x-position for physical location reference normalized by total length
-= true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
-Number of parallel components [1]
-Number of discrete volumes [:#(type=Integer)]
-Discretized volumes [m3]
-Formulation of energy balances [:#(type=Modelica.Fluid.Types.Dynamics)]
-Formulation of mass balances [:#(type=Modelica.Fluid.Types.Dynamics)]
-Formulation of substance balances [:#(type=Modelica.Fluid.Types.Dynamics)]
-Formulation of trace substance balances [:#(type=Modelica.Fluid.Types.Dynamics)]
-Pressure [Pa|bar]
-Use T_start if true, otherwise h_start [:#(type=Boolean)]
-Temperature [K|degC]
-Specific enthalpy [J/kg]
-Mass fraction [1]
-Mass [kg]
-der(Mass) [kg/s]
-Internal energy [J]
-der(Internal energy) [W]
-= true to set up initial equations for pressure [:#(type=Boolean)]
-Pressure at port a [Pa|bar]
-Pressure at port b [Pa|bar]
-Temperature at port a [K|degC]
-Temperature at port b [K|degC]
-Specific enthalpy at port a [J/kg]
-Specific enthalpy at port b [J/kg]
-Mass fraction at port a [1]
-Mass fraction at port b [1]
-Mass flow rate at port_a [kg/s]
-Mass flow rate at port_b [kg/s]
-Mass flow rates [kg/s]
-Mass flow rates [kg/s]
-Index for Icon figure [:#(type=Integer)]
-Number of volume nodes [:#(type=Integer)]
-Number of transfer (heat/mass) surfaces [:#(type=Integer)]
-Unit cell length [m]
-Average heights of surface asperities [m]
-Vertical angle from the horizontal (-pi/2 <= x <= pi/2) [rad|deg]
-Height(port_b) - Height(port_a) [m]
-Elevation at port_a: Reference value only. No impact on calculations. [m]
-Elevation at port_b: Reference value only. No impact on calculations. [m]
-Fractional lengths [1]
-Number of discrete flow models [:#(type=Integer)]
-Gravitational acceleration [m/s2]
-Formulation of momentum balance [:#(type=Modelica.Fluid.Types.Dynamics)]
-Pressure changes {p[2]-p[1],...,p[n+1]-p[n]} [Pa|bar]
-Mass flow rates [kg/s]
-Length of flow model [m]
-Average height of surface asperities [m]
-Average height of surface asperities [m]
-Height(states[2:nFM+1]) - Height(states[1:nFM]) [m]
-= true to allow flow reversal, false restricts to design direction (m_flows >= zeros(m)) [:#(type=Boolean)]
-Laminar transition Reynolds number [1]
-Turbulent transition Reynolds number [1]
-= true, use m_flow = f(dp), otherwise dp = f(m_flow) [:#(type=Boolean)]
-Within regularization if |m_flows| < m_flow_small (may be wider for large discontinuities in static head) [kg/s]
-Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head) [Pa|bar]
-Flow of momentum across boundaries and source/sink in volumes [N]
-Reynolds number [1]
-Re smoothing transition center [1]
-Re smoothing transition width [1]
-Minor loss coefficients. Flow in direction a -> b [1]
-Minor loss coefficients. Flow in direction b -> a [1]
-= true to consider differences in flow of momentum through boundaries [:#(type=Boolean)]
-Time Constant for first order delay of {dps_K,dps_add} [s]
-Time Constant for first order delay of {dps_K,dps_add} [s]
-Flow of momentum across boundaries [N]
-Pressure forces [N]
-Pressure drop between states [Pa|bar]
-Minor form-losses (K-loss) [Pa|bar]
-Nominal pressure loss (only for nominal models) [Pa|bar]
-Nominal mass flow rate [kg/s]
-= true, if d_nominal is used, otherwise computed from medium [:#(type=Boolean)]
-Nominal density (e.g., rho_liquidWater = 995, rho_air = 1.2) [kg/m3|g/cm3]
-= true, if mu_nominal is used, otherwise computed from medium [:#(type=Boolean)]
-Nominal dynamic viscosity (e.g., mu_liquidWater = 1e-3, mu_air = 1.8e-5) [Pa.s]
-= true if the pressure loss is continuous around zero flow [:#(type=Boolean)]
-[Pa.s]
-[Pa.s]
-[Pa.s]
-[kg/m3|g/cm3]
-pressure loss for nominal conditions [Pa|bar]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Gain [1]
-Time Constant [s]
-Type of initialization (1: no init, 2: steady state, 3/4: initial output) [:#(type=Modelica.Blocks.Types.Init)]
-Initial or guess value of output (= state)
-Connector of Real input signal
-Connector of Real output signal
-der(Connector of Real output signal)
-Thermal conductivity [W/(m.K)]
-Specific heat capacity [J/(kg.K)]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Thermal conductivity [W/(m.K)]
-Specific heat capacity [J/(kg.K)]
-Length of pipe [m]
-Absolute roughness of pipe at port_a, with a default for a smooth steel pipe [m]
-Absolute roughness of pipe at port_b, with a default for a smooth steel pipe [m]
-Turbulent transition point if Re >= Re_turbulent [1]
-= true to use the HeatTransfer model [:#(type=Boolean)]
-Number of parallel components [1]
-Number of heat transfer segments [:#(type=Integer)]
-Number of heat transfer surfaces [:#(type=Integer)]
-Flag for models to handle ideal boundary [:#(type=Integer)]
-Characteristic length of heat transfer segment [m]
-Average height of surface asperities [m]
-[K|degC]
-Laminar transition Reynolds number [1]
-Turbulent transition Reynolds number [1]
-Correction Factor: Q = CF*alpha*A*dT [1]
-if non-uniform then set [1]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Specific enthalpy [J/kg]
-Density [kg/m3|g/cm3]
-Fluid mass flow rate [kg/s]
-Reynolds number [1]
-Prandtl number [1]
-Coefficient of heat transfer [W/(m2.K)]
-Nusselt number [1]
-Heat flow rate [W]
-Re smoothing transition center [1]
-Re smoothing transition width [1]
-Dynamic viscosity [Pa.s]
-Thermal conductivity [W/(m.K)]
-Specific heat capacity [J/(kg.K)]
-Number of discrete volumes [:#(type=Integer)]
-Volumes length [m]
-Internal heat generated [W]
-Per volume heat generation [W]
-if non-uniform then set Q_gens [W]
-= true to use the TraceMassTransfer model [:#(type=Boolean)]
-Number of parallel components [1]
-Number of mass transfer segments [:#(type=Integer)]
-Number of mass transfer surfaces [:#(type=Integer)]
-Flag for models to handle ideal boundary [:#(type=Integer)]
-Characteristic length of transfer segment [m]
-Average height of surface asperities [m]
-[:#(type=Integer)]
-Number of substances [:#(type=Integer)]
-Diffusion Coefficient [m2/s]
-Laminar transition Reynolds number [1]
-Turbulent transition Reynolds number [1]
-Fluid mass flow rate [kg/s]
-Reynolds number [1]
-Position of local mass transfer calculation [m]
-Number of substances [:#(type=Integer)]
-[mol]
-Re smoothing transition center [1]
-Re smoothing transition width [1]
-# of species not transfered from fluid [:#(type=Integer)]
-Dynamic viscosity [Pa.s]
-Thermal conductivity [W/(m.K)]
-Specific heat capacity [J/(kg.K)]
-Number of discrete volumes [:#(type=Integer)]
-Volumes length [m]
-=true, p is calculated at port_a else m_flow [:#(type=Boolean)]
-=true, p is calculated at port_b else m_flow [:#(type=Boolean)]
-Formulation of momentum balances [:#(type=Modelica.Fluid.Types.Dynamics)]
-Gravitational acceleration [m/s2]
-=true to take port properties for flow models from internal control volumes [:#(type=Boolean)]
-=true to lump pressure states together [:#(type=Boolean)]
-Location of pressure for flow calculations [:#(type=TRANSFORM.Fluid.Types.LumpedLocation)]
-number of flow models in flowModel [:#(type=Integer)]
-[:#(type=Integer)]
-[:#(type=Integer)]
-Index of control volume with representative state if useLumpedPressure [:#(type=Integer)]
-[Pa|bar]
-[Pa|bar]
-[kg/s]
-[K|degC]
-[K|degC]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Specific enthalpy [J/kg]
-Density [kg/m3|g/cm3]
-Temperature [K|degC]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Density [kg/m3|g/cm3]
-Temperature [K|degC]
-Mass flow rates across segment boundaries [kg/s]
-Mass flow rates across segment boundaries [kg/s]
-Enthalpy flow rates across segment boundaries [W]
-Enthalpy flow rates across segment boundaries [W]
-mean velocities in flow segments [m/s]
-Mechanical power, p*der(V) etc. [W]
-[:#(type=Boolean)]
-[:#(type=Boolean)]
-Toggle dynamic color display [:#(type=Boolean)]
-val <= val_min is mapped to colorMap[1,:] []
-val >= val_max is mapped to colorMap[end,:] []
-Number of colors in the colorMap, multiples of 4 is best [:#(type=Integer)]
-
-
-
-= false to not calculate p*der(V) [Wb_flows] for energy equation [:#(type=Boolean)]
-Heat flow rate (positive if flowing from outside into the component) [W]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Density [kg/m3|g/cm3]
-der(Density) [Pa.m-2.s]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Mean velocities in flow segments [m/s]
-Lengths of flow segments [m]
-Differences in heights between flow segments [m]
-Hydraulic diameters of flow segments [m]
-Wetted perimeters of flow segments [m]
-Average heights of surface asperities [m]
-Average heights of surface asperities [m]
-Absolute pressure of medium [Pa|bar]
-der(Absolute pressure of medium) [Pa/s]
-Specific enthalpy of medium [J/kg]
-der(Specific enthalpy of medium) [m2/s3]
-Mass fractions (= (component mass)/total mass  m_i/m) [kg/kg]
-Specific internal energy of medium [J/kg]
-der(Specific internal energy of medium) [m2/s3]
-Gas constant (of mixture if applicable) [J/(kg.K)]
-Molar mass (of mixture or single fluid) [kg/mol]
-= true if StateSelect.prefer shall be used for the independent property variables of the medium [:#(type=Boolean)]
-If true, and reducedX = true, the last element of X will be computed from the other ones [:#(type=Boolean)]
-Temperature of medium in [degC] [degC;]
-Absolute pressure of medium in [bar] [bar]
-Saturation temperature [K|degC]
-=true then use input port [:#(type=Boolean)]
-Heat flow rate at port [W]
-[:#(type=Boolean)]
-= true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
-= true if port_a exposes the state of a fluid volume [:#(type=Boolean)]
-= true if port_b.p exposes the state of a fluid volume [:#(type=Boolean)]
-= false to hide the arrow in the model icon [:#(type=Boolean)]
-Number of identical parallel pipes [1]
-Length [m]
-= true, if cross sectional area is circular [:#(type=Boolean)]
-Diameter of circular pipe [m]
-Inner cross section area [m2]
-Inner perimeter [m]
-Average height of surface asperities (default: smooth steel pipe) [m|mm]
-Volume size [m3]
-Height(port_b) - Height(port_a) [m]
-Start value of pressure at port a [Pa|bar]
-Start value of pressure at port b [Pa|bar]
-Start value for mass flow rate [kg/s]
-= true, use m_flow = f(dp), otherwise dp = f(m_flow) [:#(type=Boolean)]
-Number of discrete flow volumes [:#(type=Integer)]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Density [kg/m3|g/cm3]
-Temperature [K|degC]
-Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
-Density [kg/m3|g/cm3]
-Temperature [K|degC]
-Mean velocities of fluid flow [m/s]
-Mean velocities of fluid flow [m/s]
-Number of identical parallel flow devices [1]
-Characteristic dimensions for fluid flow (diameters for pipe flow) [m]
-Characteristic dimensions for fluid flow (diameters for pipe flow) [m]
-Constant gravity acceleration [m/s2]
-= true, if flow reversal is enabled, otherwise restrict flow to design direction (states[1] -> states[n+1]) [:#(type=Boolean)]
-Formulation of momentum balance [:#(type=Modelica.Fluid.Types.Dynamics)]
-Start value of mass flow rates [kg/s]
-Start value for p[1] at design inflow [Pa|bar]
-Start value for p[n+1] at design outflow [Pa|bar]
-Number of flow segments [:#(type=Integer)]
-Momenta of flow segments [kg.m/s]
-Flow of momentum across boundaries [N]
-Pressure forces [N]
-= false to average upstream and downstream properties across flow segments [:#(type=Boolean)]
-= true to consider differences in flow of momentum through boundaries [:#(type=Boolean)]
-Actual density per segment [kg/m3|g/cm3]
-[Pa.s]
-[Pa.s]
-Actual viscosity per segment [Pa.s]
-Pressure drop between states [Pa|bar]
-Start of turbulent regime, depending on type of flow device [1]
-= true, if Reynolds numbers are included for plotting [:#(type=Boolean)]
-= true, if rho_nominal is used, otherwise computed from medium [:#(type=Boolean)]
-Nominal density (e.g., rho_liquidWater = 995, rho_air = 1.2) [kg/m3|g/cm3]
-= true, if mu_nominal is used, otherwise computed from medium [:#(type=Boolean)]
-Nominal dynamic viscosity (e.g., mu_liquidWater = 1e-3, mu_air = 1.8e-5) [Pa.s]
-Re_turbulent used internally; to be defined by extending class [1]
-Nominal pressure loss (only for nominal models) [Pa|bar]
-Nominal mass flow rate [kg/s]
-Within regularization if |m_flows| < m_flow_small (may be wider for large discontinuities in static head) [kg/s]
-Within regularization if |dp| < dp_small (may be wider for large discontinuities in static head) [Pa|bar]
-= true, if the pressure loss does not depend on fluid states [:#(type=Boolean)]
-= true, if the pressure loss is continuous around zero flow [:#(type=Boolean)]
-Mean diameters between segments [m]
-Pressure loss for nominal conditions [Pa|bar]
-Mass flow rate from the connection point into the component [kg/s]
-Thermodynamic pressure in the connection point [Pa|bar]
-Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
-
-[m]
-[m]
-[Pa|bar]
-[W]
 [:#(type=Boolean)]
 Unit cell mass averaged temperature [K|degC]
 Maximum temperature [K|degC]
@@ -10484,6 +10786,36 @@ Gain of input signal 2
 Connector of Real output signal
 Gain of input signal 1
 Gain of input signal 2
+[:#(type=Boolean)]
+Number of ports [:#(type=Integer)]
+Absolute pressure of medium [Pa|bar]
+Density of medium [kg/m3|g/cm3]
+Temperature of medium [K|degC]
+Mass fractions (= (component mass)/total mass  m_i/m) [kg/kg]
+Specific internal energy of medium [J/kg]
+Gas constant (of mixture if applicable) [J/(kg.K)]
+Molar mass (of mixture or single fluid) [kg/mol]
+Phase of the fluid: 1 for 1-phase, 2 for two-phase, 0 for not known, e.g., interactive use [:#(type=Integer)]
+Pressure [Pa|bar]
+= true if StateSelect.prefer shall be used for the independent property variables of the medium [:#(type=Boolean)]
+If true, and reducedX = true, the last element of X will be computed from the other ones [:#(type=Boolean)]
+Temperature of medium in [degC] [degC;]
+Absolute pressure of medium in [bar] [bar]
+Saturation pressure [Pa|bar]
+Saturation temperature [K|degC]
+Thermodynamic pressure in the connection point [Pa|bar]
+Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
+Allowed flow direction [:#(type=Modelica.Fluid.Types.PortFlowDirection)]
+Get the pressure from the input connector [:#(type=Boolean)]
+Get the temperature from the input connector [:#(type=Boolean)]
+Get the composition from the input connector [:#(type=Boolean)]
+Get the trace substances from the input connector [:#(type=Boolean)]
+Fixed value of pressure [Pa|bar]
+Fixed value of temperature [K|degC]
+Fixed value of composition [kg/kg]
+Needed to connect to conditional connector [Pa]
+Needed to connect to conditional connector [K]
+Needed to connect to conditional connector [1]
 Molar mass [kg/mol]
 Critical temperature [K|degC]
 Critical pressure [Pa|bar]
