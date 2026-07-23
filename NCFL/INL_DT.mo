@@ -14,7 +14,7 @@ package INL_DT
         annotation (Placement(transformation(extent={{74,-16},{54,4}})));
       Components.NCFL ncfl(redeclare package Medium =
             Modelica.Media.Water.StandardWater, redeclare
-          INL_DT.ControlSystems.Dynamic_CS CS)
+          INL_DT.ControlSystems.AVO_CS CS)
         annotation (Placement(transformation(extent={{-62,-16},{-2,38}})));
       TRANSFORM.Fluid.BoundaryConditions.Boundary_pT boundary(
         redeclare package Medium = Medium,
@@ -28,7 +28,7 @@ package INL_DT
               {6,-6},{6,13.1},{-1.25,13.1}},    color={0,127,255}));
       connect(ncfl.port_b, boundary.ports[1]) annotation (Line(points={{-1.25,
               23},{16,23},{16,52},{22,52}}, color={0,127,255}));
-      annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+      annotation (experiment(StartTime=0, StopTime=1800, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
             coordinateSystem(preserveAspectRatio=false)));
     end NCFL_Modular;
 
@@ -862,10 +862,10 @@ characteristic N = f(M, C, R, K*).</p>
         replaceable package Medium = Modelica.Media.Water.StandardWater,
         redeclare replaceable BaseClasses.CS_Dummy CS,
         redeclare replaceable BaseClasses.ED_Dummy ED,
-        redeclare BaseClasses.Data_NCFL data,
+        redeclare BaseClasses.Data_NCFL data(HX_L=0.62),
         port_b(redeclare package Medium = Modelica.Media.Water.StandardWater),
         port_a(redeclare package Medium = Modelica.Media.Water.StandardWater));
-      BaseClasses.Data_NCFL data(Heater_Length=1.5446375/3)
+      BaseClasses.Data_NCFL data(Heater_Length=1.5446375/3, HX_L=0.62)
         annotation (Placement(transformation(extent={{78,102},{98,122}})));
       Modelica.Fluid.Pipes.StaticPipe Slant(
         redeclare package Medium = Medium,
@@ -955,7 +955,7 @@ characteristic N = f(M, C, R, K*).</p>
             rotation=90,
             origin={86,-142})));
       NHES.Fluid.Sensors.stateDisplay SD2
-        annotation (Placement(transformation(extent={{-134,64},{-80,94}})));
+        annotation (Placement(transformation(extent={{-184,64},{-130,94}})));
       NHES.Fluid.Sensors.stateDisplay SD3
         annotation (Placement(transformation(extent={{0,22},{54,52}})));
       NHES.Fluid.Sensors.stateDisplay SD4
@@ -999,7 +999,7 @@ characteristic N = f(M, C, R, K*).</p>
             origin={-63,-176})));
       Modelica.Fluid.Pipes.StaticPipe DistanceAfterHeaters(
         redeclare package Medium = Medium,
-        length=data.Height,
+        length=2.92,
         diameter=data.Pipe_D,
         p_a_start=data.Init_P,
         m_flow_start=0.01) annotation (Placement(transformation(
@@ -1076,6 +1076,8 @@ characteristic N = f(M, C, R, K*).</p>
         annotation (Placement(transformation(extent={{-154,-58},{-134,-38}})));
       TRANSFORM.Blocks.RealExpression HeaterPower
         annotation (Placement(transformation(extent={{110,138},{132,156}})));
+      Modelica.Blocks.Sources.RealExpression FlowRate(y=pump.m_flow)
+        annotation (Placement(transformation(extent={{-150,124},{-130,144}})));
     equation
       connect(DistanceAfterHX.port_b, volume.port_a[1])
         annotation (Line(points={{86,-88},{86,-110}},color={0,127,255}));
@@ -1092,7 +1094,7 @@ characteristic N = f(M, C, R, K*).</p>
               {-48,-113.95},{-48,-144},{-50,-144},{-50,-160},{-107,-160},{-107,
               -118.9}}, color={0,0,0}));
       connect(s2.statePort, SD2.statePort) annotation (Line(points={{-64.05,
-              68.05},{-64.05,80},{-78,80},{-78,58},{-107,58},{-107,75.1}},
+              68.05},{-64.05,70},{-126,70},{-126,58},{-157,58},{-157,75.1}},
             color={0,0,0}));
       connect(s3.statePort, SD3.statePort) annotation (Line(points={{85.95,
               45.95},{60,45.95},{60,16},{27,16},{27,33.1}}, color={0,0,0}));
@@ -1213,6 +1215,33 @@ characteristic N = f(M, C, R, K*).</p>
           index=-1,
           extent={{6,3},{6,3}},
           horizontalAlignment=TextAlignment.Left));
+      connect(sensorBus.PumpMFlow, FlowRate.y) annotation (Line(
+          points={{-30,100},{-30,134},{-129,134}},
+          color={239,82,82},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(sensorBus.TdiffHL, T_diff_HL.y) annotation (Line(
+          points={{-30,100},{-124,100},{-124,2},{-131,2}},
+          color={239,82,82},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(sensorBus.TdiffCL, T_diff_CL.y) annotation (Line(
+          points={{-30,100},{-124,100},{-124,-48},{-133,-48}},
+          color={239,82,82},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{-3,6},{-3,6}},
+          horizontalAlignment=TextAlignment.Right));
       annotation (experiment(StartTime=0, StopTime=180, Interval=0.1), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-220,
                 -200},{100,160}})),                                  Diagram(
             coordinateSystem(preserveAspectRatio=false, extent={{-220,-200},{100,160}})));
@@ -1390,28 +1419,30 @@ characteristic N = f(M, C, R, K*).</p>
 
       Modelica.Blocks.Sources.CombiTimeTable PumpPower(
         tableOnFile=true,
-        tableName="pump",
-        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/pump.txt",
+        tableName="pump_static",
+        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/pump_static.txt",
         smoothness=Modelica.Blocks.Types.Smoothness.ContinuousDerivative,
         timeEvents=Modelica.Blocks.Types.TimeEvents.NoTimeEvents)
         annotation (Placement(transformation(extent={{-46,-20},{-26,0}})));
       Modelica.Blocks.Sources.CombiTimeTable BotValve(
         tableOnFile=true,
-        tableName="botValve",
-        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/botValve.txt",
+        tableName="botValve_static",
+        fileName=
+            "C:/INL LDRD Project Files/NCFL/DataSeries/botValve_static.txt",
         smoothness=Modelica.Blocks.Types.Smoothness.ContinuousDerivative,
         timeEvents=Modelica.Blocks.Types.TimeEvents.NoTimeEvents)
         annotation (Placement(transformation(extent={{-46,10},{-26,30}})));
       Modelica.Blocks.Sources.CombiTimeTable TopValve(
         tableOnFile=true,
-        tableName="topValve",
-        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/topValve.txt",
+        tableName="topValve_static",
+        fileName=
+            "C:/INL LDRD Project Files/NCFL/DataSeries/topValve_static.txt",
         smoothness=Modelica.Blocks.Types.Smoothness.ContinuousDerivative,
         timeEvents=Modelica.Blocks.Types.TimeEvents.NoTimeEvents)
         annotation (Placement(transformation(extent={{-46,40},{-26,60}})));
       Modelica.Blocks.Sources.CombiTimeTable HeaterPower(tableOnFile=true,
-        tableName="Heater",
-        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/Heater.txt",
+        tableName="Heater_static",
+        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/Heater_static.txt",
         smoothness=Modelica.Blocks.Types.Smoothness.ContinuousDerivative,
         timeEvents=Modelica.Blocks.Types.TimeEvents.NoTimeEvents)
         annotation (Placement(transformation(extent={{-44,-50},{-24,-30}})));
@@ -1453,6 +1484,33 @@ characteristic N = f(M, C, R, K*).</p>
           extent={{6,3},{6,3}},
           horizontalAlignment=TextAlignment.Left));
     end Dynamic_CS;
+
+    model AdaptiveHeating
+      extends BaseClasses.CS_Dummy;
+      Modelica.Blocks.Sources.Constant const1(k=1)
+        annotation (Placement(transformation(extent={{-56,10},{-36,30}})));
+      Modelica.Blocks.Sources.Constant const2(k=0)
+        annotation (Placement(transformation(extent={{-56,-24},{-36,-4}})));
+    equation
+      connect(actuatorBus.TopValve_Opening, const2.y) annotation (Line(
+          points={{30,-100},{30,-14},{-35,-14}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.BotValve_Opening, const1.y) annotation (Line(
+          points={{30,-100},{30,20},{-35,20}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{-3,-6},{-3,-6}},
+          horizontalAlignment=TextAlignment.Right));
+    end AdaptiveHeating;
   end ControlSystems;
 
   package BaseClasses

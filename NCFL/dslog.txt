@@ -1,16 +1,12 @@
 Log-file of program ./dymosim
-(generated: Tue Jul 21 13:27:28 2026)
+(generated: Thu Jul 23 15:21:07 2026)
 
 dymosim started
 ... "INL_DT.Tests.NCFL_Modular" simulating
 ... "dsin.txt" loading (dymosim input file)
-... loading "pump" from "C:/INL LDRD Project Files/NCFL/DataSeries/pump.txt"
-... loading "botValve" from "C:/INL LDRD Project Files/NCFL/DataSeries/botValve.txt"
-... loading "topValve" from "C:/INL LDRD Project Files/NCFL/DataSeries/topValve.txt"
-... loading "Heater" from "C:/INL LDRD Project Files/NCFL/DataSeries/Heater.txt"
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -4.63328e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -4.61212e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -25,11 +21,11 @@ Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT_Unique18(SecondaryLoop.med
 Modelic...
 
 Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 7
+Non-linear solver gave up after attempt: 6
 
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -4.57189e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -4.62236e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -38,11 +34,10 @@ Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
 Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
 Modelica.Media.Water.IF97_Utilities.T_props_ph(
-ncfl.JetPump.port_b.p, 
-ncfl.s1.port_a.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetPump.port_b.p, ncfl.s1.port_a.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.JetPump.port_b.p, ncfl.s1.port_a.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.JetPump.port_b.p, ncfl.s1.port...
+ncfl.heater1.HeaterPipe.port_a.p, 
+ncfl.heater1.HeaterPipe.port_a.h_outflow_inStream, 
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater1.HeaterPipe.port_a.p, ncfl.heater1.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.heater1.HeaterPipe.port_a.p, ncfl.heater1.HeaterPipe.port_a.h_outflow_i...
 
 Non-linear solver will silently attempt to handle this problem.
 Non-linear solver gave up after attempt: 15
@@ -57,11 +52,11 @@ Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
 Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
+Modelica.Media.Water.IF97_Utilities.T_props_ph(
 ncfl.heater2.HeaterPipe.port_a.p, 
 ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 
 Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outfl...
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outflow_i...
 
 Non-linear solver will silently attempt to handle this problem.
 Non-linear solver gave up after attempt: 1
@@ -87,7 +82,7 @@ Non-linear solver gave up after attempt: 1
 
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -5.35219e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -5.35228e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -107,7 +102,7 @@ Non-linear solver gave up after attempt: 5
 
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -2.93797e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -2.93802e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -127,7 +122,7 @@ Non-linear solver gave up after attempt: 4
 
 Error: The following error was detected at time: 0
   IF97 medium function tsat called with too low pressure
-p = -3.9759e+06 Pa <= 611.657 Pa (triple point pressure)
+p = -3.97596e+06 Pa <= 611.657 Pa (triple point pressure)
   Failed condition: p > 611.657
 The stack of functions is:
 Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
@@ -145,29 +140,142 @@ Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.ValveOutl...
 Non-linear solver will silently attempt to handle this problem.
 Non-linear solver gave up after attempt: 4
 
-... "NCFL_Modular_PyResults.mat" creating (simulation result file)
+... "NCFL_Modular.mat" creating (simulation result file)
 
 Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
+Error: The following error was detected at time: 1616.819815532145
+  Error in region computation of IF97 steam tables(p = 1.00142e+08, h = 504520)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.mediums[1].phase, 0)
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.mediums[1].phase, 0)
+Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.me...
 
-Integration terminated successfully at T = 180
-   CPU-time for integration                : 13.8 seconds
-   CPU-time for one grid interval          : 7.69 milliseconds
-   CPU-time for initialization             : 0.083 seconds
-   Number of result points                 : 1803
-   Number of grid points                   : 1801
-   Number of accepted steps                : 474
-   Number of f-evaluations (dynamics)      : 1051
-   Number of crossing function evaluations : 2274
-   Number of Jacobian-evaluations          : 119
-   Number of model time events             : 1
+Solver will attempt to handle this problem.
+
+Error: The following error was detected at time: 1578.599278935161
+  Error in region computation of IF97 steam tables(p = 1.00001e+08, h = 504650)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.mediums[1].phase, 0)
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.mediums[1].phase, 0)
+Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.HX.Tube.mediums[1].p, ncfl.HX.Tube.mediums[1].h, ncfl.HX.Tube.me...
+
+Solver will attempt to handle this problem.
+
+Error: The following error was detected at time: 1604.079636666484
+  Error in region computation of IF97 steam tables(p = 1.00026e+08, h = 503979)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.setS...
+
+First evaluation failed for non-linear solver.
+
+Error: The following error was detected at time: 1604.079636666484
+  Error in region computation of IF97 steam tables(p = 1.00026e+08, h = 503979)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.JetPump.port_a.p, ncfl.JetPump.port_a.h_outflow_inStream, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.setS...
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 2
+
+Solver will attempt to handle this problem.
+
+Error: The following error was detected at time: 1587.5
+  Error in region computation of IF97 steam tables(p = 1e+08, h = 503080)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.setState_phX_Unique23(ncfl.V_bot.port_a.p, ncfl....
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 433
+
+Error: The following error was detected at time: 1587.476000000001
+  Error in region computation of IF97 steam tables(p = 1e+08, h = 503078)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.setState_phX_Unique23(ncfl.V_bot.port_a.p, ncfl....
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 442
+
+Error: The following error was detected at time: 1587.469600000001
+  Error in region computation of IF97 steam tables(p = 1e+08, h = 503078)
+  Failed condition: false
+The stack of functions is:
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
+Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.V_bot.port_a.p, ncfl.pump.port_b.h_outflow, 0, 0)
+Modelica.Media.Water.WaterIF97_ph.setState_phX_Unique23(ncfl.V_bot.port_a.p, ncfl....
+
+Non-linear solver will silently attempt to handle this problem.
+Non-linear solver gave up after attempt: 460
+
+Error: The following error was detected at time: 1587.466400306189
+  Reverting flow occurs in flowModel even though allowFlowReversal is false
+  Failed condition: ncfl.heater1.Heater.flowModel.m_flows[1] >  -ncfl.heater1.Heater.flowModel.m_flow_small
+
+Integration terminated before reaching "StopTime" at T = 1.59e+03
+
+Final values of states and state derivatives:
+State                                              ,      State value, Derivative value
+ncfl.heater3.Heater.flowModel.firstOrder_dps_K[1].y,                0,               -0
+ncfl.heater3.Heater.mediums[1].p                   ,      9.96883e+07,      6.68262e+09
+ncfl.heater3.Heater.mediums[1].h                   ,           505023,      6.69443e+06
+ncfl.heater2.Heater.flowModel.firstOrder_dps_K[1].y,       3.7877e-15,      -3.7877e-13
+ncfl.heater2.Heater.mediums[1].p                   ,      9.96893e+07,     -1.51342e+10
+ncfl.heater2.Heater.mediums[1].h                   ,           504371,     -1.51619e+07
+ncfl.heater1.Heater.flowModel.firstOrder_dps_K[1].y,    -7.24569e-104,     7.24569e-102
+ncfl.heater1.Heater.mediums[1].p                   ,       9.9689e+07,      8.51115e+09
+ncfl.heater1.Heater.mediums[1].h                   ,           503719,      8.52746e+06
+ncfl.HX.Shell.flowModel.firstOrder_dps_K[1].y      ,                0,               -0
+ncfl.HX.Shell.mediums[1].p                         ,           102149,      -0.00591535
+ncfl.HX.Shell.mediums[1].h                         ,          84792.4,        0.0950009
+ncfl.HX.Tube.flowModel.firstOrder_dps_K[1].y       ,                0,               -0
+ncfl.HX.Tube.mediums[1].p                          ,      9.96758e+07,     -1.05297e+08
+ncfl.HX.Tube.mediums[1].h                          ,           503050,          -105508
+
+   CPU-time for integration                : 51.2 seconds
+   CPU-time for one grid interval          : 3.23 milliseconds
+   CPU-time for initialization             : 0.03 seconds
+   Number of result points                 : 15881
+   Number of grid points                   : 15876
+   Number of accepted steps                : 215
+   Number of f-evaluations (dynamics)      : 544
+   Number of crossing function evaluations : 16099
+   Number of Jacobian-evaluations          : 216
+   Number of model time events             : 0
    Number of input time events             : 0
-   Number of state events                  : 0
+   Number of state events                  : 3
    Number of step events                   : 0
-   Minimum integration stepsize            : 6.03e-09
-   Maximum integration stepsize            : 2.63
-   Maximum integration order               : 2
+   Minimum integration stepsize            : 5.42e-09
+   Maximum integration stepsize            : 67.9
+   Maximum integration order               : 4
 Calling terminal section
 ... "dsfinal.txt" creating (final states)
 
-SUCCESSFUL simulation of INL_DT.Tests.NCFL_Modular
+... Error message from dymosim
+
+ERROR: The simulation of INL_DT.Tests.NCFL_Modular FAILED
+

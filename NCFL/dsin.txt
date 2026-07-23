@@ -9,7 +9,7 @@ Modelica experiment file
 double experiment(7,1)
        0                   # StartTime    Time at which integration starts
                            #              (and linearization and trimming time)
-     180                   # StopTime     Time at which integration stops
+    1800                   # StopTime     Time at which integration stops
   1.0000000000000001E-01   # Increment    Communication step size, if > 0
        0                   # nInterval    Number of communication intervals, if > 0
   1.0000000000000000E-04   # Tolerance    Relative precision of signals for
@@ -102,7 +102,7 @@ int settings(13,1)
 
 
 #    Names of initial variables
-char initialName(2678,92)
+char initialName(2593,92)
 systemTF.p_ambient
 systemTF.T_ambient
 systemTF.g
@@ -169,90 +169,9 @@ SecondaryLoop.X[1]
 SecondaryLoop.m_flow_in_internal
 SecondaryLoop.T_in_internal
 SecondaryLoop.X_in_internal[1]
-ncfl.CS.PumpPower.nout
-ncfl.CS.PumpPower.tableOnFile
-ncfl.CS.PumpPower.verboseRead
-ncfl.CS.PumpPower.columns[1]
-ncfl.CS.PumpPower.smoothness
-ncfl.CS.PumpPower.extrapolation
-ncfl.CS.PumpPower.timeScale
-ncfl.CS.PumpPower.offset[1]
-ncfl.CS.PumpPower.startTime
-ncfl.CS.PumpPower.shiftTime
-ncfl.CS.PumpPower.timeEvents
-ncfl.CS.PumpPower.verboseExtrapolation
-ncfl.CS.PumpPower.t_min
-ncfl.CS.PumpPower.t_max
-ncfl.CS.PumpPower.t_minScaled
-ncfl.CS.PumpPower.t_maxScaled
-ncfl.CS.PumpPower.p_offset[1]
-ncfl.CS.PumpPower.tableID.id
-ncfl.CS.PumpPower.nextTimeEvent
-ncfl.CS.PumpPower.nextTimeEventScaled
-ncfl.CS.PumpPower.timeScaled
-ncfl.CS.BotValve.nout
-ncfl.CS.BotValve.tableOnFile
-ncfl.CS.BotValve.verboseRead
-ncfl.CS.BotValve.columns[1]
-ncfl.CS.BotValve.smoothness
-ncfl.CS.BotValve.extrapolation
-ncfl.CS.BotValve.timeScale
-ncfl.CS.BotValve.offset[1]
-ncfl.CS.BotValve.startTime
-ncfl.CS.BotValve.shiftTime
-ncfl.CS.BotValve.timeEvents
-ncfl.CS.BotValve.verboseExtrapolation
-ncfl.CS.BotValve.t_min
-ncfl.CS.BotValve.t_max
-ncfl.CS.BotValve.t_minScaled
-ncfl.CS.BotValve.t_maxScaled
-ncfl.CS.BotValve.p_offset[1]
-ncfl.CS.BotValve.tableID.id
-ncfl.CS.BotValve.nextTimeEvent
-ncfl.CS.BotValve.nextTimeEventScaled
-ncfl.CS.BotValve.timeScaled
-ncfl.CS.TopValve.nout
-ncfl.CS.TopValve.tableOnFile
-ncfl.CS.TopValve.verboseRead
-ncfl.CS.TopValve.columns[1]
-ncfl.CS.TopValve.smoothness
-ncfl.CS.TopValve.extrapolation
-ncfl.CS.TopValve.timeScale
-ncfl.CS.TopValve.offset[1]
-ncfl.CS.TopValve.startTime
-ncfl.CS.TopValve.shiftTime
-ncfl.CS.TopValve.timeEvents
-ncfl.CS.TopValve.verboseExtrapolation
-ncfl.CS.TopValve.t_min
-ncfl.CS.TopValve.t_max
-ncfl.CS.TopValve.t_minScaled
-ncfl.CS.TopValve.t_maxScaled
-ncfl.CS.TopValve.p_offset[1]
-ncfl.CS.TopValve.tableID.id
-ncfl.CS.TopValve.nextTimeEvent
-ncfl.CS.TopValve.nextTimeEventScaled
-ncfl.CS.TopValve.timeScaled
-ncfl.CS.HeaterPower.nout
-ncfl.CS.HeaterPower.tableOnFile
-ncfl.CS.HeaterPower.verboseRead
-ncfl.CS.HeaterPower.columns[1]
-ncfl.CS.HeaterPower.smoothness
-ncfl.CS.HeaterPower.extrapolation
-ncfl.CS.HeaterPower.timeScale
-ncfl.CS.HeaterPower.offset[1]
-ncfl.CS.HeaterPower.startTime
-ncfl.CS.HeaterPower.shiftTime
-ncfl.CS.HeaterPower.timeEvents
-ncfl.CS.HeaterPower.verboseExtrapolation
-ncfl.CS.HeaterPower.t_min
-ncfl.CS.HeaterPower.t_max
-ncfl.CS.HeaterPower.t_minScaled
-ncfl.CS.HeaterPower.t_maxScaled
-ncfl.CS.HeaterPower.p_offset[1]
-ncfl.CS.HeaterPower.tableID.id
-ncfl.CS.HeaterPower.nextTimeEvent
-ncfl.CS.HeaterPower.nextTimeEventScaled
-ncfl.CS.HeaterPower.timeScaled
+ncfl.CS.const.k
+ncfl.CS.const1.k
+ncfl.CS.const2.k
 ncfl.data.Slant
 ncfl.data.Height
 ncfl.data.Width
@@ -409,7 +328,6 @@ ncfl.Distance2Heaters.flowModel.continuousFlowReversal
 ncfl.Distance2Heaters.flowModel.diameters[1]
 ncfl.Distance2Heaters.flowModel.dp_fric_nominal
 ncfl.PumpPipe.allowFlowReversal
-ncfl.PumpPipe.port_a.m_flow
 ncfl.PumpPipe.port_a.h_outflow
 ncfl.PumpPipe.port_b.p
 ncfl.PumpPipe.port_b.h_outflow
@@ -813,7 +731,6 @@ ncfl.V_top.checkValve
 ncfl.V_top.dp_small
 ncfl.V_top.Kv2Av
 ncfl.V_top.Cv2Av
-ncfl.V_top.opening
 ncfl.V_top.minLimiter.uMin
 ncfl.V_top.minLimiter.y
 ncfl.V_top.Re_turbulent
@@ -853,7 +770,6 @@ ncfl.V_bot.checkValve
 ncfl.V_bot.dp_small
 ncfl.V_bot.Kv2Av
 ncfl.V_bot.Cv2Av
-ncfl.V_bot.opening
 ncfl.V_bot.minLimiter.uMin
 ncfl.V_bot.minLimiter.y
 ncfl.V_bot.Re_turbulent
@@ -1283,7 +1199,6 @@ ncfl.heater3.HeaterPipe.flowModel.constantPressureLossCoefficient
 ncfl.heater3.HeaterPipe.flowModel.continuousFlowReversal
 ncfl.heater3.HeaterPipe.flowModel.diameters[1]
 ncfl.heater3.HeaterPipe.flowModel.dp_fric_nominal
-ncfl.heater3.HeaterPower
 ncfl.heater3.port_a.m_flow
 ncfl.heater3.port_a.p
 ncfl.heater3.port_a.h_outflow
@@ -2782,7 +2697,7 @@ _GlobalScope.Modelica.Media.Water.waterConstants[1].SCRIT0
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltah
 _GlobalScope.Modelica.Media.Water.waterConstants[1].deltas
 
-double initialValue(2678,6)
+double initialValue(2593,6)
  -1  1.0132500000000000E+05       0                 1.0000000000000000E+100
   1   280   # systemTF.p_ambient
  -1  2.9314999999999998E+02       0                 1.0000000000000000E+100
@@ -2915,174 +2830,12 @@ double initialValue(2678,6)
   6  1280   # SecondaryLoop.T_in_internal
   0       1                       0                       0                
   6  1280   # SecondaryLoop.X_in_internal[1]
-  0       1                       1                 1.0000000000000000E+100
-  6   258   # ncfl.CS.PumpPower.nout
-  0       1                       0                       0                
-  6   257   # ncfl.CS.PumpPower.tableOnFile
- -1       1                       0                       0                
-  1   281   # ncfl.CS.PumpPower.verboseRead
-  0       2                       0                       0                
-  6   258   # ncfl.CS.PumpPower.columns[1]
-  0       2                       1                       6                
-  6   258   # ncfl.CS.PumpPower.smoothness
-  0       2                       1                       4                
-  6   258   # ncfl.CS.PumpPower.extrapolation
-  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
-  6   256   # ncfl.CS.PumpPower.timeScale
- -1       0                       0                       0                
-  1   280   # ncfl.CS.PumpPower.offset[1]
- -1       0                       0                       0                
-  1   280   # ncfl.CS.PumpPower.startTime
-  0       0                       0                       0                
-  6   256   # ncfl.CS.PumpPower.shiftTime
- -1       3                       1                       3                
-  1   282   # ncfl.CS.PumpPower.timeEvents
-  0       0                       0                       0                
-  6   257   # ncfl.CS.PumpPower.verboseExtrapolation
-  0       0                       0                       0                
-  6   256   # ncfl.CS.PumpPower.t_min
-  0       0                       0                       0                
-  6   256   # ncfl.CS.PumpPower.t_max
-  0       0                       0                       0                
-  6   256   # ncfl.CS.PumpPower.t_minScaled
-  0       0                       0                       0                
-  6   256   # ncfl.CS.PumpPower.t_maxScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.PumpPower.p_offset[1]
-  0       0                       0                       0                
-  6  1282   # ncfl.CS.PumpPower.tableID.id
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.PumpPower.nextTimeEvent
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.PumpPower.nextTimeEventScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.PumpPower.timeScaled
-  0       1                       1                 1.0000000000000000E+100
-  6   258   # ncfl.CS.BotValve.nout
-  0       1                       0                       0                
-  6   257   # ncfl.CS.BotValve.tableOnFile
- -1       1                       0                       0                
-  1   281   # ncfl.CS.BotValve.verboseRead
-  0       2                       0                       0                
-  6   258   # ncfl.CS.BotValve.columns[1]
-  0       2                       1                       6                
-  6   258   # ncfl.CS.BotValve.smoothness
-  0       2                       1                       4                
-  6   258   # ncfl.CS.BotValve.extrapolation
-  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
-  6   256   # ncfl.CS.BotValve.timeScale
- -1       0                       0                       0                
-  1   280   # ncfl.CS.BotValve.offset[1]
- -1       0                       0                       0                
-  1   280   # ncfl.CS.BotValve.startTime
-  0       0                       0                       0                
-  6   256   # ncfl.CS.BotValve.shiftTime
- -1       3                       1                       3                
-  1   282   # ncfl.CS.BotValve.timeEvents
-  0       0                       0                       0                
-  6   257   # ncfl.CS.BotValve.verboseExtrapolation
-  0       0                       0                       0                
-  6   256   # ncfl.CS.BotValve.t_min
-  0       0                       0                       0                
-  6   256   # ncfl.CS.BotValve.t_max
-  0       0                       0                       0                
-  6   256   # ncfl.CS.BotValve.t_minScaled
-  0       0                       0                       0                
-  6   256   # ncfl.CS.BotValve.t_maxScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.BotValve.p_offset[1]
-  0       0                       0                       0                
-  6  1282   # ncfl.CS.BotValve.tableID.id
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.BotValve.nextTimeEvent
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.BotValve.nextTimeEventScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.BotValve.timeScaled
-  0       1                       1                 1.0000000000000000E+100
-  6   258   # ncfl.CS.TopValve.nout
-  0       1                       0                       0                
-  6   257   # ncfl.CS.TopValve.tableOnFile
- -1       1                       0                       0                
-  1   281   # ncfl.CS.TopValve.verboseRead
-  0       2                       0                       0                
-  6   258   # ncfl.CS.TopValve.columns[1]
-  0       2                       1                       6                
-  6   258   # ncfl.CS.TopValve.smoothness
-  0       2                       1                       4                
-  6   258   # ncfl.CS.TopValve.extrapolation
-  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
-  6   256   # ncfl.CS.TopValve.timeScale
- -1       0                       0                       0                
-  1   280   # ncfl.CS.TopValve.offset[1]
- -1       0                       0                       0                
-  1   280   # ncfl.CS.TopValve.startTime
-  0       0                       0                       0                
-  6   256   # ncfl.CS.TopValve.shiftTime
- -1       3                       1                       3                
-  1   282   # ncfl.CS.TopValve.timeEvents
-  0       0                       0                       0                
-  6   257   # ncfl.CS.TopValve.verboseExtrapolation
-  0       0                       0                       0                
-  6   256   # ncfl.CS.TopValve.t_min
-  0       0                       0                       0                
-  6   256   # ncfl.CS.TopValve.t_max
-  0       0                       0                       0                
-  6   256   # ncfl.CS.TopValve.t_minScaled
-  0       0                       0                       0                
-  6   256   # ncfl.CS.TopValve.t_maxScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.TopValve.p_offset[1]
-  0       0                       0                       0                
-  6  1282   # ncfl.CS.TopValve.tableID.id
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.TopValve.nextTimeEvent
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.TopValve.nextTimeEventScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.TopValve.timeScaled
-  0       1                       1                 1.0000000000000000E+100
-  6   258   # ncfl.CS.HeaterPower.nout
-  0       1                       0                       0                
-  6   257   # ncfl.CS.HeaterPower.tableOnFile
- -1       1                       0                       0                
-  1   281   # ncfl.CS.HeaterPower.verboseRead
-  0       2                       0                       0                
-  6   258   # ncfl.CS.HeaterPower.columns[1]
-  0       2                       1                       6                
-  6   258   # ncfl.CS.HeaterPower.smoothness
-  0       2                       1                       4                
-  6   258   # ncfl.CS.HeaterPower.extrapolation
-  0       1                  1.0000000000000001E-15 1.0000000000000000E+100
-  6   256   # ncfl.CS.HeaterPower.timeScale
- -1       0                       0                       0                
-  1   280   # ncfl.CS.HeaterPower.offset[1]
- -1       0                       0                       0                
-  1   280   # ncfl.CS.HeaterPower.startTime
-  0       0                       0                       0                
-  6   256   # ncfl.CS.HeaterPower.shiftTime
- -1       3                       1                       3                
-  1   282   # ncfl.CS.HeaterPower.timeEvents
-  0       0                       0                       0                
-  6   257   # ncfl.CS.HeaterPower.verboseExtrapolation
-  0       0                       0                       0                
-  6   256   # ncfl.CS.HeaterPower.t_min
-  0       0                       0                       0                
-  6   256   # ncfl.CS.HeaterPower.t_max
-  0       0                       0                       0                
-  6   256   # ncfl.CS.HeaterPower.t_minScaled
-  0       0                       0                       0                
-  6   256   # ncfl.CS.HeaterPower.t_maxScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.HeaterPower.p_offset[1]
-  0       0                       0                       0                
-  6  1282   # ncfl.CS.HeaterPower.tableID.id
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.HeaterPower.nextTimeEvent
-  0       0                       0                       0                
-  6  1352   # ncfl.CS.HeaterPower.nextTimeEventScaled
-  0       0                       0                       0                
-  6  1280   # ncfl.CS.HeaterPower.timeScaled
+ -1       1                       0                       1                
+  1   280   # ncfl.CS.const.k
+ -1      20                       0                  100000                
+  1   280   # ncfl.CS.const1.k
+ -1    5500                       0                       0                
+  1   280   # ncfl.CS.const2.k
  -1  3.3019999999999999E-01       0                       0                
   1   280   # ncfl.data.Slant
  -1  7.1627999999999998E+00       0                       0                
@@ -3109,7 +2862,7 @@ double initialValue(2678,6)
   1   280   # ncfl.data.Heater_radius
  -1      20                       0                       0                
   1   280   # ncfl.data.Pump_Mflow
- -1  4.6989999999999998E-01       0                       0                
+ -1  6.2000000000000000E-01       0                       0                
   1   280   # ncfl.data.HX_L
  -1  3.8100000000000002E-02       0                       0                
   1   280   # ncfl.data.HX_radius
@@ -3395,8 +3148,6 @@ double initialValue(2678,6)
   6  1280   # ncfl.Distance2Heaters.flowModel.dp_fric_nominal
   0       1                       0                       0                
   6   257   # ncfl.PumpPipe.allowFlowReversal
-  0       0                       0                  100000                
-  6   388   # ncfl.PumpPipe.port_a.m_flow
   0  100000                 -1.0000000000000000E+10  1.0000000000000000E+10
   6   260   # ncfl.PumpPipe.port_a.h_outflow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -4203,8 +3954,6 @@ double initialValue(2678,6)
   6   256   # ncfl.V_top.Kv2Av
   0  2.4000000000000001E-05       0                       0                
   6   256   # ncfl.V_top.Cv2Av
-  0       0                       0                       1                
-  6   256   # ncfl.V_top.opening
   0       0                       0                       0                
   6  1280   # ncfl.V_top.minLimiter.uMin
   0       0                       0                       0                
@@ -4283,8 +4032,6 @@ double initialValue(2678,6)
   6   256   # ncfl.V_bot.Kv2Av
   0  2.4000000000000001E-05       0                       0                
   6   256   # ncfl.V_bot.Cv2Av
-  0       0                       0                       1                
-  6   256   # ncfl.V_bot.opening
   0       0                       0                       0                
   6  1280   # ncfl.V_bot.minLimiter.uMin
   0       0                       0                       0                
@@ -4445,8 +4192,8 @@ double initialValue(2678,6)
   1  1305   # ncfl.DistanceAfterHeaters.showDesignFlowDirection
  -1       1                       1                 1.0000000000000000E+100
   1   280   # ncfl.DistanceAfterHeaters.nParallel
-  0       0                       0                       0                
-  6   256   # ncfl.DistanceAfterHeaters.length
+ -1  2.9199999999999999E+00       0                       0                
+  1   280   # ncfl.DistanceAfterHeaters.length
   0       1                       0                       0                
   6   257   # ncfl.DistanceAfterHeaters.isCircular
   0       0                       0                 1.0000000000000000E+100
@@ -5143,8 +4890,6 @@ double initialValue(2678,6)
   6  1280   # ncfl.heater3.HeaterPipe.flowModel.diameters[1]
   0       0                       0                 1.0000000000000000E+100
   6  1280   # ncfl.heater3.HeaterPipe.flowModel.dp_fric_nominal
-  0       0                       0                       0                
-  6   256   # ncfl.heater3.HeaterPower
   0      20                       0                  100000                
   6   388   # ncfl.heater3.port_a.m_flow
   0  5.0000000000000000E+06  6.1165700000000004E+02  1.0000000000000000E+08
@@ -8185,7 +7930,7 @@ double initialValue(2678,6)
 #   Which variables will be important for initialization and continue
 #   is indicated by value in column 6 & dsStartMasks.
 #
-char initialDescription(2678,126)
+char initialDescription(2593,126)
 Default ambient pressure [Pa|bar]
 Default ambient temperature [K|degC]
 Constant gravity acceleration [m/s2]
@@ -8252,90 +7997,9 @@ Fixed value of composition [kg/kg]
 Needed to connect to conditional connector [kg/s]
 Needed to connect to conditional connector [K]
 Needed to connect to conditional connector [1]
-Number of outputs [:#(type=Integer)]
-= true, if table is defined on file or in function usertab [:#(type=Boolean)]
-= true, if info message that file is loading is to be printed [:#(type=Boolean)]
-Columns of table to be interpolated [:#(type=Integer)]
-Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
-Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
-Time scale of first table column [s]
-Offsets of output signals
-Output = offset for time < startTime [s]
-Shift time of first table column [s]
-Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
-= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
-Minimum abscissa value defined in table [s]
-Maximum abscissa value defined in table [s]
-Minimum (scaled) abscissa value defined in table [1]
-Maximum (scaled) abscissa value defined in table [1]
-Offsets of output signals
-[:#(type=Integer)]
-Next time event instant [s]
-Next scaled time event instant [1]
-Scaled time [1]
-Number of outputs [:#(type=Integer)]
-= true, if table is defined on file or in function usertab [:#(type=Boolean)]
-= true, if info message that file is loading is to be printed [:#(type=Boolean)]
-Columns of table to be interpolated [:#(type=Integer)]
-Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
-Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
-Time scale of first table column [s]
-Offsets of output signals
-Output = offset for time < startTime [s]
-Shift time of first table column [s]
-Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
-= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
-Minimum abscissa value defined in table [s]
-Maximum abscissa value defined in table [s]
-Minimum (scaled) abscissa value defined in table [1]
-Maximum (scaled) abscissa value defined in table [1]
-Offsets of output signals
-[:#(type=Integer)]
-Next time event instant [s]
-Next scaled time event instant [1]
-Scaled time [1]
-Number of outputs [:#(type=Integer)]
-= true, if table is defined on file or in function usertab [:#(type=Boolean)]
-= true, if info message that file is loading is to be printed [:#(type=Boolean)]
-Columns of table to be interpolated [:#(type=Integer)]
-Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
-Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
-Time scale of first table column [s]
-Offsets of output signals
-Output = offset for time < startTime [s]
-Shift time of first table column [s]
-Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
-= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
-Minimum abscissa value defined in table [s]
-Maximum abscissa value defined in table [s]
-Minimum (scaled) abscissa value defined in table [1]
-Maximum (scaled) abscissa value defined in table [1]
-Offsets of output signals
-[:#(type=Integer)]
-Next time event instant [s]
-Next scaled time event instant [1]
-Scaled time [1]
-Number of outputs [:#(type=Integer)]
-= true, if table is defined on file or in function usertab [:#(type=Boolean)]
-= true, if info message that file is loading is to be printed [:#(type=Boolean)]
-Columns of table to be interpolated [:#(type=Integer)]
-Smoothness of table interpolation [:#(type=Modelica.Blocks.Types.Smoothness)]
-Extrapolation of data outside the definition range [:#(type=Modelica.Blocks.Types.Extrapolation)]
-Time scale of first table column [s]
-Offsets of output signals
-Output = offset for time < startTime [s]
-Shift time of first table column [s]
-Time event handling of table interpolation [:#(type=Modelica.Blocks.Types.TimeEvents)]
-= true, if warning messages are to be printed if time is outside the table definition range [:#(type=Boolean)]
-Minimum abscissa value defined in table [s]
-Maximum abscissa value defined in table [s]
-Minimum (scaled) abscissa value defined in table [1]
-Maximum (scaled) abscissa value defined in table [1]
-Offsets of output signals
-[:#(type=Integer)]
-Next time event instant [s]
-Next scaled time event instant [1]
-Scaled time [1]
+Constant output value
+Constant output value [kg/s]
+Constant output value [W]
 [m]
 [m]
 [m]
@@ -8492,7 +8156,6 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
 = true to allow flow reversal, false restricts to design direction (port_a -> port_b) [:#(type=Boolean)]
-Mass flow rate from the connection point into the component [kg/s]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
@@ -8896,7 +8559,6 @@ Reverse flow stopped [:#(type=Boolean)]
 Regularisation of zero flow [Pa|bar]
 Conversion factor [m2]
 Conversion factor [m2]
-Valve position in the range 0..1
 Lower limit of input signal
 Connector of Real output signal
 cf. straight pipe for fully open valve -- dp_turbulent increases for closing valve [1]
@@ -8936,7 +8598,6 @@ Reverse flow stopped [:#(type=Boolean)]
 Regularisation of zero flow [Pa|bar]
 Conversion factor [m2]
 Conversion factor [m2]
-Valve position in the range 0..1
 Lower limit of input signal
 Connector of Real output signal
 cf. straight pipe for fully open valve -- dp_turbulent increases for closing valve [1]
@@ -9366,7 +9027,6 @@ Within regularization if |dp| < dp_small (may be wider for large discontinuities
 = true, if the pressure loss is continuous around zero flow [:#(type=Boolean)]
 Mean diameters between segments [m]
 Pressure loss for nominal conditions [Pa|bar]
-[W]
 Mass flow rate from the connection point into the component [kg/s]
 Thermodynamic pressure in the connection point [Pa|bar]
 Specific thermodynamic enthalpy close to the connection point if m_flow < 0 [J/kg]
