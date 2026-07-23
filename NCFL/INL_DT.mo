@@ -1491,6 +1491,19 @@ characteristic N = f(M, C, R, K*).</p>
         annotation (Placement(transformation(extent={{-56,10},{-36,30}})));
       Modelica.Blocks.Sources.Constant const2(k=0)
         annotation (Placement(transformation(extent={{-56,-24},{-36,-4}})));
+      Modelica.Blocks.Math.MultiProduct multiProduct(nu=4)
+        annotation (Placement(transformation(extent={{-50,60},{-38,72}})));
+      Modelica.Blocks.Sources.Constant Cp(k=4184)
+        annotation (Placement(transformation(extent={{-116,46},{-96,66}})));
+      Modelica.Blocks.Sources.Constant const3(k=1/3)
+        annotation (Placement(transformation(extent={{-90,68},{-70,88}})));
+      Modelica.Blocks.Sources.CombiTimeTable PumpPower(
+        tableOnFile=true,
+        tableName="pump",
+        fileName="C:/INL LDRD Project Files/NCFL/DataSeries/pump.txt",
+        smoothness=Modelica.Blocks.Types.Smoothness.ContinuousDerivative,
+        timeEvents=Modelica.Blocks.Types.TimeEvents.NoTimeEvents)
+        annotation (Placement(transformation(extent={{-56,-56},{-36,-36}})));
     equation
       connect(actuatorBus.TopValve_Opening, const2.y) annotation (Line(
           points={{30,-100},{30,-14},{-35,-14}},
@@ -1510,6 +1523,48 @@ characteristic N = f(M, C, R, K*).</p>
           index=-1,
           extent={{-3,-6},{-3,-6}},
           horizontalAlignment=TextAlignment.Right));
+      connect(Cp.y, multiProduct.u[1]) annotation (Line(points={{-95,56},{-56,
+              56},{-56,64.425},{-50,64.425}}, color={0,0,127}));
+      connect(sensorBus.TdiffHL, multiProduct.u[2]) annotation (Line(
+          points={{-30,-100},{-30,-58},{-60,-58},{-60,56},{-56,56},{-56,65.475},
+              {-50,65.475}},
+          color={239,82,82},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(sensorBus.PumpMFlow, multiProduct.u[3]) annotation (Line(
+          points={{-30,-100},{-30,-58},{-60,-58},{-60,58},{-50,58},{-50,66.525}},
+
+          color={239,82,82},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(const3.y, multiProduct.u[4]) annotation (Line(points={{-69,78},{
+              -58,78},{-58,67.575},{-50,67.575}}, color={0,0,127}));
+      connect(actuatorBus.Heater_Power, multiProduct.y) annotation (Line(
+          points={{30,-100},{30,66},{-36.98,66}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
+      connect(actuatorBus.Pump_Power, PumpPower.y[1]) annotation (Line(
+          points={{30,-100},{30,-46},{-35,-46}},
+          color={111,216,99},
+          pattern=LinePattern.Dash,
+          thickness=0.5), Text(
+          string="%first",
+          index=-1,
+          extent={{6,3},{6,3}},
+          horizontalAlignment=TextAlignment.Left));
     end AdaptiveHeating;
   end ControlSystems;
 
