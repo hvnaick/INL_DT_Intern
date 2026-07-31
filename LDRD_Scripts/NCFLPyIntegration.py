@@ -65,16 +65,43 @@ else:
 
 dymola.getLastErrorLog()
 #model_path = "INL_DT.Tests.NCFL_Modular"
-model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.Dynamic_CS CS))'
+#model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.AVO_CS CS))'
+#model_path = 'INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.Dynamic_CS CS))'
+'''
+model_path = ('INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.Dynamic_CS CS('
+              'HeaterPower(fileName="C:/INL LDRD Project Files/NCFL/DataSeries/Heater.txt", '
+              'tableName="Heater"))))')
+'''
+model_path = ('INL_DT.Tests.NCFL_Modular(ncfl(redeclare INL_DT.ControlSystems.Dynamic_CS CS('
+              'HeaterPower(fileName="C:/INL LDRD Project Files/NCFL/DataSeries/Heater.txt", '
+              'tableName="Heater"), '
+              'PumpPower(fileName="C:/INL LDRD Project Files/NCFL/DataSeries/pump.txt", '
+              'tableName="pump"), '
+              'TopValve(fileName="C:/INL LDRD Project Files/NCFL/DataSeries/topValve.txt", '
+              'tableName="topValve"), '
+              'BotValve(fileName="C:/INL LDRD Project Files/NCFL/DataSeries/botValve.txt", '
+              'tableName="botValve"))))')
+
 CS_path = 'INL_DT.ControlSystems.Dynamic_CS'
 # ====================================
 
 # In[]
 #Include any modifications to the simulation in the following line 
-#dymola.ExecuteCommand('ncfl.data.Heater_Power = 3.5E3;2.5E3')
-dymola.ExecuteCommand('INL_DT.ControlSystems.Dynamic_CS.HeaterPower.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/Heater_static.txt"')
-dymola.ExecuteCommand('INL_DT.ControlSystems.Dynamic_CS.HeaterPower.tableName = "Heater_static"')
-# ====================================
+
+#dymola.ExecuteCommand('ControlSystems.Dynamic_CS.HeaterPower.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/Heater_static.txt"')
+#dymola.ExecuteCommand('ControlSystems.Dynamic_CS.HeaterPower.tableName = "Heater_static"')
+'''
+dymola.ExecuteCommand('ncfl.CS.PumpPower.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/pump.txt"')
+dymola.ExecuteCommand('ncfl.CS.PumpPower.tableName = "pump"')
+
+dymola.ExecuteCommand('ncfl.CS.TopValve.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/topValve.txt"')
+dymola.ExecuteCommand('ncfl.CS.TopValve.tableName = "topValve"')
+
+dymola.ExecuteCommand('ncfl.CS.BotValve.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/botValve.txt"')
+dymola.ExecuteCommand('ncfl.CS.BotValve.tableName = "botValve"')
+'''
+log = dymola.getLastErrorLog()
+print(log)
 
 # In[ ]:
 #Translate Dymola simulation for NCFL model
@@ -93,7 +120,16 @@ else:
 
 # ====================================
 
+# In[]
+# Run modifications that would occur after translation such as to variable parameters within the NCFL
 
+dymola.ExecuteCommand('ncfl.data.Heater_Power = 3.5E3')
+dymola.ExecuteCommand('ncfl.CS.HeaterPower.fileName = "C:/INL LDRD Project Files/NCFL/DataSeries/Heater_static.txt"')
+#dymola.ExecuteCommand('ControlSystems.Dynamic_CS.HeaterPower.tableName = "Heater_static"')
+log = dymola.getLastErrorLog()
+print(log)
+
+# ====================================
 
 # In[]
 #Run simulation and store results in "NCFL_Total_PyResults" or "NCFL_Modular_PyResults," potentially make changes to model here as well:
@@ -169,11 +205,14 @@ def plot_dymola(file, comps, labels=None, xlabel="Time [s]", ylabel=None,
 #Run the plotting function for specified data streams
 
 result_file = "NCFL_Modular_PyResults.mat"
-
+'''
 plot_dymola(result_file, "ncfl.CS.HeaterPower.y[1]",
             ylabel="Temperature Difference [K]",
             title="Cold Leg Temperature Difference")
-
+'''
+plot_dymola(result_file, "ncfl.data.Heater_Power",
+            ylabel="Heater Power [W]",
+            title="Heater Power")
 
 plot_dymola(result_file,
             ["ncfl.T_diff_CL.y", "ncfl.T_diff_HL.y"],
