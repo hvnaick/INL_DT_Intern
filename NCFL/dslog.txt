@@ -1,173 +1,2361 @@
 Log-file of program ./dymosim
-(generated: Fri Jul 31 15:54:16 2026)
+(generated: Mon Aug 10 08:32:24 2026)
 
 dymosim started
-... "INL_DT.Tests.NCFL_Modular" simulating
+... "NHES.Systems.EnergyStorage.PCM_HITB.Examples.Final_Runs.HITB_Experiment_01_Calibrate_sensitivity" simulating
 ... "dsin.txt" loading (dymosim input file)
-... loading "pump" from "C:/Users/NAICHV/INL LDRD Project Files/NCFL/DataSeries/pump.txt"
-... loading "botValve" from "C:/Users/NAICHV/INL LDRD Project Files/NCFL/DataSeries/botValve.txt"
-... loading "topValve" from "C:/Users/NAICHV/INL LDRD Project Files/NCFL/DataSeries/topValve.txt"
-... loading "Heater" from "C:/Users/NAICHV/INL LDRD Project Files/NCFL/DataSeries/Heater.txt"
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -4.61212e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_pT
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT
-Modelica.Media.Water.IF97_Utilities.h_props_pT(
-SecondaryLoop.medium.p, 
-293.15, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_pT(SecondaryLoop.medium.p, 293.15, 0))
-Modelica.Media.Water.IF97_Utilities.h_pT(SecondaryLoop.medium.p, SecondaryLoop.T_in_internal, 0)
-Modelica.Media.Water.WaterIF97_ph.specificEnthalpy_pT_Unique18(SecondaryLoop.medium.p, SecondaryLoop.T_in_internal, 0, 0)
-Modelic...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 6
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -4.57189e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.T_props_ph(
-ncfl.JetPump.port_b.p, 
-ncfl.s1.port_a.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetPump.port_b.p, ncfl.s1.port_a.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.JetPump.port_b.p, ncfl.s1.port_a.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.JetPump.port_b.p, ncfl.s1.port...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 15
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -10520.2 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-ncfl.heater2.HeaterPipe.port_a.p, 
-ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.heater2.HeaterPipe.port_a.p, ncfl.heater2.HeaterPipe.port_a.h_outfl...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 1
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -10520.2 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-ncfl.heater3.HeaterPipe.port_a.p, 
-ncfl.heater3.HeaterPipe.port_a.h_outflow_inStream, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.heater3.HeaterPipe.port_a.p, ncfl.heater3.HeaterPipe.port_a.h_outflow_inStream, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.heater3.HeaterPipe.port_a.p, ncfl.heater3.HeaterPipe.port_a.h_outfl...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 1
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -5.35228e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.T_props_ph(
-ncfl.PumpPipe.port_b.p, 
-ncfl.pump.port_a.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.PumpPipe.port_b.p, ncfl.pump.port_a.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.T_ph(ncfl.PumpPipe.port_b.p, ncfl.pump.port_a.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.temperature_ph_Unique16(ncfl.PumpPipe.port_b.p, nc...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 5
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -2.93802e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-ncfl.JetInlet.port_a.p, 
-ncfl.ValveOutlet.port_b.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.JetInlet.port_a.p, ncfl.ValveOutlet.port_b.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.JetInlet.port_a.p, ncfl.ValveOutlet.port_b.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl....
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 4
-
-Error: The following error was detected at time: 0
-  IF97 medium function tsat called with too low pressure
-p = -3.97596e+06 Pa <= 611.657 Pa (triple point pressure)
-  Failed condition: p > 611.657
-The stack of functions is:
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Basic.tsat
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p
-Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.region_ph
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph
-Modelica.Media.Water.IF97_Utilities.rho_props_ph(
-ncfl.ValveOutlet.port_a.p, 
-ncfl.V_bot.port_b.h_outflow, 
-Modelica.Media.Water.IF97_Utilities.waterBaseProp_ph(ncfl.ValveOutlet.port_a.p, ncfl.V_bot.port_b.h_outflow, 0, 0))
-Modelica.Media.Water.IF97_Utilities.rho_ph(ncfl.ValveOutlet.port_a.p, ncfl.V_bot.port_b.h_outflow, 0, 0)
-Modelica.Media.Water.WaterIF97_ph.density_ph_Unique15(ncfl.ValveOutl...
-
-Non-linear solver will silently attempt to handle this problem.
-Non-linear solver gave up after attempt: 4
-
-... "NCFL_Modular.mat" creating (simulation result file)
+... "HITB_Experiment_01_Calibrate_sensitivity.mat" creating (simulation result file)
 
 Integration started at T = 0 using integration method DASSL
 (DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
+Residual was NaN or Inf.
 
-Integration terminated successfully at T = 180
-   CPU-time for integration                : 11.1 seconds
-   CPU-time for one grid interval          : 6.16 milliseconds
-   CPU-time for initialization             : 0.075 seconds
-   Number of result points                 : 1803
-   Number of grid points                   : 1801
-   Number of accepted steps                : 342
-   Number of f-evaluations (dynamics)      : 754
-   Number of crossing function evaluations : 2142
-   Number of Jacobian-evaluations          : 85
-   Number of model time events             : 1
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 33771.4344423296
+  Tag: simulation.nonlinear[451]
+  For debugging information enable
+  Simulation/Setup/Debug/Nonlinear solver diagnostics/Detailed logging of failed nonlinear solutions.
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52485.98510913252
+  Tag: simulation.nonlinear[711]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52633.34397926588
+  Tag: simulation.nonlinear[10]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52722.74506745716
+  Tag: simulation.nonlinear[581]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52727.74369968803
+  Tag: simulation.nonlinear[45]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52780.72920133523
+  Tag: simulation.nonlinear[160]
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 52888.31054118094
+  Tag: simulation.nonlinear[41]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53236.10535582848
+  Tag: simulation.nonlinear[135]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53596.85812360809
+  Tag: simulation.nonlinear[130]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53596.18922526149
+  Tag: simulation.nonlinear[35]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53596.18922526149
+  Tag: simulation.nonlinear[35]
+Solver will attempt to handle this problem.
+
+Failed to evaluate model for ODE-Jacobian
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53615.22969002972
+  Tag: simulation.nonlinear[94]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53936.2185891063
+  Tag: simulation.nonlinear[290]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53945.21832865055
+  Tag: simulation.nonlinear[248]
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53963.04253223928
+  Tag: simulation.nonlinear[439]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 53978.44233863306
+  Tag: simulation.nonlinear[422]
+Solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+Residual was NaN or Inf.
+
+Non-linear solver will attempt to handle this problem.
+
+
+Warning: Failed to solve nonlinear system using Newton solver.
+  Time: 54026.84035261903
+  Tag: simulation.nonlinear[257]
+Solver will attempt to handle this problem.
+
+
+Integration terminated successfully at T = 90000
+   CPU-time for integration                : 2.41e+03 seconds
+   CPU-time for one grid interval          : 2.41e+04 milliseconds
+   CPU-time for initialization             : 0.437 seconds
+   Number of result points                 : 675
+   Number of grid points                   : 101
+   Number of accepted steps                : 3461
+   Number of f-evaluations (dynamics)      : 6665
+   Number of crossing function evaluations : 3890
+   Number of Jacobian-evaluations          : 1231
+   Number of model time events             : 280
    Number of input time events             : 0
-   Number of state events                  : 0
+   Number of state events                  : 9
    Number of step events                   : 0
-   Minimum integration stepsize            : 5.42e-09
-   Maximum integration stepsize            : 2.6
-   Maximum integration order               : 2
+   Minimum integration stepsize            : 3.46e-07
+   Maximum integration stepsize            : 2.46e+03
+   Maximum integration order               : 5
 Calling terminal section
 ... "dsfinal.txt" creating (final states)
 
-SUCCESSFUL simulation of INL_DT.Tests.NCFL_Modular
+SUCCESSFUL simulation of NHES.Systems.EnergyStorage.PCM_HITB.Examples.Final_Runs.HITB_Experiment_01_Calibrate_sensitivity

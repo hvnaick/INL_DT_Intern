@@ -14,7 +14,7 @@ package INL_DT
         annotation (Placement(transformation(extent={{74,-16},{54,4}})));
       Components.NCFL ncfl(redeclare package Medium =
             Modelica.Media.Water.StandardWater, redeclare
-          INL_DT.ControlSystems.Dynamic_CS CS)
+          INL_DT.ControlSystems.NF_BV_CS CS)
         annotation (Placement(transformation(extent={{-62,-16},{-2,38}})));
       TRANSFORM.Fluid.BoundaryConditions.Boundary_pT boundary(
         redeclare package Medium = Medium,
