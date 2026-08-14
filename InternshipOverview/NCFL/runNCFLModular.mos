@@ -1,0 +1,3 @@
+﻿simulateModel("INL_DT.Tests.NCFL_Modular", stopTime=180, resultFile="NCFL_Modular");
+removePlots();
+plot({"NCFL_Modular.ncfl.T_diff_HL.y"});
