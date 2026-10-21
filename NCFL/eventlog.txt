@@ -1,0 +1,33 @@
+Event iteration details;;;;Event summary;;;Triggering expression;;Bifurcation warning
+Iteration;Event type;Expression;Result;Time;Type(s) logged in dslog;Minor/Failed;Expression;Crossing;Expression;Crossing;Residual
+
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;false
+21;4;boilerDrum.medium_liquid.state.phase;2
+21;4;boilerDrum.medium_liquid.h < Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hvl_p(boilerDrum.medium_liquid.p, Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.boilingcurve_p(boilerDrum.medium_liquid.p))Modelica.Media.Water.IF97_Utilities.BaseIF97.Regions.hl_p(boilerDrum.medium_liquid.sat.psat)Modelica.Media.Water.WaterIF97_ph.bubbleEnthalpy_Unique7(Modelica.Media.Water.WaterIF97_base.SaturationProperties(ps...;true
+21;4;boilerDrum.medium_liquid.state.phase;1
+21;4;boilerDrum.medium_liquid.state.phase;1
+;;;;1.856729563362537;8;1
+;;;;;;;Step event;;Not supported;;
+
